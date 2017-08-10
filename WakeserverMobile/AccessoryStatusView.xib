@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccessoryStatusView" customModule="WakeserverMobile" customModuleProvider="target">
+            <connections>
+                <outlet property="accessoryView" destination="iO9-BM-ggI" id="juO-Ko-h2q"/>
+                <outlet property="nameLabel" destination="mTn-NI-O6w" id="HW5-Gd-CHh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iO9-BM-ggI" userLabel="Accessory" customClass="AccessoryStatusUnitView" customModule="WakeserverMobile" customModuleProvider="target">
+                    <rect key="frame" x="-137.5" y="0.0" width="650" height="649"/>
+                    <color key="backgroundColor" red="0.53963832030000003" green="1" blue="0.064000422259999995" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="iO9-BM-ggI" secondAttribute="height" multiplier="1:1" id="UiE-Vo-qRe"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accessory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTn-NI-O6w" userLabel=" AccessoryName">
+                    <rect key="frame" x="0.0" y="651" width="375" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="iO9-BM-ggI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="E8S-9z-HeJ"/>
+                <constraint firstItem="mTn-NI-O6w" firstAttribute="top" secondItem="iO9-BM-ggI" secondAttribute="bottom" constant="2" id="QhB-IG-dL9"/>
+                <constraint firstItem="mTn-NI-O6w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eGQ-zV-NiG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="mTn-NI-O6w" secondAttribute="bottom" id="eTo-f4-uPD"/>
+                <constraint firstItem="iO9-BM-ggI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qiH-56-wDN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mTn-NI-O6w" secondAttribute="trailing" id="xmF-Ei-GdH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  WakeserverMobile
+
+  Created by opiopan on 2017/09/18.
+  Copyright © 2017年 opiopan. All rights reserved.
+*/
+
+"PORTAL_SECTION_POTALS" = "Registered Portals";
+"PORTAL_BUTTON_ADD" = "Add a new Portal";
+
+"ADDPORTAL_SECTION_TITLE" = "DETECTED PORTALS...";
+"ADDPORTAL_FOOTER_TEXT" = "Now finding Wakeserver portals on the local network.\nPlease make sure your iOS device is connected to the same network with a Wakeserver portal when no Wakeserver portal is shown.";

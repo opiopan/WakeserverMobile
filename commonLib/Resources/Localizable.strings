@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  WakeserverMobile
+
+  Created by opiopan on 2017/10/07.
+  Copyright © 2017年 opiopan. All rights reserved.
+*/
+
+"PORTAL_PLATFORM_UNKNOWN" = "Unknown";
+
+"OUTDOORSPORTAL_NAME" = "Outdoors";
+
+"HOMES_NAME" = "Homes";
+"ZONE_NAME_FOR_OTHERS" = "Others";
+
+"ACCESSORY_DEC_switch" = "Switch";
+"ACCESSORY_DEC_thermometer" = "Thermometer";
+"ACCESSORY_DEC_av" = "Audio & Visual";
+"ACCESSORY_DEC_dashboard" = "Dashboard";
+"ACCESSORY_DEC_server" = "Server";
+"ACCESSORY_DEC_storage" = "Storage";
+
+
+"MSG_ERR_FAILED_PARSE" = "An error occured while parsing a portal configulation";
+"MSG_ERR_SERVERACCESS" = "Failed to access to a portal server";
+"MSG_ERR_PERSE_CONFIG" = "Failed to parse a configuration 'wakeserver.conf'";
+"MSG_ERR_PERSE_SERVERS" = "Failed to parse a configuration 'servers.conf'";
+"MSG_ERR_NO_NATIVE_APP" = "'nativeApp' property which include available page config is necessary";
+"MSG_ERR_INVALID_PAGE" = "There is an invalid page definition";
+"MSG_ERR_NO_REQ_PARAM_ACCESSORY" = "No required parameter for accessory in 'wakeserver.conf'";
+"MSG_ERR_NO_UNIT_IN_DASHBOARD" = "No units specification in a dashboard definition in 'wakeserver.conf'";
+"MSG_ERR_NO_ATTRIBUTE_IN_THERMOMETER" = "'attribute' property is necessary for 'thermometer' accessory";
+"MSG_ERR_NO_NAME_IN_SERVER" = "'name' property is necessary for server definition in 'servers.conf'";

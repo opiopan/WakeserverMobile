@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  WakeserverMobile
+
+  Created by opiopan on 2017/09/18.
+  Copyright © 2017年 opiopan. All rights reserved.
+*/
+
+"Yes" = "Yes";
+"No" = "No";
+"Ok" = "Ok";
+"Cancel" = "Cancel";
+
+"PORTAL_SECTION_POTALS" = "Registered Portals";
+"PORTAL_BUTTON_ADD" = "Add a new Portal";
+
+"PORTAL_DELETE_TITLE" = "Delete a Portal";
+"PORTAL_DELETE_MESSAGE" = "Are you sure you want to delete a portal?";
+
+"ADDPORTAL_SECTION_TITLE" = "DETECTED PORTALS...";
+"ADDPORTAL_FOOTER_TEXT" = "Now finding Wakeserver portals on the local network.\nPlease make sure your iOS device is connected to the same network with a Wakeserver portal when no Wakeserver portal is shown.";
+
+"PORTAL_SEATTING_BEACON_FOOTER_TEXT" = "When 'Identify a Room by Beacon' switch is on, or when your locaiton cannot be identified by using beacon, an accessory specified as 'Default Accessory' is choosen as a primery remote controller.";
+
+"PORTAL_NAME_EDIT_TITLE" = "Name";
+
+"ACCESSORY_NAME_EDIT_TITLE" = "Accessory Name";
+
+"OUTDOORS_ADD_ACCESSORY_FOOTER_TEXT" = "Up to four accessories of HomeKit can be registered to show there status on dashboard when you are out range of any registered portal.";
+
+"NO_HOMEKIT_TITLE" = "HomeKit does not configured";
+"NO_HOMEKIT_MESSAGE" = "No HomeKit accessory has been found.\nPlease register a HomeKit accessory using Home App before this operation";
+
+"SELECT_ICON_TITLE" = "Icon";

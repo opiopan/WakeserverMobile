@@ -1384,7 +1384,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = G3Y32477L5;
 				INFOPLIST_FILE = WakeserverMobile/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1402,7 +1402,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = G3Y32477L5;
 				INFOPLIST_FILE = WakeserverMobile/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";

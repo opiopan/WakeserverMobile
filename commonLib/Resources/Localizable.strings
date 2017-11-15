@@ -19,7 +19,9 @@
 "ACCESSORY_DEC_dashboard" = "Dashboard";
 "ACCESSORY_DEC_server" = "Server";
 "ACCESSORY_DEC_storage" = "Storage";
-
+"ACCESSORY_DEC_home" = "Home";
+"ACCESSORY_DEC_room" = "Room";
+"ACCESSORY_DEC_lightbulb" = "Light Bulb";
 
 "MSG_ERR_FAILED_PARSE" = "An error occured while parsing a portal configulation";
 "MSG_ERR_SERVERACCESS" = "Failed to access to a portal server";

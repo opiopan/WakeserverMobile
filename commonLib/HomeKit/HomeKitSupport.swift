@@ -116,6 +116,36 @@ open class HomeKitNode{
         newacc?.hmService = service
         return newacc
     }
+    
+    open var preferenceIcon : UIImage? {
+        get {
+            var image = portalAccessories["switch"]?.dashboardIcon
+            if nodeType == .home {
+                image = portalAccessories["home"]?.dashboardIcon
+            }else if nodeType == .room {
+                image = portalAccessories["room"]?.dashboardIcon
+            }else if nodeType == .accessory{
+                if service?.serviceType == HMServiceTypeTemperatureSensor {
+                    image = portalAccessories["thermometer"]?.dashboardIcon
+                }else if service?.serviceType == HMServiceTypeLightbulb {
+                    image = portalAccessories["lightbulb"]?.dashboardIcon
+                }
+            }
+            guard let icon = image else{
+                return nil
+            }
+            
+            return Graphics.shrinkingFilter.apply(
+                image: Graphics.coloringFilter.apply(image: icon, color: UIColor.lightGray),
+                size: CGSize(width: 36, height: 36))
+        }
+    }
+    
+    open var canChangeIcon : Bool {
+        get {
+            return service?.serviceType != HMServiceTypeTemperatureSensor
+        }
+    }
 }
 
 open class HomeKitNodeManager : NSObject {
@@ -169,7 +199,12 @@ open class HomeKitNodeManager : NSObject {
     }
     
     private func zoneNode(zone: HMZone, home: HMHome) -> HomeKitNode {
-        let children = zone.rooms.map{roomNode(room: $0, home: home)}.filter{$0.children.count > 0}
+        let sorteOrder = home.rooms.enumerated().reduce(into:[String:Int]()){
+            $0[$1.element.uniqueIdentifier.uuidString] = $1.offset
+        }
+        let children = zone.rooms.map{roomNode(room: $0, home: home)}.filter{$0.children.count > 0}.sorted{
+            sorteOrder[$0.nodeId]! < sorteOrder[$1.nodeId]!
+        }
         let zoneNode = HomeKitNode(type: .zone, nodeId: zone.uniqueIdentifier.uuidString, children: children)
         zoneNode.nodeName = zone.name
         zoneNode.homeId = home.uniqueIdentifier.uuidString

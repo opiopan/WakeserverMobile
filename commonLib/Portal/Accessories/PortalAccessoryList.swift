@@ -50,6 +50,10 @@ public let portalAccessories : [String : PortalAccessoryAttribute] = [
         type: "switch",
         typeName: String(describing: SwitchAccessory.self),
         create: {try SwitchAccessory(dict: $0)}),
+    "lightbulb" : PortalAccessoryAttribute(
+        type: "lightbulb",
+        typeName: nil,
+        create: nil),
     "thermometer" : PortalAccessoryAttribute(
         type: "thermometer",
         typeName: String(describing: ThermometerAccessory.self),
@@ -58,16 +62,24 @@ public let portalAccessories : [String : PortalAccessoryAttribute] = [
         type: "av",
         typeName: String(describing: AVAccessory.self),
         create: {try AVAccessory(dict: $0)}),
-    "dashboard" : PortalAccessoryAttribute(
-        type: "dashboard",
-        typeName: String(describing: DashboardAccessory.self),
-        create: {try DashboardAccessory(dict: $0)}),
     "storage" : PortalAccessoryAttribute(
         type: "storage",
         typeName: nil,
         create: nil),
     "server" : PortalAccessoryAttribute(
         type: "server",
+        typeName: nil,
+        create: nil),
+    "dashboard" : PortalAccessoryAttribute(
+        type: "dashboard",
+        typeName: String(describing: DashboardAccessory.self),
+        create: {try DashboardAccessory(dict: $0)}),
+    "home" : PortalAccessoryAttribute(
+        type: "home",
+        typeName: nil,
+        create: nil),
+    "room" : PortalAccessoryAttribute(
+        type: "room",
         typeName: nil,
         create: nil),
 ]

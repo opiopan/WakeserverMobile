@@ -86,7 +86,7 @@ class OutdoorsSettingsViewController: UITableViewController {
     //-----------------------------------------------------------------------------------------
     private func updateView() {
         nameLabel?.text = config.outdoorsPortal.displayName
-        addAccessoryButton.isEnabled = (config.outdoorsPortal.homeKitAccessories.count ?? 0) < 4
+        addAccessoryButton.isEnabled = (config.outdoorsPortal.homeKitAccessories.count ) < 4
         tableView.reloadData()
     }
 
@@ -200,7 +200,9 @@ class OutdoorsSettingsViewController: UITableViewController {
             portal.homeKitAccessories.remove(at: indexPath.row)
             config.outdoorsPortal = portal
             tableView.deleteRows(at: [indexPath], with: .fade)
-            updateView()
+            UIView.transition(with: addAccessoryButton, duration: 0.5, options:.transitionCrossDissolve, animations: {
+                self.addAccessoryButton.isEnabled = (self.config.outdoorsPortal.homeKitAccessories.count ) < 4
+            }, completion: nil)
         }
     }
 

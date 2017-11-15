@@ -56,6 +56,21 @@ open class ShrinkingFilter {
         
         return outImage
     }
+    
+    open func apply(image: UIImage?, size: CGSize) -> UIImage? {
+        guard let image = image else {
+            return nil
+        }
+
+        let drawRect = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
+        
+        UIGraphicsBeginImageContext(size)
+        image.draw(in: drawRect)
+        let outImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return outImage
+    }
 }
 
 public var Graphics : (

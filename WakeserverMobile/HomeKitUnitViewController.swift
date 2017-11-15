@@ -58,11 +58,13 @@ class HomeKitUnitViewController: UITableViewController {
             sections[indexPath.section].children[indexPath.row] : contextNode?.children[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "homekitItemCell", for: indexPath)
         cell.textLabel?.text = node?.nodeName
+        cell.imageView?.image = node?.preferenceIcon
         if node?.nodeType == .accessory {
             cell.detailTextLabel?.text = "\(node!.service!.localizedDescription): \(node!.accessory!.name)"
             cell.accessoryType = .none
         }else{
-            cell.detailTextLabel?.text = nil
+            cell.detailTextLabel?.text =
+                String(format: NSLocalizedString("ROOM_DESCRIPTION_FORMAT", comment: ""), node?.children.count ?? 0)
             cell.accessoryType = .disclosureIndicator
         }
         

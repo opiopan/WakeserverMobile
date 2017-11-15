@@ -32,3 +32,5 @@
 "NO_HOMEKIT_MESSAGE" = "No HomeKit accessory has been found.\nPlease register a HomeKit accessory using Home App before this operation";
 
 "SELECT_ICON_TITLE" = "Icon";
+
+"ROOM_DESCRIPTION_FORMAT" = "%d accessories";

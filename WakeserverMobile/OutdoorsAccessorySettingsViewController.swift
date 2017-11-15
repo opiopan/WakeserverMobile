@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HomeKit
 import commonLib
 
 class OutdoorsAccessorySettingsViewPersonality {
@@ -33,6 +34,11 @@ class OutdoorsAccessorySettingsViewController: UITableViewController {
     @IBOutlet weak var homeNameLabel: UILabel!
     @IBOutlet weak var roomNameLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var accessoryNameLabel: UILabel!
+    @IBOutlet weak var manufacturerLabel: UILabel!
+    @IBOutlet weak var modelLabel: UILabel!
+    
+    private let iconIndex = IndexPath(row: 1, section: 0)
     
     var foo : String?
     var personality : OutdoorsAccessorySettingsViewPersonality? {
@@ -69,6 +75,10 @@ class OutdoorsAccessorySettingsViewController: UITableViewController {
         roomNameLabel?.text = personality?.accessory.hmService?.accessory?.room?.name
         homeNameLabel?.text = personality?.accessory.hmHome?.name
         
+        accessoryNameLabel?.text = personality?.accessory.hmService?.accessory?.name
+        manufacturerLabel?.text = personality?.accessory.hmService?.accessory?.manufacturer
+        modelLabel?.text = personality?.accessory.hmService?.accessory?.model
+        
         let image = Graphics.coloringFilter.apply(
             image: personality?.accessory.dashboardIcon, color: UIColor.lightGray)
         iconImageView?.image = Graphics.shrinkingFilter.apply(image: image, rathio: 0.8)
@@ -88,19 +98,16 @@ class OutdoorsAccessorySettingsViewController: UITableViewController {
     // MARK: - Table view data source
     //-----------------------------------------------------------------------------------------
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if personality?.accessory as? ThermometerAccessory != nil {
-            return super.numberOfSections(in: tableView) - 1
-        }else{
-            return super.numberOfSections(in: tableView)
-        }
+        return super.numberOfSections(in: tableView)
     }
 
-    /*
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if section == iconIndex.section && personality?.accessory as? ThermometerAccessory != nil {
+            return iconIndex.row
+        }else{
+            return super.tableView(tableView, numberOfRowsInSection: section)
+        }
     }
-     */
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

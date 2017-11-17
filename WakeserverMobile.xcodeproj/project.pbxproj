@@ -56,6 +56,36 @@
 		7B8609D71FA5F09E00B067FF /* AccessoryStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8609D61FA5F09E00B067FF /* AccessoryStatusView.swift */; };
 		7B8BC5C21FB71F3C00B5D4C1 /* HomeKitUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BC5C11FB71F3C00B5D4C1 /* HomeKitUnitViewController.swift */; };
 		7B8BC5C71FB8237800B5D4C1 /* OutdoorsAccessorySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BC5C61FB8237800B5D4C1 /* OutdoorsAccessorySettingsViewController.swift */; };
+		7B98B5EC1FBD9F89001F579B /* commonLibWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98B5E51FBD9F89001F579B /* commonLibWatch.framework */; };
+		7B98B5ED1FBD9F89001F579B /* commonLibWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98B5E51FBD9F89001F579B /* commonLibWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7B98B5F21FBDA0DD001F579B /* commonLibWatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B98B5E71FBD9F89001F579B /* commonLibWatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B98B5F31FBDA13F001F579B /* libutil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66C5C1F891BDB00C32FDB /* libutil.swift */; };
+		7B98B5F41FBDB33E001F579B /* LooseSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BADC5B31F91C93D001B3442 /* LooseSerializable.swift */; };
+		7B98B5F51FBDB343001F579B /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B45831FA4457C0067D5DC /* CommonUtils.swift */; };
+		7B98B5F71FBDB44B001F579B /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3DBB531F77E8C4009D3715 /* ConfigurationController.swift */; };
+		7B98B5F81FBDB465001F579B /* Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66C4C1F890FDA00C32FDB /* Portal.swift */; };
+		7B98B5F91FBDB472001F579B /* PortalPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66C501F8913F900C32FDB /* PortalPlatform.swift */; };
+		7B98B5FA1FBDB475001F579B /* PortalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBCF8241F8FB85700DAD404 /* PortalConfig.swift */; };
+		7B98B5FB1FBDB47A001F579B /* PortalAccessoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBE4961F922E5100E80FA8 /* PortalAccessoryList.swift */; };
+		7B98B5FC1FBDB47E001F579B /* PortalAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BADC5B11F91C867001B3442 /* PortalAccessory.swift */; };
+		7B98B5FD1FBDB482001F579B /* AVAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BADC5B51F91DB99001B3442 /* AVAccessory.swift */; };
+		7B98B5FE1FBDB487001F579B /* AVFunctionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAB11F9B88DA00FFB495 /* AVFunctionFactory.swift */; };
+		7B98B5FF1FBDB48B001F579B /* AVFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBA9D1F9B78D700FFB495 /* AVFunction.swift */; };
+		7B98B6001FBDB48F001F579B /* VolumeFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBA9F1F9B7EC700FFB495 /* VolumeFunction.swift */; };
+		7B98B6011FBDB493001F579B /* TVChannelFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAA11F9B7FEE00FFB495 /* TVChannelFunction.swift */; };
+		7B98B6021FBDB499001F579B /* TVChannelNameFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAA31F9B81FB00FFB495 /* TVChannelNameFunction.swift */; };
+		7B98B6031FBDB4A4001F579B /* PlayerFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAA51F9B826C00FFB495 /* PlayerFunction.swift */; };
+		7B98B6041FBDB4A8001F579B /* AltSkipFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAA71F9B82D700FFB495 /* AltSkipFunction.swift */; };
+		7B98B6051FBDB4AB001F579B /* CursorFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAA91F9B830800FFB495 /* CursorFunction.swift */; };
+		7B98B6061FBDB4B6001F579B /* OuterCursorFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAAB1F9B83E400FFB495 /* OuterCursorFunction.swift */; };
+		7B98B6071FBDB4C0001F579B /* FourColorFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAAD1F9B843200FFB495 /* FourColorFunction.swift */; };
+		7B98B6081FBDB4C4001F579B /* AuxFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAAF1F9B847E00FFB495 /* AuxFunction.swift */; };
+		7B98B6091FBDB4C7001F579B /* SwitchAcceesory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BADC5B71F91DBB8001B3442 /* SwitchAcceesory.swift */; };
+		7B98B60A1FBDB4CA001F579B /* ThermometerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BADC5B91F91DC32001B3442 /* ThermometerAccessory.swift */; };
+		7B98B60B1FBDB4CE001F579B /* DashboardAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BADC5BB1F91DC59001B3442 /* DashboardAccessory.swift */; };
+		7B98B60C1FBDB4D2001F579B /* ServerDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBE4991F932F0500E80FA8 /* ServerDefinition.swift */; };
+		7B98B60D1FBDB4E0001F579B /* HomeKitSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A51DA1FB47B4C00C9E37D /* HomeKitSupport.swift */; };
+		7B98B60F1FBDCF7F001F579B /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6829F31FB9DA2D0089A496 /* Graphics.swift */; };
 		7BA318AD1FAB5F0A00434582 /* AccessoryStatusUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA318AC1FAB5F0A00434582 /* AccessoryStatusUnitView.swift */; };
 		7BA66C4D1F890FDA00C32FDB /* Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66C4C1F890FDA00C32FDB /* Portal.swift */; };
 		7BA66C4E1F89107200C32FDB /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3DBB531F77E8C4009D3715 /* ConfigurationController.swift */; };
@@ -128,6 +158,13 @@
 			remoteGlobalIDString = 7B471E0C1F3C99DE00B1392D;
 			remoteInfo = "WakeserverMobile WatchKit Extension";
 		};
+		7B98B5EA1FBD9F89001F579B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B471DCE1F3C99DE00B1392D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B98B5E41FBD9F89001F579B;
+			remoteInfo = commonLibWatch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -162,6 +199,17 @@
 				7B471DFF1F3C99DE00B1392D /* WakeserverMobile WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B98B5F11FBD9F89001F579B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7B98B5ED1FBD9F89001F579B /* commonLibWatch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -226,6 +274,9 @@
 		7B8609D61FA5F09E00B067FF /* AccessoryStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryStatusView.swift; sourceTree = "<group>"; };
 		7B8BC5C11FB71F3C00B5D4C1 /* HomeKitUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitUnitViewController.swift; sourceTree = "<group>"; };
 		7B8BC5C61FB8237800B5D4C1 /* OutdoorsAccessorySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutdoorsAccessorySettingsViewController.swift; sourceTree = "<group>"; };
+		7B98B5E51FBD9F89001F579B /* commonLibWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = commonLibWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B98B5E71FBD9F89001F579B /* commonLibWatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commonLibWatch.h; sourceTree = "<group>"; };
+		7B98B5E81FBD9F89001F579B /* InfoWatch.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InfoWatch.plist; sourceTree = "<group>"; };
 		7BA318AC1FAB5F0A00434582 /* AccessoryStatusUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryStatusUnitView.swift; sourceTree = "<group>"; };
 		7BA66C491F88A5DD00C32FDB /* PortalSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalSettingsViewController.swift; sourceTree = "<group>"; };
 		7BA66C4C1F890FDA00C32FDB /* Portal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portal.swift; sourceTree = "<group>"; };
@@ -291,6 +342,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B98B5EC1FBD9F89001F579B /* commonLibWatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B98B5E11FBD9F89001F579B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +408,9 @@
 			isa = PBXGroup;
 			children = (
 				7B3DBB301F77DCB6009D3715 /* commonLib.h */,
+				7B98B5E71FBD9F89001F579B /* commonLibWatch.h */,
 				7B3DBB311F77DCB6009D3715 /* Info.plist */,
+				7B98B5E81FBD9F89001F579B /* InfoWatch.plist */,
 				7BA66C5B1F891B3000C32FDB /* Utility */,
 				7B44142D1FA2278D00DC3303 /* Place */,
 				7BA66C4B1F890FB000C32FDB /* Portal */,
@@ -427,6 +488,7 @@
 				7B471E0D1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension.appex */,
 				7B3DBB2E1F77DCB6009D3715 /* commonLib.framework */,
 				7B3DBB361F77DCB6009D3715 /* commonLibTests.xctest */,
+				7B98B5E51FBD9F89001F579B /* commonLibWatch.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -641,6 +703,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7B98B5E21FBD9F89001F579B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B98B5F21FBDA0DD001F579B /* commonLibWatch.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -762,15 +832,35 @@
 				7B471E091F3C99DE00B1392D /* Sources */,
 				7B471E0A1F3C99DE00B1392D /* Frameworks */,
 				7B471E0B1F3C99DE00B1392D /* Resources */,
+				7B98B5F11FBD9F89001F579B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7B98B5EB1FBD9F89001F579B /* PBXTargetDependency */,
 			);
 			name = "WakeserverMobile WatchKit Extension";
 			productName = "WakeserverMobile WatchKit Extension";
 			productReference = 7B471E0D1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		7B98B5E41FBD9F89001F579B /* commonLibWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B98B5EE1FBD9F89001F579B /* Build configuration list for PBXNativeTarget "commonLibWatch" */;
+			buildPhases = (
+				7B98B5E01FBD9F89001F579B /* Sources */,
+				7B98B5E11FBD9F89001F579B /* Frameworks */,
+				7B98B5E21FBD9F89001F579B /* Headers */,
+				7B98B5E31FBD9F89001F579B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = commonLibWatch;
+			productName = commonLibWatch;
+			productReference = 7B98B5E51FBD9F89001F579B /* commonLibWatch.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -832,6 +922,11 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
+					7B98B5E41FBD9F89001F579B = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = G3Y32477L5;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 7B471DD11F3C99DE00B1392D /* Build configuration list for PBXProject "WakeserverMobile" */;
@@ -854,6 +949,7 @@
 				7B471E0C1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension */,
 				7B3DBB2D1F77DCB6009D3715 /* commonLib */,
 				7B3DBB351F77DCB6009D3715 /* commonLibTests */,
+				7B98B5E41FBD9F89001F579B /* commonLibWatch */,
 			);
 		};
 /* End PBXProject section */
@@ -915,6 +1011,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B471E191F3C99DE00B1392D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B98B5E31FBD9F89001F579B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1015,6 +1118,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7B98B5E01FBD9F89001F579B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B98B5F71FBDB44B001F579B /* ConfigurationController.swift in Sources */,
+				7B98B5F81FBDB465001F579B /* Portal.swift in Sources */,
+				7B98B6031FBDB4A4001F579B /* PlayerFunction.swift in Sources */,
+				7B98B60D1FBDB4E0001F579B /* HomeKitSupport.swift in Sources */,
+				7B98B5F31FBDA13F001F579B /* libutil.swift in Sources */,
+				7B98B6041FBDB4A8001F579B /* AltSkipFunction.swift in Sources */,
+				7B98B60C1FBDB4D2001F579B /* ServerDefinition.swift in Sources */,
+				7B98B5FE1FBDB487001F579B /* AVFunctionFactory.swift in Sources */,
+				7B98B6001FBDB48F001F579B /* VolumeFunction.swift in Sources */,
+				7B98B5FF1FBDB48B001F579B /* AVFunction.swift in Sources */,
+				7B98B5FD1FBDB482001F579B /* AVAccessory.swift in Sources */,
+				7B98B5FA1FBDB475001F579B /* PortalConfig.swift in Sources */,
+				7B98B6081FBDB4C4001F579B /* AuxFunction.swift in Sources */,
+				7B98B6021FBDB499001F579B /* TVChannelNameFunction.swift in Sources */,
+				7B98B5F51FBDB343001F579B /* CommonUtils.swift in Sources */,
+				7B98B5FC1FBDB47E001F579B /* PortalAccessory.swift in Sources */,
+				7B98B5F91FBDB472001F579B /* PortalPlatform.swift in Sources */,
+				7B98B6061FBDB4B6001F579B /* OuterCursorFunction.swift in Sources */,
+				7B98B6071FBDB4C0001F579B /* FourColorFunction.swift in Sources */,
+				7B98B60A1FBDB4CA001F579B /* ThermometerAccessory.swift in Sources */,
+				7B98B5FB1FBDB47A001F579B /* PortalAccessoryList.swift in Sources */,
+				7B98B6051FBDB4AB001F579B /* CursorFunction.swift in Sources */,
+				7B98B5F41FBDB33E001F579B /* LooseSerializable.swift in Sources */,
+				7B98B6091FBDB4C7001F579B /* SwitchAcceesory.swift in Sources */,
+				7B98B60F1FBDCF7F001F579B /* Graphics.swift in Sources */,
+				7B98B6011FBDB493001F579B /* TVChannelFunction.swift in Sources */,
+				7B98B60B1FBDB4CE001F579B /* DashboardAccessory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1052,6 +1189,11 @@
 			isa = PBXTargetDependency;
 			target = 7B471E0C1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension */;
 			targetProxy = 7B471E0F1F3C99DE00B1392D /* PBXContainerItemProxy */;
+		};
+		7B98B5EB1FBD9F89001F579B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B98B5E41FBD9F89001F579B /* commonLibWatch */;
+			targetProxy = 7B98B5EA1FBD9F89001F579B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1473,6 +1615,68 @@
 			};
 			name = Release;
 		};
+		7B98B5EF1FBD9F89001F579B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = G3Y32477L5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = commonLib/InfoWatch.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.commonLibWatch;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		7B98B5F01FBD9F89001F579B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = G3Y32477L5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = commonLib/InfoWatch.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.commonLibWatch;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1544,6 +1748,15 @@
 			buildConfigurations = (
 				7B471E2C1F3C99DE00B1392D /* Debug */,
 				7B471E2D1F3C99DE00B1392D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B98B5EE1FBD9F89001F579B /* Build configuration list for PBXNativeTarget "commonLibWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B98B5EF1FBD9F89001F579B /* Debug */,
+				7B98B5F01FBD9F89001F579B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

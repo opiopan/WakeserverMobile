@@ -24,8 +24,12 @@ open class Portal : LooseSerializable {
     open var isEnableBeacon : Bool = true
     open var defaultPage : Int = 0
     
+    #if os(iOS)
     open var service: NetService?
-    
+    #elseif os(watchOS)
+    open var service : (name: String, domain: String, port: Int)?
+    #endif
+
     open var displayName : String {
         get {
             return name
@@ -81,7 +85,8 @@ open class Portal : LooseSerializable {
         configHash = nil
         serversHash = nil
     }
-    
+
+    #if os(iOS)
     public init(service : NetService) {
         self.service = service
         
@@ -120,6 +125,7 @@ open class Portal : LooseSerializable {
         self.configHash = configHash
         self.serversHash = serversHash
     }
+    #endif
     
     public required init(dict : [String : Any]) throws{
         name = dict["name"] as! String

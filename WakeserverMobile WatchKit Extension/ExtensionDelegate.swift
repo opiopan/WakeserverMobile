@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import commonLibWatch
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 

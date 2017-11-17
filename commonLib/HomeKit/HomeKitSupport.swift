@@ -135,9 +135,13 @@ open class HomeKitNode{
                 return nil
             }
             
+            #if os(watchOS)
+            return icon
+            #else
             return Graphics.shrinkingFilter.apply(
                 image: Graphics.coloringFilter.apply(image: icon, color: UIColor.lightGray),
                 size: CGSize(width: 36, height: 36))
+            #endif
         }
     }
     

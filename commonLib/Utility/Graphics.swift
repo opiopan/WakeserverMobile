@@ -10,6 +10,7 @@ import Foundation
 
 
 open class ColoringFilter {
+    #if os(iOS)
     private let kernel : CIKernel?
     
     init() {
@@ -35,16 +36,25 @@ open class ColoringFilter {
         }
         return nil
     }
+    #endif
 }
 
 open class ShrinkingFilter {
     open func apply(image: UIImage?, rathio : Double) -> UIImage? {
-        guard let image = image, image.cgImage != nil || image.ciImage != nil else{
-            return nil
-        }
+        #if os(iOS)
+            guard let image = image, image.cgImage != nil || image.ciImage != nil else{
+                return nil
+            }
+            let width = image.ciImage?.extent.width ?? CGFloat(image.cgImage!.width)
+            let height = image.ciImage?.extent.height ?? CGFloat(image.cgImage!.height)
+        #else
+            guard let image = image, let cgImage = image.cgImage else{
+                return nil
+            }
+            let width = CGFloat(cgImage.width)
+            let height = CGFloat(cgImage.height)
+        #endif
         
-        let width = image.ciImage?.extent.width ?? CGFloat(image.cgImage!.width)
-        let height = image.ciImage?.extent.height ?? CGFloat(image.cgImage!.height)
         let size = CGSize(width: width, height: height)
         let drawRect = CGRect(x: width * (1.0 - CGFloat(rathio)) / 2, y: height * (1.0 - CGFloat(rathio)) / 2,
                               width: width * CGFloat(rathio), height: height * CGFloat(rathio))

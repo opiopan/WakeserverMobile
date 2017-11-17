@@ -17,5 +17,9 @@ func LocalizedString(_ key: String) -> String{
 }
 
 func libBundleImage(name: String) -> UIImage? {
-    return UIImage(named: name, in: libBundle, compatibleWith: nil)
+    #if os(iOS)
+        return UIImage(named: name, in: libBundle, compatibleWith: nil)
+    #elseif os(watchOS)
+        return UIImage(named: name)
+    #endif
 }

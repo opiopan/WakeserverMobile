@@ -12,7 +12,7 @@ import commonLibWatch
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        IPC.session.start()
     }
 
     func applicationDidBecomeActive() {

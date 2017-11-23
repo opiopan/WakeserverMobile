@@ -38,6 +38,8 @@
 		7B471E171F3C99DE00B1392D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B471E161F3C99DE00B1392D /* ComplicationController.swift */; };
 		7B471E191F3C99DE00B1392D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B471E181F3C99DE00B1392D /* Assets.xcassets */; };
 		7B551C751FB0637C006A98F1 /* CircleIndicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B551C741FB0637C006A98F1 /* CircleIndicatorLayer.swift */; };
+		7B5AAEB81FBF954200396D82 /* IPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B98B6111FBF8FC1001F579B /* IPC.swift */; };
+		7B5AAEBA1FC1875800396D82 /* GetPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5AAEB91FC1875800396D82 /* GetPortal.swift */; };
 		7B5BBA9E1F9B78D700FFB495 /* AVFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBA9D1F9B78D700FFB495 /* AVFunction.swift */; };
 		7B5BBAA01F9B7EC700FFB495 /* VolumeFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBA9F1F9B7EC700FFB495 /* VolumeFunction.swift */; };
 		7B5BBAA21F9B7FEE00FFB495 /* TVChannelFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAA11F9B7FEE00FFB495 /* TVChannelFunction.swift */; };
@@ -86,6 +88,7 @@
 		7B98B60C1FBDB4D2001F579B /* ServerDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBE4991F932F0500E80FA8 /* ServerDefinition.swift */; };
 		7B98B60D1FBDB4E0001F579B /* HomeKitSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A51DA1FB47B4C00C9E37D /* HomeKitSupport.swift */; };
 		7B98B60F1FBDCF7F001F579B /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6829F31FB9DA2D0089A496 /* Graphics.swift */; };
+		7B98B6121FBF8FC1001F579B /* IPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B98B6111FBF8FC1001F579B /* IPC.swift */; };
 		7BA318AD1FAB5F0A00434582 /* AccessoryStatusUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA318AC1FAB5F0A00434582 /* AccessoryStatusUnitView.swift */; };
 		7BA66C4D1F890FDA00C32FDB /* Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66C4C1F890FDA00C32FDB /* Portal.swift */; };
 		7BA66C4E1F89107200C32FDB /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3DBB531F77E8C4009D3715 /* ConfigurationController.swift */; };
@@ -258,6 +261,7 @@
 		7B471E181F3C99DE00B1392D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B471E1A1F3C99DE00B1392D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B551C741FB0637C006A98F1 /* CircleIndicatorLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIndicatorLayer.swift; sourceTree = "<group>"; };
+		7B5AAEB91FC1875800396D82 /* GetPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPortal.swift; sourceTree = "<group>"; };
 		7B5BBA9D1F9B78D700FFB495 /* AVFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVFunction.swift; sourceTree = "<group>"; };
 		7B5BBA9F1F9B7EC700FFB495 /* VolumeFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeFunction.swift; sourceTree = "<group>"; };
 		7B5BBAA11F9B7FEE00FFB495 /* TVChannelFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVChannelFunction.swift; sourceTree = "<group>"; };
@@ -277,6 +281,7 @@
 		7B98B5E51FBD9F89001F579B /* commonLibWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = commonLibWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B98B5E71FBD9F89001F579B /* commonLibWatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commonLibWatch.h; sourceTree = "<group>"; };
 		7B98B5E81FBD9F89001F579B /* InfoWatch.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InfoWatch.plist; sourceTree = "<group>"; };
+		7B98B6111FBF8FC1001F579B /* IPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPC.swift; sourceTree = "<group>"; };
 		7BA318AC1FAB5F0A00434582 /* AccessoryStatusUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryStatusUnitView.swift; sourceTree = "<group>"; };
 		7BA66C491F88A5DD00C32FDB /* PortalSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalSettingsViewController.swift; sourceTree = "<group>"; };
 		7BA66C4C1F890FDA00C32FDB /* Portal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portal.swift; sourceTree = "<group>"; };
@@ -356,14 +361,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7B13A1CB1F63740E00C5FE59 /* Tests */ = {
+		7B0B1AC71FC32D0600BF3E98 /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
-				7B3DBB3C1F77DCB6009D3715 /* commonLibTests */,
-				7B471DED1F3C99DE00B1392D /* WakeserverMobileTests */,
-				7B471DF81F3C99DE00B1392D /* WakeserverMobileUITests */,
+				7B0B1AC81FC32D3900BF3E98 /* WakeserverMobile WatchKit App */,
+				7B0B1AC91FC32D4E00BF3E98 /* WakeserverMobile WatchKit Extension */,
 			);
-			name = Tests;
+			path = watchOS;
+			sourceTree = "<group>";
+		};
+		7B0B1AC81FC32D3900BF3E98 /* WakeserverMobile WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				7B471E031F3C99DE00B1392D /* Interface.storyboard */,
+				7B471E061F3C99DE00B1392D /* Assets.xcassets */,
+				7B471E081F3C99DE00B1392D /* Info.plist */,
+			);
+			path = "WakeserverMobile WatchKit App";
+			sourceTree = "<group>";
+		};
+		7B0B1AC91FC32D4E00BF3E98 /* WakeserverMobile WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7B471E121F3C99DE00B1392D /* InterfaceController.swift */,
+				7B471E141F3C99DE00B1392D /* ExtensionDelegate.swift */,
+				7B471E161F3C99DE00B1392D /* ComplicationController.swift */,
+				7B471E181F3C99DE00B1392D /* Assets.xcassets */,
+				7B471E1A1F3C99DE00B1392D /* Info.plist */,
+			);
+			path = "WakeserverMobile WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		7B0B1ACA1FC32EFA00BF3E98 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				7B0B1ACB1FC32F0F00BF3E98 /* commonLibTests */,
+				7B0B1ACC1FC32F1B00BF3E98 /* WakeserverMobileTests */,
+				7B0B1ACD1FC32F2300BF3E98 /* WakeserverMobileUITests */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		7B0B1ACB1FC32F0F00BF3E98 /* commonLibTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B3DBB3D1F77DCB6009D3715 /* commonLibTests.swift */,
+				7B3DBB3F1F77DCB6009D3715 /* Info.plist */,
+			);
+			path = commonLibTests;
+			sourceTree = "<group>";
+		};
+		7B0B1ACC1FC32F1B00BF3E98 /* WakeserverMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B471DEE1F3C99DE00B1392D /* WakeserverMobileTests.swift */,
+				7B471DF01F3C99DE00B1392D /* Info.plist */,
+			);
+			path = WakeserverMobileTests;
+			sourceTree = "<group>";
+		};
+		7B0B1ACD1FC32F2300BF3E98 /* WakeserverMobileUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7B471DF91F3C99DE00B1392D /* WakeserverMobileUITests.swift */,
+				7B471DFB1F3C99DE00B1392D /* Info.plist */,
+			);
+			path = WakeserverMobileUITests;
 			sourceTree = "<group>";
 		};
 		7B13A1CC1F65A70D00C5FE59 /* Resources */ = {
@@ -412,6 +475,7 @@
 				7B3DBB311F77DCB6009D3715 /* Info.plist */,
 				7B98B5E81FBD9F89001F579B /* InfoWatch.plist */,
 				7BA66C5B1F891B3000C32FDB /* Utility */,
+				7B98B6101FBF8F43001F579B /* IPC */,
 				7B44142D1FA2278D00DC3303 /* Place */,
 				7BA66C4B1F890FB000C32FDB /* Portal */,
 				7B1A51D91FB47AEC00C9E37D /* HomeKit */,
@@ -420,15 +484,6 @@
 				7BA66C5A1F891AD500C32FDB /* Resources */,
 			);
 			path = commonLib;
-			sourceTree = "<group>";
-		};
-		7B3DBB3C1F77DCB6009D3715 /* commonLibTests */ = {
-			isa = PBXGroup;
-			children = (
-				7B3DBB3D1F77DCB6009D3715 /* commonLibTests.swift */,
-				7B3DBB3F1F77DCB6009D3715 /* Info.plist */,
-			);
-			path = commonLibTests;
 			sourceTree = "<group>";
 		};
 		7B3DBB521F77E875009D3715 /* Configuration */ = {
@@ -468,11 +523,8 @@
 		7B471DCD1F3C99DE00B1392D = {
 			isa = PBXGroup;
 			children = (
-				7B3DBB551F77EB0D009D3715 /* WakeserverMobile.entitlements */,
-				7B9B07041F7A8B350093861E /* iOS */,
-				7B9B07051F7A8B8E0093861E /* watch */,
-				7B3DBB2F1F77DCB6009D3715 /* commonLib */,
-				7B13A1CB1F63740E00C5FE59 /* Tests */,
+				7BA15A231FC6EC9D00520944 /* src */,
+				7B0B1ACA1FC32EFA00BF3E98 /* tests */,
 				7B471DD71F3C99DE00B1392D /* Products */,
 				7B1A51DC1FB4830300C9E37D /* Frameworks */,
 			);
@@ -501,46 +553,6 @@
 				7B13A1CC1F65A70D00C5FE59 /* Resources */,
 			);
 			path = WakeserverMobile;
-			sourceTree = "<group>";
-		};
-		7B471DED1F3C99DE00B1392D /* WakeserverMobileTests */ = {
-			isa = PBXGroup;
-			children = (
-				7B471DEE1F3C99DE00B1392D /* WakeserverMobileTests.swift */,
-				7B471DF01F3C99DE00B1392D /* Info.plist */,
-			);
-			path = WakeserverMobileTests;
-			sourceTree = "<group>";
-		};
-		7B471DF81F3C99DE00B1392D /* WakeserverMobileUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7B471DF91F3C99DE00B1392D /* WakeserverMobileUITests.swift */,
-				7B471DFB1F3C99DE00B1392D /* Info.plist */,
-			);
-			path = WakeserverMobileUITests;
-			sourceTree = "<group>";
-		};
-		7B471E021F3C99DE00B1392D /* WakeserverMobile WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				7B471E031F3C99DE00B1392D /* Interface.storyboard */,
-				7B471E061F3C99DE00B1392D /* Assets.xcassets */,
-				7B471E081F3C99DE00B1392D /* Info.plist */,
-			);
-			path = "WakeserverMobile WatchKit App";
-			sourceTree = "<group>";
-		};
-		7B471E111F3C99DE00B1392D /* WakeserverMobile WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				7B471E121F3C99DE00B1392D /* InterfaceController.swift */,
-				7B471E141F3C99DE00B1392D /* ExtensionDelegate.swift */,
-				7B471E161F3C99DE00B1392D /* ComplicationController.swift */,
-				7B471E181F3C99DE00B1392D /* Assets.xcassets */,
-				7B471E1A1F3C99DE00B1392D /* Info.plist */,
-			);
-			path = "WakeserverMobile WatchKit Extension";
 			sourceTree = "<group>";
 		};
 		7B5BBA9C1F9B788100FFB495 /* AVAccessory */ = {
@@ -590,21 +602,32 @@
 			name = OutdoorsPortal;
 			sourceTree = "<group>";
 		};
-		7B9B07041F7A8B350093861E /* iOS */ = {
+		7B98B6101FBF8F43001F579B /* IPC */ = {
 			isa = PBXGroup;
 			children = (
-				7B471DD81F3C99DE00B1392D /* WakeserverMobile */,
+				7B98B6111FBF8FC1001F579B /* IPC.swift */,
+				7B5AAEB91FC1875800396D82 /* GetPortal.swift */,
 			);
-			name = iOS;
+			path = IPC;
 			sourceTree = "<group>";
 		};
-		7B9B07051F7A8B8E0093861E /* watch */ = {
+		7BA15A221FC6BC2700520944 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				7B471E021F3C99DE00B1392D /* WakeserverMobile WatchKit App */,
-				7B471E111F3C99DE00B1392D /* WakeserverMobile WatchKit Extension */,
+				7B3DBB551F77EB0D009D3715 /* WakeserverMobile.entitlements */,
+				7B471DD81F3C99DE00B1392D /* WakeserverMobile */,
 			);
-			name = watch;
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		7BA15A231FC6EC9D00520944 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				7BA15A221FC6BC2700520944 /* iOS */,
+				7B0B1AC71FC32D0600BF3E98 /* watchOS */,
+				7B3DBB2F1F77DCB6009D3715 /* commonLib */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		7BA66C4B1F890FB000C32FDB /* Portal */ = {
@@ -1029,6 +1052,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B5BBAA81F9B82D700FFB495 /* AltSkipFunction.swift in Sources */,
+				7B5AAEBA1FC1875800396D82 /* GetPortal.swift in Sources */,
 				7B5BBAAC1F9B83E400FFB495 /* OuterCursorFunction.swift in Sources */,
 				7BBBE4971F922E5100E80FA8 /* PortalAccessoryList.swift in Sources */,
 				7B5BBA9E1F9B78D700FFB495 /* AVFunction.swift in Sources */,
@@ -1056,6 +1080,7 @@
 				7B2B45821FA413430067D5DC /* PlaceRecognizer.swift in Sources */,
 				7BADC5B21F91C867001B3442 /* PortalAccessory.swift in Sources */,
 				7B2B45841FA4457C0067D5DC /* CommonUtils.swift in Sources */,
+				7B98B6121FBF8FC1001F579B /* IPC.swift in Sources */,
 				7BADC5BC1F91DC59001B3442 /* DashboardAccessory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1126,6 +1151,7 @@
 				7B98B5F81FBDB465001F579B /* Portal.swift in Sources */,
 				7B98B6031FBDB4A4001F579B /* PlayerFunction.swift in Sources */,
 				7B98B60D1FBDB4E0001F579B /* HomeKitSupport.swift in Sources */,
+				7B5AAEB81FBF954200396D82 /* IPC.swift in Sources */,
 				7B98B5F31FBDA13F001F579B /* libutil.swift in Sources */,
 				7B98B6041FBDB4A8001F579B /* AltSkipFunction.swift in Sources */,
 				7B98B60C1FBDB4D2001F579B /* ServerDefinition.swift in Sources */,
@@ -1250,7 +1276,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = commonLib/Info.plist;
+				INFOPLIST_FILE = src/commonLib/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1282,7 +1308,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = commonLib/Info.plist;
+				INFOPLIST_FILE = src/commonLib/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1306,7 +1332,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = commonLibTests/Info.plist;
+				INFOPLIST_FILE = tests/commonLibTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.commonLibTests;
@@ -1327,7 +1353,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = commonLibTests/Info.plist;
+				INFOPLIST_FILE = tests/commonLibTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.commonLibTests;
@@ -1450,7 +1476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = "WakeserverMobile WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "src/watchOS/WakeserverMobile WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1468,7 +1494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = "WakeserverMobile WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "src/watchOS/WakeserverMobile WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1488,7 +1514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G3Y32477L5;
 				IBSC_MODULE = WakeserverMobile_WatchKit_Extension;
-				INFOPLIST_FILE = "WakeserverMobile WatchKit App/Info.plist";
+				INFOPLIST_FILE = "src/watchOS/WakeserverMobile WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1506,7 +1532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G3Y32477L5;
 				IBSC_MODULE = WakeserverMobile_WatchKit_Extension;
-				INFOPLIST_FILE = "WakeserverMobile WatchKit App/Info.plist";
+				INFOPLIST_FILE = "src/watchOS/WakeserverMobile WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1522,10 +1548,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WakeserverMobile.entitlements;
+				CODE_SIGN_ENTITLEMENTS = src/iOS/WakeserverMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = WakeserverMobile/Info.plist;
+				INFOPLIST_FILE = src/iOS/WakeserverMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile;
@@ -1540,10 +1566,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WakeserverMobile.entitlements;
+				CODE_SIGN_ENTITLEMENTS = src/iOS/WakeserverMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = WakeserverMobile/Info.plist;
+				INFOPLIST_FILE = src/iOS/WakeserverMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile;
@@ -1559,7 +1585,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = WakeserverMobileTests/Info.plist;
+				INFOPLIST_FILE = tests/WakeserverMobileTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobileTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1575,7 +1601,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = WakeserverMobileTests/Info.plist;
+				INFOPLIST_FILE = tests/WakeserverMobileTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobileTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1590,7 +1616,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = WakeserverMobileUITests/Info.plist;
+				INFOPLIST_FILE = tests/WakeserverMobileUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobileUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1605,7 +1631,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = WakeserverMobileUITests/Info.plist;
+				INFOPLIST_FILE = tests/WakeserverMobileUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobileUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1631,7 +1657,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = commonLib/InfoWatch.plist;
+				INFOPLIST_FILE = src/commonLib/InfoWatch.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.commonLibWatch;
@@ -1662,7 +1688,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = commonLib/InfoWatch.plist;
+				INFOPLIST_FILE = src/commonLib/InfoWatch.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.commonLibWatch;

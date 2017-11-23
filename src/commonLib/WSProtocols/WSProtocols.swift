@@ -53,7 +53,7 @@ open class WSPBrowser: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
     //-----------------------------------------------------------------------------------------
     // Delegate methods for NetServiceBrowser
     //-----------------------------------------------------------------------------------------
-    open func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
+    public func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
         if resolvingServices.index(where:{$0 === service}) == nil {
             resolvingServices.append(service)
             service.delegate = self
@@ -61,7 +61,7 @@ open class WSPBrowser: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
         }
     }
 
-    open func netServiceBrowser(_ browser: NetServiceBrowser, didRemove service: NetService, moreComing: Bool) {
+    public func netServiceBrowser(_ browser: NetServiceBrowser, didRemove service: NetService, moreComing: Bool) {
         if let index = resolvingServices.index(where: {$0 === service}){
             resolvingServices.remove(at: index)
             stoppingServices.append(service)
@@ -74,14 +74,14 @@ open class WSPBrowser: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
         }
     }
     
-    open func netServiceBrowser(_ browser: NetServiceBrowser, didNotSearch errorDict: [String : NSNumber]) {
+    public func netServiceBrowser(_ browser: NetServiceBrowser, didNotSearch errorDict: [String : NSNumber]) {
         delegate?.wspBrowserDidNotSearch(browser: self, errorDict: errorDict)
     }
 
     //-----------------------------------------------------------------------------------------
     // Delegate methods for NetService
     //-----------------------------------------------------------------------------------------
-    open func netServiceDidResolveAddress(_ service: NetService) {
+    public func netServiceDidResolveAddress(_ service: NetService) {
         if let index = resolvingServices.index(where:{$0 === service}) {
             resolvingServices.remove(at: index)
             service.delegate = nil
@@ -92,7 +92,7 @@ open class WSPBrowser: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
         }
     }
     
-    open func netServiceDidStop(_ service: NetService) {
+    public func netServiceDidStop(_ service: NetService) {
         if let index = stoppingServices.index(where: {$0 === service}){
             stoppingServices.remove(at: index)
         }

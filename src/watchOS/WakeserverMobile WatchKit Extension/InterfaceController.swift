@@ -15,8 +15,15 @@ class InterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        // Configure interface objects here.
+        self.setTitle("ほげほげ")
+
+        IPC.session.getLocation{
+            result, error in
+            /*
+            let id = result?.portalId
+            let url = result?.portalUrl
+             */
+        }
     }
     
     override func willActivate() {
@@ -29,4 +36,12 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    @IBAction func onTest() {
+        IPC.session.getLocation{result, error in
+            if let result = result {
+                let url = result.portalUrl
+                let id = result.portalId
+            }
+        }
+    }
 }

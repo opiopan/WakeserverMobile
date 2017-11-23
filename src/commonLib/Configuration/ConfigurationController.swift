@@ -84,15 +84,44 @@ open class ConfigurationController : NSObject {
         
         super.init()
     }
+    
+    open func updagteAll(with dictionary: [String : Any]) {
+        let reflect : (String) -> Void = {key in
+            self.controller.setValue(dictionary[key], forKey: key)
+        }
+        reflect(UserDefaults.RegisteredPortals)
+        reflect(UserDefaults.OutdoorsPortal)
+    }
+
+    //-----------------------------------------------------------------------------------------
+    // MARK: - sync to watch
+    //-----------------------------------------------------------------------------------------
+    private func syncToWatch(){
+        #if os(iOS)
+            IPC.session.syncConfiguration()
+        #endif
+    }
 
     //-----------------------------------------------------------------------------------------
     // MARK: - properties (save data)
     //-----------------------------------------------------------------------------------------
+    open var dictionaryRepresentation : [String : Any] {
+        get {
+            /*
+            return [
+                UserDefaults.RegisteredPortals : controller.value(forKey: UserDefaults.RegisteredPortals)!,
+                UserDefaults.OutdoorsPortal : controller.value(forKey: UserDefaults.OutdoorsPortal)!,
+            ]
+             */
+            return controller.dictionaryRepresentation()
+        }
+    }
+    
     open var registeredPortals : [Portal] {
         didSet{
             controller.setValue(registeredPortals.map{$0.dictionary}, forKey: UserDefaults.RegisteredPortals)
             callDelegate(withUpdateKind: .registeredPortals)
-
+            syncToWatch()
         }
     }
     
@@ -100,6 +129,7 @@ open class ConfigurationController : NSObject {
         didSet{
             controller.setValue(outdoorsPortal.dictionary, forKey: UserDefaults.OutdoorsPortal)
             callDelegate(withUpdateKind: .outdoorsPortal)
+            syncToWatch()
         }
     }
 }

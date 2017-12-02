@@ -17,10 +17,15 @@ public let IPCKeyCommand = "IPCKeyCmd"
 public let IPCKeyResponse = "IPCKeyRsp"
 public let IPCKeyPortalId = "IPCKeyPortalId"
 public let IPCKeyPortalUrl = "IPCKeyIPUrl"
+public let IPCKeyServiceName = "IPCKeyServiceName"
+public let IPCKeyServiceDomain = "IPCKeyServiceDomain"
+public let IPCKeyServicePort = "IPCKeyServicePort"
 
 public enum IPCResponse : Int {
     case succeed = 0
+    case unreachable
     case protocolError
+    case bussy
     case notSupportedFunction
 }
 
@@ -74,26 +79,35 @@ open class IPC : NSObject, WCSessionDelegate {
         }
     }
     
-    open func getLocation(handler: @escaping ((portalId: String?, portalUrl: String?)?, IPCError?) -> Void) {
+    open func getLocation(handler: @escaping ((portalId: String?, service: (name: String, domain: String, port: Int)?)?, IPCError?) -> Void) {
         let sendData = [IPCKeyCommand: IPCCmd.getPosition.rawValue]
-        if let session = wcSession, session.isReachable {
-            session.sendMessage(sendData, replyHandler: {
-                data in
-                guard let resp = data[IPCKeyResponse] as? Int, let error = IPCResponse(rawValue: resp) else {
-                    handler(nil, .IPCError(.protocolError))
-                    return
-                }
-                guard error == .succeed else{
-                    handler(nil, .IPCError(error))
-                    return
-                }
-                let value = (portalId: data[IPCKeyPortalId] as? String, portalUrl: data[IPCKeyPortalUrl] as? String)
-                handler(value, nil)
-            }, errorHandler: {
-                error in
-                handler(nil, .OSError(error))
-            })
+        guard let session = wcSession, session.isReachable else{
+            handler(nil, .IPCError(.unreachable))
+            return
         }
+        session.sendMessage(sendData, replyHandler: {
+            data in
+            guard let resp = data[IPCKeyResponse] as? Int, let error = IPCResponse(rawValue: resp) else {
+                handler(nil, .IPCError(.protocolError))
+                return
+            }
+            guard error == .succeed else{
+                handler(nil, .IPCError(error))
+                return
+            }
+            var service : (name: String, domain: String, port: Int)? = nil
+            if let sname = data[IPCKeyServiceName] as? String,
+                let sdomain = data[IPCKeyServiceDomain] as? String,
+                let sport = data[IPCKeyServicePort] as? Int {
+                service = (name: sname, domain: sdomain, port: sport)
+            }
+            
+            let value = (portalId: data[IPCKeyPortalId] as? String, service: service)
+            handler(value, nil)
+        }, errorHandler: {
+            error in
+            handler(nil, .OSError(error))
+        })
     }
 
     //-----------------------------------------------------------------------------------------
@@ -114,6 +128,10 @@ open class IPC : NSObject, WCSessionDelegate {
         ConfigurationController.sharedController.updagteAll(with: applicationContext)
     }
 
+#if os(iOS)
+    private var getPortalCmd : GetPortal?
+#endif
+    
     public func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
         guard let cmdCode = message[IPCKeyCommand] as? Int, let cmd = IPCCmd(rawValue: cmdCode) else {
@@ -124,20 +142,30 @@ open class IPC : NSObject, WCSessionDelegate {
         switch cmd {
         case .getPosition:
             #if os(iOS)
-                let command = GetPortal()
-                command.run{
-                    portal, error in
-                    guard let portal = portal, error != nil, let service = portal.service, let id = portal.id else {
-                        replyHandler([IPCKeyResponse: IPCResponse.succeed])
+                DispatchQueue.main.async {
+                    [unowned self] in
+                    guard self.getPortalCmd == nil else {
+                        replyHandler([IPCKeyResponse: IPCResponse.bussy.rawValue])
                         return
                     }
-                    let url = "http://\(service.name).\(service.domain):\(service.port)"
-                    let data : [String:Any] = [
-                        IPCKeyResponse: IPCResponse.succeed.rawValue,
-                        IPCKeyPortalId: id,
-                        IPCKeyPortalUrl: url,
-                    ]
-                    replyHandler(data)
+                    self.getPortalCmd = GetPortal()
+                    self.getPortalCmd?.run{
+                        [unowned self] portal, error in
+                        guard let portal = portal, error == nil, let service = portal.service, let id = portal.id else {
+                            replyHandler([IPCKeyResponse: IPCResponse.succeed.rawValue])
+                            self.getPortalCmd = nil
+                            return
+                        }
+                        let data : [String:Any] = [
+                            IPCKeyResponse: IPCResponse.succeed.rawValue,
+                            IPCKeyPortalId: id,
+                            IPCKeyServiceName: service.name,
+                            IPCKeyServiceDomain: service.domain,
+                            IPCKeyServicePort: service.port,
+                            ]
+                        replyHandler(data)
+                        self.getPortalCmd = nil
+                    }
                 }
             #elseif os(watchOS)
                 replyHandler([IPCKeyResponse: IPCResponse.notSupportedFunction.rawValue])

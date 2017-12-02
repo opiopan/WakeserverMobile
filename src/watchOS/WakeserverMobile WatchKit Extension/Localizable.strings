@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  WakeserverMobile
+
+  Created by opiopan on 2017/12/02.
+  Copyright © 2017年 opiopan. All rights reserved.
+*/
+
+"COMPLICATION_TEMPLATE_PLACE_NAME" = "My Home";
+
+"PORTAL_PLATFORM_UNKNOWN" = "Unknown";
+"PLACENAME_DETECTING" = "Detecting...";
+"OUTDOORSPORTAL_NAME" = "Outdoors";

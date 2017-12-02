@@ -15,16 +15,18 @@ class GetPortal : WSPBrowserDelegate{
     private var timer : Timer?
     
     init() {
-        self.browser = WSPBrowser()
+        browser = WSPBrowser()
+        browser.delegate = self
     }
     
     func run(_ handler: @escaping ResultHandler){
         self.handler = handler
-        self.timer = Timer(timeInterval: 2, repeats: false){
+        self.timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false){
             [unowned self] _ in
             self.stop()
-            self.handler?(nil, nil)
+            let handler = self.handler
             self.handler = nil
+            handler?(nil, nil)
         }
         browser.start()
     }
@@ -40,8 +42,9 @@ class GetPortal : WSPBrowserDelegate{
             return
         }
         stop()
+        let handler = self.handler
+        self.handler = nil
         handler?(portal, nil)
-        handler = nil
     }
     
     func wspBrowserDetectPortalDel(browser: WSPBrowser, portal: Portal) {

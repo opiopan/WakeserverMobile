@@ -13,7 +13,11 @@ fileprivate class ThisLib{}
 let libBundle = Bundle(for: ThisLib.self)
 
 func LocalizedString(_ key: String) -> String{
-    return libBundle.localizedString(forKey: key, value: "", table: nil)
+    #if os(iOS)
+        return libBundle.localizedString(forKey: key, value: "", table: nil)
+    #elseif os(watchOS)
+        return NSLocalizedString(key, comment: "")
+    #endif
 }
 
 func libBundleImage(name: String) -> UIImage? {

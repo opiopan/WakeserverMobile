@@ -15,6 +15,10 @@
 "HOMES_NAME" = "Homes";
 "ZONE_NAME_FOR_OTHERS" = "Others";
 
+"POWER_STATE_UNKNOWN" = "Unknown";
+"POWER_STATE_ON" = "On";
+"POWER_STATE_OFF" = "OFF";
+
 "ACCESSORY_DEC_switch" = "Switch";
 "ACCESSORY_DEC_thermometer" = "Thermometer";
 "ACCESSORY_DEC_av" = "Audio & Visual";

@@ -82,16 +82,19 @@ open class IPC : NSObject, WCSessionDelegate {
     open func getLocation(handler: @escaping ((portalId: String?, service: (name: String, domain: String, port: Int)?)?, IPCError?) -> Void) {
         let sendData = [IPCKeyCommand: IPCCmd.getPosition.rawValue]
         guard let session = wcSession, session.isReachable else{
+            print("ERROR: IPC unreachable")
             handler(nil, .IPCError(.unreachable))
             return
         }
         session.sendMessage(sendData, replyHandler: {
             data in
             guard let resp = data[IPCKeyResponse] as? Int, let error = IPCResponse(rawValue: resp) else {
+                print("ERROR: IPC protocol error")
                 handler(nil, .IPCError(.protocolError))
                 return
             }
             guard error == .succeed else{
+                print("ERROR: IPC other error")
                 handler(nil, .IPCError(error))
                 return
             }
@@ -106,6 +109,7 @@ open class IPC : NSObject, WCSessionDelegate {
             handler(value, nil)
         }, errorHandler: {
             error in
+            print("ERROR: IPC OS error")
             handler(nil, .OSError(error))
         })
     }

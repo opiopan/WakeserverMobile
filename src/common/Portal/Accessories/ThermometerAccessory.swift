@@ -14,6 +14,16 @@ open class ThermometerAccessory : PortalAccessoryCorrespondsServer {
     
     open var temperature : Double?
     
+    override open var complicationStatusString : String {
+        get {
+            if let temperature = temperature {
+                return String(format: "%.1f °C", temperature)
+            }else{
+                return LocalizedString("POWER_STATE_UNKNOWN")
+            }
+        }
+    }
+    
     override public init() {
         attribute = ""
         super.init()

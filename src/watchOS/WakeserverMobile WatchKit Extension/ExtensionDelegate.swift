@@ -13,6 +13,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
         IPC.session.start()
+        let fireDate = Date(timeIntervalSinceNow: 3)
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil){
+            error in
+            print("bgtask complete")
+        }
+        print("bgtask schedule date: " + fireDate.description)
     }
 
     func applicationDidBecomeActive() {
@@ -29,8 +35,16 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             // Use a switch statement to check the task type
             switch task {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
-                // Be sure to complete the background task once you’re done.
-                backgroundTask.setTaskCompleted()
+                print("bgtask fire date: " + Date().description)
+                placeRecognizer.reflesh{
+                    let fireDate = Date(timeIntervalSinceNow: 60 * 6)
+                    WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil){
+                        error in
+                        print("bgtask complete")
+                    }
+                    print("bgtask schedule date: " + fireDate.description)
+                    backgroundTask.setTaskCompleted()
+                }
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
                 snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B090C471FD3B4F00085C4D2 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B090C461FD3B4F00085C4D2 /* HomeKit.framework */; };
 		7B13A1CA1F60487F00C5FE59 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B13A1C91F60487F00C5FE59 /* DashboardViewController.swift */; };
 		7B13A1D01F65AD1200C5FE59 /* AddPortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B13A1CF1F65AD1200C5FE59 /* AddPortalViewController.swift */; };
 		7B1A51DB1FB47B4C00C9E37D /* HomeKitSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A51DA1FB47B4C00C9E37D /* HomeKitSupport.swift */; };
@@ -21,7 +22,6 @@
 		7B3DBB401F77DCB6009D3715 /* commonLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3DBB301F77DCB6009D3715 /* commonLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B3DBB431F77DCB6009D3715 /* commonLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3DBB2E1F77DCB6009D3715 /* commonLib.framework */; };
 		7B3DBB441F77DCB6009D3715 /* commonLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3DBB2E1F77DCB6009D3715 /* commonLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7B416AF41FD05E1E009F07F8 /* PlaceRecognizerWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B416AF21FD05E12009F07F8 /* PlaceRecognizerWatch.swift */; };
 		7B4414281F9DFEE700DC3303 /* ItemSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4414271F9DFEE700DC3303 /* ItemSelectorViewController.swift */; };
 		7B44142C1FA0D58300DC3303 /* WebUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B44142B1FA0D58300DC3303 /* WebUIViewController.swift */; };
 		7B45D4151FD24E450028CA89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B45D4141FD24E450028CA89 /* Assets.xcassets */; };
@@ -55,6 +55,7 @@
 		7B5BBAB21F9B88DA00FFB495 /* AVFunctionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BBAB11F9B88DA00FFB495 /* AVFunctionFactory.swift */; };
 		7B6829F41FB9DA2D0089A496 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6829F31FB9DA2D0089A496 /* Graphics.swift */; };
 		7B6C23481F9C667B00F94896 /* PortalSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66C491F88A5DD00C32FDB /* PortalSettingsViewController.swift */; };
+		7B8427EB1FD3F3E6007258CA /* PlaceRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B416AF21FD05E12009F07F8 /* PlaceRecognizer.swift */; };
 		7B8609D31FA4CEAF00B067FF /* DashboardStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B45861FA4C5650067D5DC /* DashboardStatusCell.swift */; };
 		7B8609D51FA5EDE900B067FF /* AccessoryStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B8609D41FA5EDE900B067FF /* AccessoryStatusView.xib */; };
 		7B8609D71FA5F09E00B067FF /* AccessoryStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8609D61FA5F09E00B067FF /* AccessoryStatusView.swift */; };
@@ -220,6 +221,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B090C461FD3B4F00085C4D2 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.1.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
+		7B090C481FD3B4F00085C4D2 /* WakeserverMobile WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WakeserverMobile WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		7B13A1C91F60487F00C5FE59 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		7B13A1CF1F65AD1200C5FE59 /* AddPortalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPortalViewController.swift; sourceTree = "<group>"; };
 		7B1A51DA1FB47B4C00C9E37D /* HomeKitSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitSupport.swift; sourceTree = "<group>"; };
@@ -238,7 +241,7 @@
 		7B3DBB3F1F77DCB6009D3715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B3DBB531F77E8C4009D3715 /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
 		7B3DBB551F77EB0D009D3715 /* WakeserverMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WakeserverMobile.entitlements; sourceTree = "<group>"; };
-		7B416AF21FD05E12009F07F8 /* PlaceRecognizerWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRecognizerWatch.swift; sourceTree = "<group>"; };
+		7B416AF21FD05E12009F07F8 /* PlaceRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRecognizer.swift; sourceTree = "<group>"; };
 		7B4414271F9DFEE700DC3303 /* ItemSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemSelectorViewController.swift; path = GeneralUI/ItemSelectorViewController.swift; sourceTree = "<group>"; };
 		7B44142B1FA0D58300DC3303 /* WebUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUIViewController.swift; sourceTree = "<group>"; };
 		7B45D4141FD24E450028CA89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -351,6 +354,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B090C471FD3B4F00085C4D2 /* HomeKit.framework in Frameworks */,
 				7B98B5EC1FBD9F89001F579B /* commonLibWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +394,7 @@
 				7B471E121F3C99DE00B1392D /* InterfaceController.swift */,
 				7B471E141F3C99DE00B1392D /* ExtensionDelegate.swift */,
 				7B471E161F3C99DE00B1392D /* ComplicationController.swift */,
+				7B416AF21FD05E12009F07F8 /* PlaceRecognizer.swift */,
 				7B45D4141FD24E450028CA89 /* Assets.xcassets */,
 				7B471E1A1F3C99DE00B1392D /* Info.plist */,
 				7B45D45E1FD281480028CA89 /* Localizable.strings */,
@@ -456,6 +461,7 @@
 		7B1A51DC1FB4830300C9E37D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B090C461FD3B4F00085C4D2 /* HomeKit.framework */,
 				7B1A51DD1FB4830300C9E37D /* HomeKit.framework */,
 			);
 			name = Frameworks;
@@ -521,7 +527,6 @@
 			isa = PBXGroup;
 			children = (
 				7B2B45811FA413430067D5DC /* PlaceRecognizer.swift */,
-				7B416AF21FD05E12009F07F8 /* PlaceRecognizerWatch.swift */,
 			);
 			path = Place;
 			sourceTree = "<group>";
@@ -529,6 +534,7 @@
 		7B471DCD1F3C99DE00B1392D = {
 			isa = PBXGroup;
 			children = (
+				7B090C481FD3B4F00085C4D2 /* WakeserverMobile WatchKit Extension.entitlements */,
 				7BA15A231FC6EC9D00520944 /* src */,
 				7B0B1ACA1FC32EFA00BF3E98 /* tests */,
 				7B471DD71F3C99DE00B1392D /* Products */,
@@ -950,6 +956,11 @@
 						DevelopmentTeam = G3Y32477L5;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
 					};
 					7B98B5E41FBD9F89001F579B = {
 						CreatedOnToolsVersion = 9.1;
@@ -1145,6 +1156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B471E151F3C99DE00B1392D /* ExtensionDelegate.swift in Sources */,
+				7B8427EB1FD3F3E6007258CA /* PlaceRecognizer.swift in Sources */,
 				7B471E131F3C99DE00B1392D /* InterfaceController.swift in Sources */,
 				7B471E171F3C99DE00B1392D /* ComplicationController.swift in Sources */,
 			);
@@ -1175,7 +1187,6 @@
 				7B98B6061FBDB4B6001F579B /* OuterCursorFunction.swift in Sources */,
 				7B98B6071FBDB4C0001F579B /* FourColorFunction.swift in Sources */,
 				7B98B60A1FBDB4CA001F579B /* ThermometerAccessory.swift in Sources */,
-				7B416AF41FD05E1E009F07F8 /* PlaceRecognizerWatch.swift in Sources */,
 				7B98B5FB1FBDB47A001F579B /* PortalAccessoryList.swift in Sources */,
 				7B98B6051FBDB4AB001F579B /* CursorFunction.swift in Sources */,
 				7B98B5F41FBDB33E001F579B /* LooseSerializable.swift in Sources */,
@@ -1483,6 +1494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WakeserverMobile WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = G3Y32477L5;
 				INFOPLIST_FILE = "src/watchOS/WakeserverMobile WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1501,6 +1513,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WakeserverMobile WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = G3Y32477L5;
 				INFOPLIST_FILE = "src/watchOS/WakeserverMobile WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

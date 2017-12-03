@@ -39,6 +39,19 @@ open class PortalAccessory : LooseSerializable {
     open var hmService : HMService?
     
     open var powerState : PowerState = .unknown
+    
+    open var complicationStatusString : String {
+        get {
+            switch powerState {
+            case .unknown:
+                return LocalizedString("POWER_STATE_UNKNOWN")
+            case .on:
+                return LocalizedString("POWER_STATE_ON")
+            case .off:
+                return LocalizedString("POWER_STATE_OFF")
+            }
+        }
+    }
 
     private var delegates = [PortalAccessoryDelegate]()
 

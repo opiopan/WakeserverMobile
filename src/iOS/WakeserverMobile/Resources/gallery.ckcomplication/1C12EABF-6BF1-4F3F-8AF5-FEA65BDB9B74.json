@@ -1,0 +1,18 @@
+{
+  "tintColor" : {
+    "green" : 0.78431373834609985,
+    "red" : 0.35294118523597717,
+    "alpha" : 1,
+    "blue" : 0.98039215803146362
+  },
+  "class" : "CLKComplicationTemplateCircularSmallRingImage",
+  "fillFraction" : 0,
+  "ringStyle" : 0,
+  "version" : 30000,
+  "imageProvider" : {
+    "onePieceImage" : {
+      "file name" : "7F0AEFF3-4D66-4423-BC26-A66BCDE42A91.png",
+      "scale" : 2
+    }
+  }
+}

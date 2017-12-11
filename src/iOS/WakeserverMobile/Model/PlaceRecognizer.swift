@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import commonLib
 
 public protocol PlaceRecognizerDelegate : AnyObject {
     func placeRecognizerDetectChangePortal(recognizer: PlaceRecognizer, portal: Portal)
@@ -70,24 +71,7 @@ open class PlaceRecognizer : WSPBrowserDelegate{
 
         scanIntervalTimer = Timer.scheduledTimer(withTimeInterval: SCAN_INTERVAL, repeats: true){
             [unowned self] _ in
-            let now = Date()
-            guard  now.timeIntervalSince(self.scanDate) > self.SCAN_MIN_INTERVAL else {
-                return
-            }
-            self.scanDate = now
-            self.scanTimeoutTimer?.invalidate()
-            self.browser.stop()
-            self.browser.start()
-            self.scanTimeoutTimer = Timer.scheduledTimer(withTimeInterval: self.SCAN_TIMEOUT, repeats: false){
-                [unowned self] _ in
-                self.stopBrowser()
-                
-                // Here is outdoors sinse no portal are found
-                if !self.currentPortalHolder.isOutdoors {
-                    self.currentPortalHolder = self.config.outdoorsPortal
-                    self.invokeChangePortalOfDelegates()
-                }
-            }
+            self.beginScanTransaction(handler: nil)
         }
         scanIntervalTimer?.fire()
     }
@@ -112,6 +96,57 @@ open class PlaceRecognizer : WSPBrowserDelegate{
     
     open func rescan(){
         scanIntervalTimer?.fire()
+    }
+
+    //-----------------------------------------------------------------------------------------
+    // MARK: - search place
+    //-----------------------------------------------------------------------------------------
+    public enum ScanError : Error {
+        case busy
+    }
+    public typealias ScanCompleteHandler = (ScanError?)->Void
+    private var isInTransaction = false
+    private var scanCompleteHandler : ScanCompleteHandler?
+    
+    open func beginScanTransaction(handler : ScanCompleteHandler?) {
+        DispatchQueue.main.async {
+            [unowned self] in
+            guard !self.isInTransaction else {
+                handler?(ScanError.busy)
+                return
+            }
+            self.isInTransaction = true
+            self.scanCompleteHandler = handler
+            
+            let now = Date()
+            guard now.timeIntervalSince(self.scanDate) > self.SCAN_MIN_INTERVAL else {
+                self.endScanTransaction(error: nil)
+                return
+            }
+            self.scanDate = now
+            self.scanTimeoutTimer?.invalidate()
+            self.browser.stop()
+            self.browser.start()
+            self.scanTimeoutTimer = Timer.scheduledTimer(withTimeInterval: self.SCAN_TIMEOUT, repeats: false){
+                [unowned self] _ in
+                self.stopBrowser()
+                
+                // Here is outdoors sinse no portal are found
+                if !self.currentPortalHolder.isOutdoors {
+                    self.currentPortalHolder = self.config.outdoorsPortal
+                    self.invokeChangePortalOfDelegates()
+                }
+                self.endScanTransaction(error: nil)
+            }
+        }
+    }
+    
+    private func endScanTransaction(error : ScanError?) {
+        DispatchQueue.main.async {
+            [unowned self] in
+            self.isInTransaction = false
+            self.scanCompleteHandler?(error)
+        }
     }
 
     //-----------------------------------------------------------------------------------------
@@ -150,6 +185,7 @@ open class PlaceRecognizer : WSPBrowserDelegate{
                         self.invokeChangePortalOfDelegates()
                     }
                 }
+                self.endScanTransaction(error: nil)
             }
         }else{
             if currentPortalHolder.id != targetPortals[0].id {
@@ -157,6 +193,7 @@ open class PlaceRecognizer : WSPBrowserDelegate{
                 currentPortalHolder = targetPortals[0]
                 invokeChangePortalOfDelegates()
             }
+            self.endScanTransaction(error: nil)
         }
     }
     
@@ -165,6 +202,7 @@ open class PlaceRecognizer : WSPBrowserDelegate{
             stopBrowser()
             currentPortalHolder = config.outdoorsPortal
             invokeChangePortalOfDelegates()
+            self.endScanTransaction(error: nil)
         }
     }
     
@@ -173,6 +211,7 @@ open class PlaceRecognizer : WSPBrowserDelegate{
         if !currentPortalHolder.isOutdoors {
             currentPortalHolder = config.outdoorsPortal
             invokeChangePortalOfDelegates()
+            self.endScanTransaction(error: nil)
         }
     }
     

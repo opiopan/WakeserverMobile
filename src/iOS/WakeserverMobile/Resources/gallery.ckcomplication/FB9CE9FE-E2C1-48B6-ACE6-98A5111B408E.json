@@ -1,0 +1,20 @@
+{
+  "tintColor" : {
+    "green" : 0.78431373834609985,
+    "red" : 0.35294118523597717,
+    "alpha" : 1,
+    "blue" : 0.98039215803146362
+  },
+  "class" : "CLKComplicationTemplateUtilitarianLargeFlat",
+  "textProvider" : {
+    "class" : "CLKSimpleTextProvider",
+    "text" : "My Home"
+  },
+  "version" : 30000,
+  "imageProvider" : {
+    "onePieceImage" : {
+      "file name" : "D3B95194-E544-405B-BC27-A08EE5142E9B.png",
+      "scale" : 2
+    }
+  }
+}

@@ -72,13 +72,34 @@ open class PlaceRecognizer {
     
     private var refleshTransaction = RefleshPhase.none
     private var transactionHasUpdated = false
+    public var isInTransaction : Bool {
+        get {
+            return refleshTransaction != .none
+        }
+    }
     
-    private var ipc : IPC?
+    private var ipc : Communicator?
     private var timer : Timer?
     
+    private var lastTransactionError : IPCError?
+    
+    private var tranTimeBegin = Date(timeIntervalSince1970: 0)
+    private var tranTimeEnd : Date?
     private var updateTimePlace = Date(timeIntervalSince1970: 0)
     private var updateTimeState = Date(timeIntervalSince1970: 0)
     private var updateTimeCharacteristics = Date(timeIntervalSince1970: 0)
+    public var updateTime : (begin: Date, end: Date?, place: Date, state: Date, characeristics: Date, error: IPCError?) {
+        get {
+            return (
+                begin: tranTimeBegin,
+                end: tranTimeEnd,
+                place: updateTimePlace,
+                state: updateTimeState,
+                characeristics: updateTimeCharacteristics,
+                error: lastTransactionError
+            )
+        }
+    }
 
     private var delegates: [PlaceRecognizerDelegate] = []
     
@@ -199,6 +220,9 @@ open class PlaceRecognizer {
             case .none:
                 self.refleshTransaction = .updatingPlace
                 self.transactionHasUpdated = false
+                self.tranTimeBegin = Date()
+                self.tranTimeEnd = nil
+                self.lastTransactionError = nil
                 if self.updateTimePlace.timeIntervalSinceNow < -UPDATE_PERIOD_PLACE {
                     self.refleshPlace(handler)
                 }else{
@@ -228,6 +252,7 @@ open class PlaceRecognizer {
     
     private func finishTransaction(){
         self.refleshTransaction = .none
+        self.tranTimeEnd = Date()
     }
     
     private func refleshPlace(_ handler: (()->Void)?) {
@@ -235,11 +260,12 @@ open class PlaceRecognizer {
             self.scheduleReflesh(.updatingPlace, withError: true, withComplitionHandler: handler)
             return
         }
-        self.ipc = IPC.session
+        self.ipc = communicator
         self.ipc?.getLocation{ result, error in
             DispatchQueue.main.async{
                 [unowned self] in
                 self.ipc = nil
+                self.lastTransactionError = error
                 guard error == nil else{
                     self.scheduleReflesh(.updatingPlace, withError: true, withComplitionHandler: handler)
                     return
@@ -276,7 +302,7 @@ open class PlaceRecognizer {
                 [unowned self] in
                 self.scheduleReflesh(.updatingCharacteristics, withError: false, withComplitionHandler: handler)
                 DispatchQueue.main.async{
-                    self.updateTimeState = Date()
+                    self.updateTimeCharacteristics = Date()
                 }
             }
         }else{

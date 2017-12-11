@@ -9,8 +9,10 @@
 import Foundation
 import WatchConnectivity
 
-private enum IPCCmd: Int{
+public enum IPCCmd: Int{
     case getPosition = 1
+    case getComplicationData
+    case notifyComplicationUpdate
 }
 
 public let IPCKeyCommand = "IPCKeyCmd"
@@ -20,6 +22,14 @@ public let IPCKeyPortalUrl = "IPCKeyIPUrl"
 public let IPCKeyServiceName = "IPCKeyServiceName"
 public let IPCKeyServiceDomain = "IPCKeyServiceDomain"
 public let IPCKeyServicePort = "IPCKeyServicePort"
+public let IPCKeyAccessory1Name = "IPCKeyAccessory1Name"
+public let IPCKeyAccessory1Value = "IPCKeyAccessory1Value"
+public let IPCKeyAccessory2Name = "IPCKeyAccessory2Name"
+public let IPCKeyAccessory2Value = "IPCKeyAccessory2Value"
+public let IPCKeyAccessory3Name = "IPCKeyAccessory3Name"
+public let IPCKeyAccessory3Value = "IPCKeyAccessory3Value"
+public let IPCKeyAccessory4Name = "IPCKeyAccessory4Name"
+public let IPCKeyAccessory4Value = "IPCKeyAccessory4Value"
 
 public enum IPCResponse : Int {
     case succeed = 0
@@ -27,13 +37,40 @@ public enum IPCResponse : Int {
     case protocolError
     case bussy
     case notSupportedFunction
+    
+    public func description() -> String {
+        switch self {
+        case .succeed:
+            return "succeed"
+        case .unreachable:
+            return "unreachable"
+        case .protocolError:
+            return "protocol error"
+        case .bussy:
+            return "busy"
+        case .notSupportedFunction:
+            return "not supported"
+        }
+    }
 }
 
 public enum IPCError {
     case IPCError(IPCResponse)
     case OSError(Error)
+    
+    public func description() -> String {
+        switch self {
+        case .IPCError(let resp):
+            return resp.description()
+        case .OSError(let error):
+            return error.localizedDescription
+        }
+    }
 }
 
+public protocol IPCDelegate {
+    func didRecieve(command: IPCCmd, withMessage message: [String: Any], replyHandler: (([String : Any]) -> Void)?)
+}
 
 open class IPC : NSObject, WCSessionDelegate {
     private static var sessionObject = IPC()
@@ -46,8 +83,10 @@ open class IPC : NSObject, WCSessionDelegate {
             return sessionObject
         }
     }
-    
+
     private var wcSession : WCSession?
+    
+    open var delegate : IPCDelegate?
     
     public override init(){
     }
@@ -57,7 +96,7 @@ open class IPC : NSObject, WCSessionDelegate {
     //-----------------------------------------------------------------------------------------
     open func start() {
     }
-    
+
     private func startObject() {
         if WCSession.isSupported() {
             wcSession = WCSession.default
@@ -69,18 +108,7 @@ open class IPC : NSObject, WCSessionDelegate {
     //-----------------------------------------------------------------------------------------
     // MARK: - send data
     //-----------------------------------------------------------------------------------------
-    open func syncConfiguration() {
-        if let session = wcSession, session.isReachable {
-            do {
-                try session.updateApplicationContext(ConfigurationController.sharedController.dictionaryRepresentation)
-            }catch {
-                
-            }
-        }
-    }
-    
-    open func getLocation(handler: @escaping ((portalId: String?, service: (name: String, domain: String, port: Int)?)?, IPCError?) -> Void) {
-        let sendData = [IPCKeyCommand: IPCCmd.getPosition.rawValue]
+    open func sendMessage(_ sendData: [String:Any], handler: @escaping ([String : Any]?, IPCError?)->Void) {
         guard let session = wcSession, session.isReachable else{
             print("ERROR: IPC unreachable")
             handler(nil, .IPCError(.unreachable))
@@ -89,29 +117,95 @@ open class IPC : NSObject, WCSessionDelegate {
         session.sendMessage(sendData, replyHandler: {
             data in
             guard let resp = data[IPCKeyResponse] as? Int, let error = IPCResponse(rawValue: resp) else {
-                print("ERROR: IPC protocol error")
                 handler(nil, .IPCError(.protocolError))
                 return
             }
             guard error == .succeed else{
-                print("ERROR: IPC other error")
                 handler(nil, .IPCError(error))
                 return
             }
-            var service : (name: String, domain: String, port: Int)? = nil
-            if let sname = data[IPCKeyServiceName] as? String,
-                let sdomain = data[IPCKeyServiceDomain] as? String,
-                let sport = data[IPCKeyServicePort] as? Int {
-                service = (name: sname, domain: sdomain, port: sport)
-            }
-            
-            let value = (portalId: data[IPCKeyPortalId] as? String, service: service)
-            handler(value, nil)
+            handler(data, nil)
         }, errorHandler: {
             error in
-            print("ERROR: IPC OS error")
             handler(nil, .OSError(error))
         })
+    }
+    
+    public typealias TransferResult = (result: WCSessionUserInfoTransfer?, error: IPCError?)
+    public enum ConflictBehavior {
+        case alwaysSend
+        case cancelAll
+        case cancelSame
+        case cancelOther
+        case overrideAll
+        case overrideSame
+        case overrideOther
+    }
+    open func transferUserInfo(asComplication: Bool, whenConflict conflictBehavior: ConflictBehavior,
+                               withData data: [String:Any]) -> TransferResult {
+        guard let session = wcSession, session.isReachable else{
+            return (result: nil, error: .IPCError(.unreachable))
+        }
+        guard let command = data[IPCKeyCommand] as? String else {
+            return (result: nil, error: .IPCError(.protocolError))
+        }
+        #if os(watchOS)
+            guard !asComplication else {
+                abort()
+            }
+        #endif
+
+        if conflictBehavior != .alwaysSend {
+            var conflictType: Bool?
+            if conflictBehavior == .cancelSame || conflictBehavior == .overrideSame {
+                conflictType = asComplication
+            }else if conflictBehavior == .cancelOther || conflictBehavior == .overrideOther {
+                conflictType = !asComplication
+            }
+            let conflicts = session.outstandingUserInfoTransfers.filter{
+                if $0.isTransferring, let dcmd = $0.userInfo[IPCKeyCommand] as? String, dcmd == command {
+                    if let conflictType = conflictType {
+                        #if os(watchOS)
+                            return !conflictType
+                        #else
+                            return $0.isCurrentComplicationInfo == conflictType
+                        #endif
+                    }else{
+                        return true
+                    }
+                }else{
+                    return false
+                }
+            }
+            if conflictBehavior == .cancelAll || conflictBehavior == .cancelSame || conflictBehavior == .cancelOther {
+                return (result: nil, error: .IPCError(.bussy))
+            }else{
+                conflicts.forEach{$0.cancel()}
+            }
+        }
+        
+        var result: WCSessionUserInfoTransfer?
+        if asComplication {
+            #if os(watchOS)
+                abort()
+            #else
+                result = session.transferCurrentComplicationUserInfo(data)
+            #endif
+        }else{
+            result = session.transferUserInfo(data)
+        }
+        
+        return (result:result, error:nil)
+    }
+    
+    open func syncConfiguration() {
+        if let session = wcSession, session.isReachable {
+            do {
+                try session.updateApplicationContext(ConfigurationController.sharedController.dictionaryRepresentation)
+            }catch {
+                
+            }
+        }
     }
 
     //-----------------------------------------------------------------------------------------
@@ -131,50 +225,27 @@ open class IPC : NSObject, WCSessionDelegate {
     public func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         ConfigurationController.sharedController.updagteAll(with: applicationContext)
     }
-
-#if os(iOS)
-    private var getPortalCmd : GetPortal?
-#endif
     
-    public func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        
+    public func session(_ session: WCSession, didReceiveMessage message: [String : Any],
+                        replyHandler: @escaping ([String : Any]) -> Void) {
         guard let cmdCode = message[IPCKeyCommand] as? Int, let cmd = IPCCmd(rawValue: cmdCode) else {
             replyHandler([IPCKeyResponse: IPCResponse.protocolError.rawValue])
             return
         }
         
-        switch cmd {
-        case .getPosition:
-            #if os(iOS)
-                DispatchQueue.main.async {
-                    [unowned self] in
-                    guard self.getPortalCmd == nil else {
-                        replyHandler([IPCKeyResponse: IPCResponse.bussy.rawValue])
-                        return
-                    }
-                    self.getPortalCmd = GetPortal()
-                    self.getPortalCmd?.run{
-                        [unowned self] portal, error in
-                        guard let portal = portal, error == nil, let service = portal.service, let id = portal.id else {
-                            replyHandler([IPCKeyResponse: IPCResponse.succeed.rawValue])
-                            self.getPortalCmd = nil
-                            return
-                        }
-                        let data : [String:Any] = [
-                            IPCKeyResponse: IPCResponse.succeed.rawValue,
-                            IPCKeyPortalId: id,
-                            IPCKeyServiceName: service.name,
-                            IPCKeyServiceDomain: service.domain,
-                            IPCKeyServicePort: service.port,
-                            ]
-                        replyHandler(data)
-                        self.getPortalCmd = nil
-                    }
-                }
-            #elseif os(watchOS)
-                replyHandler([IPCKeyResponse: IPCResponse.notSupportedFunction.rawValue])
-            #endif
+        if let delegate = delegate {
+            delegate.didRecieve(command: cmd, withMessage: message, replyHandler: replyHandler)
+        }else{
+            replyHandler([IPCKeyResponse: IPCResponse.notSupportedFunction.rawValue])
         }
+    }
+    
+    public func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+        guard let cmdCode = userInfo[IPCKeyCommand] as? Int, let cmd = IPCCmd(rawValue: cmdCode) else {
+            return
+        }
+
+        delegate?.didRecieve(command: cmd, withMessage: userInfo, replyHandler: nil)
     }
 }
 

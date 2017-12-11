@@ -7,19 +7,20 @@
 //
 
 import Foundation
+import commonLib
 
-class GetPortal : WSPBrowserDelegate{
-    typealias ResultHandler = (Portal?, [String : NSNumber]?) -> Void
+open class GetPortal : WSPBrowserDelegate{
+    public typealias ResultHandler = (Portal?, [String : NSNumber]?) -> Void
     private var handler : ResultHandler?
     private let browser : WSPBrowser
     private var timer : Timer?
     
-    init() {
+    public init() {
         browser = WSPBrowser()
         browser.delegate = self
     }
     
-    func run(_ handler: @escaping ResultHandler){
+    open func run(_ handler: @escaping ResultHandler){
         self.handler = handler
         self.timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false){
             [unowned self] _ in
@@ -37,7 +38,7 @@ class GetPortal : WSPBrowserDelegate{
         timer = nil
     }
     
-    func wspBrowserDetectPortalAdd(browser: WSPBrowser, portal: Portal) {
+    public func wspBrowserDetectPortalAdd(browser: WSPBrowser, portal: Portal) {
         guard ConfigurationController.sharedController.registeredPortals.index(where:{$0.id == portal.id}) != nil else {
             return
         }
@@ -47,10 +48,10 @@ class GetPortal : WSPBrowserDelegate{
         handler?(portal, nil)
     }
     
-    func wspBrowserDetectPortalDel(browser: WSPBrowser, portal: Portal) {
+    public func wspBrowserDetectPortalDel(browser: WSPBrowser, portal: Portal) {
     }
     
-    func wspBrowserDidNotSearch(browser: WSPBrowser, errorDict: [String : NSNumber]) {
+    public func wspBrowserDidNotSearch(browser: WSPBrowser, errorDict: [String : NSNumber]) {
         stop()
         handler?(nil, errorDict)
     }

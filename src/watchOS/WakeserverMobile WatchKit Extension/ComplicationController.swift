@@ -145,10 +145,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             iconNamePrefix: ICON_NAME_PREFIX_APP,
             portalId: nil,
             portalName: NSLocalizedString("COMPLICATION_TEMPLATE_PLACE_NAME", comment: ""),
-            accessory1Name: nil,
-            accessory1Value: nil,
-            accessory2Name: nil,
-            accessory2Value: nil
+            accessory1Name: NSLocalizedString("COMPLICATION_TEMPLATE_ACCESORY1_NAME", comment: ""),
+            accessory1Value: NSLocalizedString("COMPLICATION_TEMPLATE_ACCESORY1_VALUE", comment: ""),
+            accessory2Name: NSLocalizedString("COMPLICATION_TEMPLATE_ACCESORY2_NAME", comment: ""),
+            accessory2Value: NSLocalizedString("COMPLICATION_TEMPLATE_ACCESORY2_VALUE", comment: "")
         )
         let template = getTemplate(for: complication, withData: data)
         handler(template)

@@ -9,10 +9,13 @@
 import WatchKit
 import commonLibWatch
 
+var bgTaskBeginDate = Date(timeIntervalSince1970: 0)
+var bgTaskEndDate: Date? = Date(timeIntervalSince1970: 0)
+
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        IPC.session.start()
+        communicator.start()
         let fireDate = Date(timeIntervalSinceNow: 3)
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil){
             error in
@@ -35,8 +38,11 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             // Use a switch statement to check the task type
             switch task {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
-                print("bgtask fire date: " + Date().description)
+                bgTaskBeginDate = Date()
+                bgTaskEndDate = nil
+                print("bgtask fire date: " + bgTaskBeginDate.description)
                 placeRecognizer.reflesh{
+                    bgTaskEndDate = Date()
                     let fireDate = Date(timeIntervalSinceNow: 60 * 6)
                     WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil){
                         error in

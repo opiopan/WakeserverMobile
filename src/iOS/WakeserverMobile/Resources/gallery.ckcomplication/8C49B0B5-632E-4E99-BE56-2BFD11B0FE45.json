@@ -1,0 +1,37 @@
+{
+  "row2Column2TextProvider" : {
+    "class" : "CLKSimpleTextProvider",
+    "text" : "On"
+  },
+  "row1Column2TextProvider" : {
+    "class" : "CLKSimpleTextProvider",
+    "text" : "Off"
+  },
+  "column2Alignment" : 0,
+  "headerTextProvider" : {
+    "class" : "CLKSimpleTextProvider",
+    "text" : "My Home"
+  },
+  "tintColor" : {
+    "green" : 0.78431373834609985,
+    "red" : 0.35294118523597717,
+    "alpha" : 1,
+    "blue" : 0.98039215803146362
+  },
+  "class" : "CLKComplicationTemplateModularLargeTable",
+  "row2Column1TextProvider" : {
+    "class" : "CLKSimpleTextProvider",
+    "text" : "A\/C:"
+  },
+  "row1Column1TextProvider" : {
+    "class" : "CLKSimpleTextProvider",
+    "text" : "TV:"
+  },
+  "version" : 30000,
+  "headerImageProvider" : {
+    "onePieceImage" : {
+      "file name" : "EF5E81D5-E29D-46D6-AC89-F5B773F43A87.png",
+      "scale" : 2
+    }
+  }
+}

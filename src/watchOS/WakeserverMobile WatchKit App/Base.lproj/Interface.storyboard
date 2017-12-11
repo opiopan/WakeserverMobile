@@ -9,23 +9,32 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Debug Sheet Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WakeserverMobile_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="DebugSheetController" customModule="WakeserverMobile_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" title="Test" id="RGK-eQ-eHb">
-                            <connections>
-                                <segue destination="50v-RA-ate" kind="modal" id="ZTe-xs-av0"/>
-                            </connections>
-                        </button>
-                        <group width="1" alignment="left" verticalAlignment="bottom" id="Pke-3Q-anu">
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="esD-J8-n1X">
                             <items>
-                                <label height="0.5" alignment="center" verticalAlignment="center" text="Label" id="96s-sK-vPf">
-                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <label alignment="left" text="bg:" id="8Pp-Ko-N2x">
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                 </label>
+                                <label alignment="left" text="Tran:" id="9BY-cc-B1a"/>
+                                <label alignment="left" text="Place:" id="RW5-PL-79g"/>
+                                <label alignment="left" text="State:" id="eOn-Sn-aB1"/>
+                                <label alignment="left" text="Char:" id="b4L-aD-Vr9"/>
+                                <label alignment="left" text="Error:" id="jDG-0E-Thz"/>
                             </items>
-                            <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="O5k-mR-pR2">
+                            <items>
+                                <button width="0.5" alignment="left" title="Reload" id="RGK-eQ-eHb">
+                                    <connections>
+                                        <action selector="onReloadButton" destination="AgC-eL-Hgc" id="Mnr-BQ-KOQ"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Scan" id="fZt-Ch-uji"/>
+                            </items>
                         </group>
                     </items>
                     <menu key="menu" id="opB-Wn-Nin">
@@ -37,7 +46,15 @@
                             </menuItem>
                         </items>
                     </menu>
-                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="bgTaskLabel" destination="8Pp-Ko-N2x" id="M6p-p7-i3c"/>
+                        <outlet property="characteristicsLabel" destination="b4L-aD-Vr9" id="oGB-kt-S9N"/>
+                        <outlet property="errorLabel" destination="jDG-0E-Thz" id="3gZ-Ft-hb9"/>
+                        <outlet property="placeLabel" destination="RW5-PL-79g" id="wUS-GQ-dWR"/>
+                        <outlet property="stateLabel" destination="eOn-Sn-aB1" id="fve-jN-3rd"/>
+                        <outlet property="transactionLabel" destination="9BY-cc-B1a" id="H5F-1N-8GW"/>
+                        <segue destination="50v-RA-ate" kind="relationship" relationship="nextPage" id="QIU-Rs-Niq"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="34" y="-153"/>

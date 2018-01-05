@@ -77,5 +77,9 @@ open class AVFunction : LooseSerializable {
             return true
         }
     }
+    
+    func updateCharacteristics(portal: Portal, notifier: (() -> Void)?) {
+        notifier?()
+    }
 }
 

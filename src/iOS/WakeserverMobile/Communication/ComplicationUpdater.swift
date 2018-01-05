@@ -22,8 +22,19 @@ enum PlaceType {
         switch self {
         case .portal(let portal):
             return portal
+        case .outdoors:
+            return ConfigurationController.sharedController.outdoorsPortal
         default:
             return nil
+        }
+    }
+    
+    var isOutdoors : Bool {
+        switch self {
+        case .outdoors:
+            return true
+        default:
+            return false
         }
     }
 }
@@ -147,7 +158,7 @@ class ComplicationUpdater {
                 }
                 return
             }
-            guard error != nil else {
+            guard error == nil else {
                 self.finishTransaction()
                 handlers?.error?(error!)
                 return
@@ -221,8 +232,8 @@ class ComplicationUpdater {
     }
     
     private func refleshCharacteristics() {
-        if let portal = currentPortal {
-            portal.dashboardAccessory?.updateCharacteristicStatus(portal: portal){
+        if let portal = currentPortal, let dashboard = portal.dashboardAccessory {
+            dashboard.updateCharacteristicStatus(portal: portal){
                 [unowned self] in
                 self.scheduleReflesh(.updatingCharacteristics, withError: nil, withComplitionHandlers: nil)
                 DispatchQueue.main.async{

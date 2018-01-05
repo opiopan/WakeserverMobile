@@ -14,8 +14,8 @@ open class CursorFunction : AVFunction {
         case circle = "circle"
     }
     
-    var shape : Shape = .circle
-    var center : Button? = nil
+    open var shape : Shape = .circle
+    open var center : Button? = nil
 
     public required init(type: String, server: String) {
         super.init(type: type, server: server)

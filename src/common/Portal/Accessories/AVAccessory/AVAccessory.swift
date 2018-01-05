@@ -29,6 +29,16 @@ private let watchFunctionCaps = [
 open class AVAccessory : PortalAccessoryCorrespondsServer {
     var iosFunctions : [AVFunction] = []
     var watchFunctions : [AVFunction] = []
+    
+    open var tvChannel: TVChannelFunction?
+    open var tvChannelName: TVChannelNameFunction?
+    open var volume: VolumeFunction?
+    open var player: PlayerFunction?
+    open var altSkip: AltSkipFunction?
+    open var cursor: CursorFunction?
+    open var outerCursor: OuterCursorFunction?
+    open var fourColor: FourColorFunction?
+    open var aux: AuxFunction?
 
     public required init(dict: [String : Any]) throws {
         try super.init(dict: dict)
@@ -38,6 +48,7 @@ open class AVAccessory : PortalAccessoryCorrespondsServer {
         if let functions = dict["watch_functions"] as? [[String : Any]] {
             watchFunctions = functions.map{try! deserializeAVFunction(dict: $0)!}
         }
+        makeFunctionReferences()
     }
     
     override public var dictionary: [String : Any] {
@@ -72,6 +83,46 @@ open class AVAccessory : PortalAccessoryCorrespondsServer {
             }
             iosFunctions = createFunctionList(iosFunctionCaps)
             watchFunctions = createFunctionList(watchFunctionCaps)
+            makeFunctionReferences()
+        }
+    }
+    
+    private func makeFunctionReferences() {
+        #if os(iOS)
+            let functions = iosFunctions
+        #elseif os(watchOS)
+            let functions = watchFunctions
+        #endif
+        
+        functions.forEach{
+            function in
+            if let function = function as? VolumeFunction {
+                volume = function
+            }else if let function = function as? TVChannelFunction {
+                tvChannel = function
+            }else if let function = function as? TVChannelNameFunction {
+                tvChannelName = function
+            }else if let function = function as? PlayerFunction {
+                player = function
+            }else if let function = function as? AltSkipFunction {
+                altSkip = function
+            }else if let function = function as? CursorFunction {
+                cursor = function
+            }else if let function = function as? OuterCursorFunction {
+                outerCursor = function
+            }else if let function = function as? FourColorFunction {
+                fourColor = function
+            }else if let function = function as? AuxFunction {
+                aux = function
+            }
+        }
+    }
+    
+    override open func updateCharacteristicStatus(portal: Portal, notifier: (() -> Void)?) {
+        if let volume = self.volume {
+            volume.updateCharacteristics(portal: portal, notifier: notifier)
+        }else{
+            notifier?()
         }
     }
 }

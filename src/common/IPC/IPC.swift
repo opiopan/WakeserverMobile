@@ -146,7 +146,7 @@ open class IPC : NSObject, WCSessionDelegate {
         guard let session = wcSession, session.isReachable else{
             return (result: nil, error: .IPCError(.unreachable))
         }
-        guard let command = data[IPCKeyCommand] as? String else {
+        guard let command = data[IPCKeyCommand] as? Int else {
             return (result: nil, error: .IPCError(.protocolError))
         }
         #if os(watchOS)
@@ -163,7 +163,7 @@ open class IPC : NSObject, WCSessionDelegate {
                 conflictType = !asComplication
             }
             let conflicts = session.outstandingUserInfoTransfers.filter{
-                if $0.isTransferring, let dcmd = $0.userInfo[IPCKeyCommand] as? String, dcmd == command {
+                if $0.isTransferring, let dcmd = $0.userInfo[IPCKeyCommand] as? Int, dcmd == command {
                     if let conflictType = conflictType {
                         #if os(watchOS)
                             return !conflictType

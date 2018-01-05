@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialHB.ttc">
+            <string>ArialHebrew</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Debug Sheet Controller-->
+        <!--debugController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="DebugSheetController" customModule="WakeserverMobile_WatchKit_App" customModuleProvider="target">
+                <controller identifier="debugController" id="AgC-eL-Hgc" customClass="DebugSheetController" customModule="WakeserverMobile_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group width="1" alignment="left" layout="vertical" spacing="0.0" id="esD-J8-n1X">
                             <items>
@@ -53,7 +58,6 @@
                         <outlet property="placeLabel" destination="RW5-PL-79g" id="wUS-GQ-dWR"/>
                         <outlet property="stateLabel" destination="eOn-Sn-aB1" id="fve-jN-3rd"/>
                         <outlet property="transactionLabel" destination="9BY-cc-B1a" id="H5F-1N-8GW"/>
-                        <segue destination="50v-RA-ate" kind="relationship" relationship="nextPage" id="QIU-Rs-Niq"/>
                     </connections>
                 </controller>
             </objects>
@@ -62,32 +66,186 @@
         <!--avPageController-->
         <scene sceneID="9ZL-zz-Dny">
             <objects>
-                <controller identifier="avPageController" id="50v-RA-ate">
+                <controller identifier="avPageController" id="50v-RA-ate" customClass="AVSheetController" customModule="WakeserverMobile_WatchKit_Extension">
                     <items>
-                        <picker width="1" height="0.34000000000000002" alignment="left" verticalAlignment="center" id="WCS-24-iyh"/>
-                        <group width="1" height="0.33000000000000002" alignment="left" verticalAlignment="center" id="jj4-yG-GDn">
+                        <group width="1" height="1" alignment="left" layout="vertical" spacing="11" id="usX-Yd-2dy" userLabel="RootGroup">
                             <items>
-                                <button width="0.33000000000000002" height="1" alignment="left" verticalAlignment="center" title="1" id="KO9-e8-rrT"/>
-                                <button width="0.34000000000000002" height="1" alignment="left" verticalAlignment="center" title="2" id="RJy-qv-4Kf"/>
-                                <button width="0.33000000000000002" height="1" alignment="left" verticalAlignment="center" title="3" id="17G-qu-dQv"/>
-                            </items>
-                        </group>
-                        <group width="1" height="0.33000000000000002" alignment="left" verticalAlignment="center" id="26c-Ko-Qol">
-                            <items>
-                                <spriteKitScene alignment="left" id="YB0-ce-qfs"/>
+                                <group width="1" height="35" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="uOm-vi-ty7" userLabel="ChannelGroup">
+                                    <items>
+                                        <picker width="1" height="1" alignment="left" verticalAlignment="center" focusStyle="stack" id="WCS-24-iyh">
+                                            <connections>
+                                                <action selector="channelPickerAction:" destination="50v-RA-ate" id="6fN-8I-CEJ"/>
+                                            </connections>
+                                        </picker>
+                                    </items>
+                                </group>
+                                <group width="1" height="50" alignment="left" verticalAlignment="center" spacing="2" id="jj4-yG-GDn" userLabel="PlayerGroup">
+                                    <items>
+                                        <button alignment="left" verticalAlignment="center" id="KO9-e8-rrT" userLabel="Rwd">
+                                            <group key="contentGroup" width="40" height="40" alignment="left" layout="overlap" radius="0.0" spacing="0.0" id="OnR-Lq-Olj">
+                                                <items>
+                                                    <group width="1" height="1" alignment="left" radius="20" id="ptZ-LR-r0a" userLabel="bg">
+                                                        <color key="backgroundColor" red="0.1411777139" green="0.14117419719999999" blue="0.1411766112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </group>
+                                                    <imageView width="0.69999999999999996" height="0.69999999999999996" alignment="center" verticalAlignment="center" image="av_rwd" id="HrL-Uj-HUn" userLabel="icon">
+                                                        <color key="tintColor" red="0.94901960784313721" green="0.95686274509803915" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </imageView>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <action selector="rewindButtonAction" destination="50v-RA-ate" id="N3n-sU-FvR"/>
+                                            </connections>
+                                        </button>
+                                        <button alignment="center" verticalAlignment="center" id="RJy-qv-4Kf" userLabel="PlayPause">
+                                            <group key="contentGroup" width="50" height="50" alignment="left" layout="overlap" radius="0.0" spacing="0.0" id="3x9-Mg-cCS">
+                                                <items>
+                                                    <group width="1" height="1" alignment="left" radius="25" id="0s2-ff-YVR" userLabel="bg">
+                                                        <color key="backgroundColor" red="0.1411777139" green="0.14117419719999999" blue="0.1411766112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </group>
+                                                    <imageView width="0.69999999999999996" height="0.69999999999999996" alignment="center" verticalAlignment="center" image="av_play_pause" id="Ho3-d7-1x2" userLabel="icon">
+                                                        <color key="tintColor" red="0.94901960784313721" green="0.95686274509803915" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </imageView>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <action selector="playPauseButtonAction" destination="50v-RA-ate" id="hTB-M0-a5J"/>
+                                            </connections>
+                                        </button>
+                                        <button alignment="right" verticalAlignment="center" id="17G-qu-dQv" userLabel="Fwd">
+                                            <group key="contentGroup" width="40" height="40" alignment="left" layout="overlap" radius="0.0" spacing="0.0" id="tX1-zb-Yce">
+                                                <items>
+                                                    <group width="1" height="1" alignment="left" radius="20" id="TXr-xU-RRV" userLabel="bg">
+                                                        <color key="backgroundColor" red="0.1411777139" green="0.14117419719999999" blue="0.1411766112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </group>
+                                                    <imageView width="0.69999999999999996" height="0.69999999999999996" alignment="center" verticalAlignment="center" image="av_fwd" id="ZZr-uP-UDL" userLabel="icon">
+                                                        <color key="tintColor" red="0.94901960784313721" green="0.95686274509803915" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </imageView>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <action selector="forwardButtonAction" destination="50v-RA-ate" id="ZPp-2n-YXu"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" height="50" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="26c-Ko-Qol" userLabel="Volume Group">
+                                    <items>
+                                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="overlap" spacing="0.0" id="kEW-HC-zKh" userLabel="SliderAndCirlcle">
+                                            <items>
+                                                <group width="1" height="1" alignment="left" id="h61-Eh-p7L"/>
+                                                <group width="50" height="50" alignment="center" verticalAlignment="center" alpha="0.0" radius="25" id="J61-uR-kYT">
+                                                    <items>
+                                                        <slider width="1" height="1" alignment="left" verticalAlignment="center" continuous="YES" value="30" maximum="99" steps="100" id="rGG-Oz-aOD">
+                                                            <connections>
+                                                                <action selector="volumeSliderAction:" destination="50v-RA-ate" id="Mbj-g1-pCS"/>
+                                                            </connections>
+                                                        </slider>
+                                                    </items>
+                                                </group>
+                                                <group width="50" height="50" alignment="center" verticalAlignment="center" layout="overlap" radius="0.0" spacing="0.0" id="7V7-mQ-882" userLabel="VolumeCircle">
+                                                    <items>
+                                                        <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="meD-aY-ixr" userLabel="VolumeBackgroundCircleImage">
+                                                            <color key="tintColor" red="0.1411777138710022" green="0.14117419719696045" blue="0.14117661118507385" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </imageView>
+                                                        <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="bJX-WA-UE7" userLabel="VolumeCircleImage">
+                                                            <color key="tintColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </imageView>
+                                                        <imageView width="1" height="1" alignment="left" id="G7I-Qk-FKl">
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </imageView>
+                                                    </items>
+                                                    <gestureRecognizers>
+                                                        <tapGestureRecognizer id="Chk-ZO-U3f" userLabel="Volume Tap Gesture Recognizer">
+                                                            <connections>
+                                                                <action selector="handleGesture:" destination="50v-RA-ate" id="MCS-o2-KwC"/>
+                                                            </connections>
+                                                        </tapGestureRecognizer>
+                                                    </gestureRecognizers>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="0.94999999999999996" height="1" alignment="center" verticalAlignment="center" id="BWa-lU-DpF" userLabel="AssosiativeButtons">
+                                            <items>
+                                                <button alignment="left" verticalAlignment="center" id="XRk-22-tPE" userLabel="altRwd">
+                                                    <group key="contentGroup" width="35" height="35" alignment="left" layout="overlap" radius="17.5" spacing="0.0" id="BbP-kx-ZWr">
+                                                        <items>
+                                                            <group width="1" height="1" alignment="center" verticalAlignment="center" layout="overlap" spacing="0.0" id="GSl-ap-Lbk">
+                                                                <items>
+                                                                    <imageView width="1" height="1" alignment="left" image="av_alt_rwd" id="w07-EH-wL9">
+                                                                        <color key="tintColor" red="0.94901960784313721" green="0.95686274509803915" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    </imageView>
+                                                                    <label alignment="center" verticalAlignment="center" textAlignment="center" id="9cP-8T-Fon">
+                                                                        <fontDescription key="font" name="ArialHebrew" family="Arial Hebrew" pointSize="10"/>
+                                                                    </label>
+                                                                </items>
+                                                            </group>
+                                                        </items>
+                                                        <color key="backgroundColor" red="0.1411777139" green="0.14117419719999999" blue="0.1411766112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </group>
+                                                    <connections>
+                                                        <action selector="altRewindButtonAction" destination="50v-RA-ate" id="zNs-wb-h27"/>
+                                                    </connections>
+                                                </button>
+                                                <button alignment="right" verticalAlignment="center" id="1hY-aa-aIJ" userLabel="altFwd">
+                                                    <group key="contentGroup" width="35" height="35" alignment="left" layout="overlap" radius="17.5" spacing="0.0" id="mHw-Ov-AgL">
+                                                        <items>
+                                                            <group width="1" height="1" alignment="center" verticalAlignment="center" layout="overlap" spacing="0.0" id="Hc8-hn-I3g">
+                                                                <items>
+                                                                    <imageView width="1" height="1" alignment="left" image="av_alt_fwd" id="gld-LM-P60">
+                                                                        <color key="tintColor" red="0.94901960784313721" green="0.95686274509803915" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    </imageView>
+                                                                    <label alignment="center" verticalAlignment="center" textAlignment="center" id="6OL-0x-gAm">
+                                                                        <fontDescription key="font" name="ArialHebrew" family="Arial Hebrew" pointSize="10"/>
+                                                                    </label>
+                                                                </items>
+                                                            </group>
+                                                        </items>
+                                                        <color key="backgroundColor" red="0.1411777139" green="0.14117419719999999" blue="0.1411766112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </group>
+                                                    <connections>
+                                                        <action selector="altForwardButtonAction" destination="50v-RA-ate" id="nAW-SX-ZZm"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="altForwardButtonLabel" destination="6OL-0x-gAm" id="oTy-EK-qfi"/>
+                        <outlet property="altForwardButtonSizeChangee" destination="Hc8-hn-I3g" id="tX3-hb-sUg"/>
+                        <outlet property="altRewindButtonLabel" destination="9cP-8T-Fon" id="NIg-XL-838"/>
+                        <outlet property="altRewindButtonSizeChangee" destination="GSl-ap-Lbk" id="Zjm-Lo-wad"/>
+                        <outlet property="assosiativeButtons" destination="BWa-lU-DpF" id="PUh-4s-d02"/>
+                        <outlet property="channelGroup" destination="uOm-vi-ty7" id="L9r-5Y-gwc"/>
+                        <outlet property="channelPicker" destination="WCS-24-iyh" id="qOK-FH-lPS"/>
+                        <outlet property="forwardButtonColorChangee" destination="TXr-xU-RRV" id="eHO-rZ-yGm"/>
+                        <outlet property="forwardButtonSizeChangee" destination="ZZr-uP-UDL" id="qy4-UH-Kyz"/>
+                        <outlet property="playPauseButtonColorChangee" destination="0s2-ff-YVR" id="IHl-d4-Hbz"/>
+                        <outlet property="playPauseButtonSizeChangee" destination="Ho3-d7-1x2" id="gux-Mr-ahG"/>
+                        <outlet property="playerGroup" destination="jj4-yG-GDn" id="QDr-tL-vgz"/>
+                        <outlet property="rewindButtonColorChangee" destination="ptZ-LR-r0a" id="094-r0-bDk"/>
+                        <outlet property="rewindButtonSizeChangee" destination="HrL-Uj-HUn" id="ZNf-8p-YOM"/>
+                        <outlet property="sliderGroup" destination="J61-uR-kYT" id="4gh-l9-75b"/>
+                        <outlet property="volumeBackgroundCircleImage" destination="meD-aY-ixr" id="2oa-py-jmv"/>
+                        <outlet property="volumeCircle" destination="7V7-mQ-882" id="WUD-a7-uKV"/>
+                        <outlet property="volumeCircleImage" destination="bJX-WA-UE7" id="0Ar-BO-vhx"/>
+                        <outlet property="volumeSlider" destination="rGG-Oz-aOD" id="8fg-tu-kwt"/>
+                        <outlet property="volumeSpeakerIcon" destination="G7I-Qk-FKl" id="co2-6Y-164"/>
+                        <outlet property="volumeTapGesture" destination="Chk-ZO-U3f" id="j5i-Z5-Y3l"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="34" y="462"/>
+            <point key="canvasLocation" x="34" y="250"/>
         </scene>
         <!--dashboardPageController-->
         <scene sceneID="Z8u-Wv-fT5">
             <objects>
-                <controller identifier="dashboardPageController" id="ba7-4O-c47"/>
+                <controller identifier="dashboardPageController" id="ba7-4O-c47" customClass="DashboardSheetController" customModule="WakeserverMobile_WatchKit_Extension"/>
             </objects>
-            <point key="canvasLocation" x="264" y="462"/>
+            <point key="canvasLocation" x="263" y="250"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.3529411764705882" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

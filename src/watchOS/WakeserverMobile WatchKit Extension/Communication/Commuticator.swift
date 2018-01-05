@@ -17,32 +17,66 @@ class Communicator : IPCDelegate {
     
     func start(){
     }
+
+    //-----------------------------------------------------------------------------------------
+    // MARK: - background communication context management
+    //-----------------------------------------------------------------------------------------
+    private var backgroundTasks = [WKWatchConnectivityRefreshBackgroundTask]()
     
-    open func getLocation(handler: @escaping ((portalId: String?, service: (name: String, domain: String, port: Int)?)?, IPCError?) -> Void) {
+    func registerBackgroundTask(_ task: WKWatchConnectivityRefreshBackgroundTask){
+        backgroundTasks.append(task)
+    }
+    
+    func removeAllBackgroundTask(){
+        backgroundTasks.forEach{$0.setTaskCompleted()}
+        backgroundTasks.removeAll()
+    }
+
+    //-----------------------------------------------------------------------------------------
+    // MARK: - send commands
+    //-----------------------------------------------------------------------------------------
+    func getLocation(handler: @escaping (PlaceRecognizer.PortalRepresentation?, IPCError?) -> Void) {
         let sendData = [IPCKeyCommand: IPCCmd.getPosition.rawValue]
         IPC.session.sendMessage(sendData){
-            data, error in
-            guard error == nil else {
+            [unowned self] data, error in
+            guard error == nil, let data = data else {
                 handler(nil, error)
                 return
             }
-            var service : (name: String, domain: String, port: Int)? = nil
-            if let sname = data?[IPCKeyServiceName] as? String,
-                let sdomain = data?[IPCKeyServiceDomain] as? String,
-                let sport = data?[IPCKeyServicePort] as? Int {
-                service = (name: sname, domain: sdomain, port: sport)
-            }
-            
-            let value = (portalId: data?[IPCKeyPortalId] as? String, service: service)
-            handler(value, nil)
+            handler(self.retrievePortalRepresentation(fromMessage: data), nil)
         }
     }
 
+    //-----------------------------------------------------------------------------------------
+    // MARK: - recieve commands & respond to commands
+    //-----------------------------------------------------------------------------------------
     func didRecieve(command: IPCCmd, withMessage message: [String : Any], replyHandler: (([String : Any]) -> Void)?) {
         switch command {
+        case .notifyComplicationUpdate:
+            reviceveComplicationUpdate(message)
         default:
             replyHandler?([IPCKeyResponse: IPCResponse.notSupportedFunction.rawValue])
         }
+    }
+    
+    private func reviceveComplicationUpdate(_ data: [String:Any]) {
+        let portal = retrievePortalRepresentation(fromMessage: data)
+        placeRecognizer.setPlace(withPortal: portal)
+        complicationDatastore.update(withAccessoriesInMessage: data)
+        removeAllBackgroundTask()
+    }
+
+    //-----------------------------------------------------------------------------------------
+    // MARK: - utilities
+    //-----------------------------------------------------------------------------------------
+    private func retrievePortalRepresentation(fromMessage data: [String:Any]) -> PlaceRecognizer.PortalRepresentation {
+        var service : (name: String, domain: String, port: Int)? = nil
+        if let sname = data[IPCKeyServiceName] as? String,
+            let sdomain = data[IPCKeyServiceDomain] as? String,
+            let sport = data[IPCKeyServicePort] as? Int {
+            service = (name: sname, domain: sdomain, port: sport)
+        }
+        return (portalId: data[IPCKeyPortalId] as? String, service: service)
     }
 }
 

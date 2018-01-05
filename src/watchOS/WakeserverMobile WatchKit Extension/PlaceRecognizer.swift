@@ -115,6 +115,22 @@ open class PlaceRecognizer {
             }
         }
     }
+
+    public typealias ServiceRepresentation = (name: String, domain: String, port: Int)
+    public typealias PortalRepresentation = (portalId: String?, service: ServiceRepresentation?)
+    
+    open func setPlace(withPortal portalData: PortalRepresentation) {
+        if portalData.portalId == nil {
+            self.updateAndNotifyPlace(place: .outdoors)
+        }else{
+            let portals = ConfigurationController.sharedController.registeredPortals
+            if let index = portals.index(where: {$0.id == portalData.portalId}) {
+                let portal = portals[index]
+                portal.service = portalData.service
+                self.updateAndNotifyPlace(place: .portal(portal))
+            }
+        }
+    }
     
     //-----------------------------------------------------------------------------------------
     // MARK: - delegate manipulation
@@ -131,7 +147,7 @@ open class PlaceRecognizer {
         }
     }
     
-    private func updateAndNotifyPlace(place: PlaceType) {
+    public func updateAndNotifyPlace(place: PlaceType) {
         var needSetTimer = false
         switch self.place {
         case .unknown:
@@ -150,11 +166,10 @@ open class PlaceRecognizer {
         }
         
         self.placeHolder = place
+        self.placeHolder.portalObject()?.dashboardAccessory?.resetState()
         if needSetTimer {
             setTimer()
         }
-
-        complicationDatastore.update()
 
         DispatchQueue.main.async {
             [unowned self] in

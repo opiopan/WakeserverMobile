@@ -343,6 +343,96 @@ open class Portal : LooseSerializable {
             self.updatePageCharacteristicStatus(notifier: notifier)
         }
     }
+
+    
+    //-----------------------------------------------------------------------------------------
+    // MARK: - Attribute cgi management
+    //-----------------------------------------------------------------------------------------
+    enum PortalCommError{
+        case overriden
+        case serverResponseError
+        case invalidResponse
+    }
+    
+    typealias AttributeCommandResult = (result: Bool, value: String?, message: String)
+    typealias AttributeCommand = (
+        server: String,attribute: String, value: String?,
+        callback: ((AttributeCommandResult?, PortalCommError?) -> Void)?)
+
+    private var attributeCommandQue = [AttributeCommand]()
+    private var attributeCommandTask: URLSessionDataTask?
+
+    func sendAttributeCommand(_ command: AttributeCommand, withOverride override: Bool) {
+        DispatchQueue.main.async {
+            [unowned self] in
+            if override {
+                let index = self.attributeCommandQue.index(where: {
+                    $0.server == command.server && $0.attribute == command.attribute &&
+                    (($0.value == nil && command.value == nil) || ($0.value != nil && command.value != nil))
+                })
+                if let index = index {
+                    self.attributeCommandQue[index].callback?(nil, .overriden)
+                    self.attributeCommandQue[index] = command
+                }else{
+                    self.attributeCommandQue.append(command)
+                }
+            }else{
+                self.attributeCommandQue.append(command)
+            }
+            self.scheduleAttributeCommand()
+        }
+    }
+
+    private func scheduleAttributeCommand(){
+        guard attributeCommandTask == nil, let service = service, let command = attributeCommandQue.first else {
+            return
+        }
+        
+        attributeCommandQue.removeFirst()
+
+        let urlprefix = "http://\(service.name).\(service.domain):\(service.port)"
+        var components = URLComponents(string: "\(urlprefix)/cgi-bin/wakeserver-attribute.cgi")
+        var queryItems = [
+            URLQueryItem(name:"target", value: command.server),
+            URLQueryItem(name:"attribute", value: command.attribute)
+        ]
+        if let value = command.value {
+            queryItems.append(URLQueryItem(name: "value", value: value))
+        }
+        components?.queryItems = queryItems
+        attributeCommandTask = URLSession.shared.dataTask(with: components!.url!){
+            [unowned self] data, response, error in
+            self.attributeCommandTask = nil
+            
+            if let data = data, let response = response, (response as! HTTPURLResponse).statusCode == 200 {
+                do {
+                    let root = try JSONSerialization.jsonObject(with: data,
+                                                                options: .allowFragments) as? [String: Any]
+                    if let root = root{
+                        if let result = root["result"] as? Bool {
+                            let value = root["value"] as? String
+                            let message = root["message"] as? String ?? ""
+                            let commandResult = (result: result, value: value, message: message)
+                            command.callback?(commandResult, nil)
+                        }else{
+                            command.callback?(nil, .invalidResponse)
+                        }
+                    }else{
+                        command.callback?(nil, .invalidResponse)
+                    }
+                }catch {
+                    command.callback?(nil, .invalidResponse)
+                }
+            }else{
+                command.callback?(nil, .serverResponseError)
+            }
+            
+            DispatchQueue.main.async {
+                self.scheduleAttributeCommand()
+            }
+        }
+        attributeCommandTask?.resume()
+    }
 }
 
 //-----------------------------------------------------------------------------------------

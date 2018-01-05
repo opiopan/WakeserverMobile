@@ -40,7 +40,30 @@ class DebugSheetController: WKInterfaceController, PlaceRecognizerDelegate {
     }
     
     func placeRecognizerDetectChangePortal(recognizer: PlaceRecognizer, place: PlaceType) {
-        updateView()
+        placeRecognizer.unregister(delegate: self)
+
+        let portal = placeRecognizer.place.portalObject()
+        var names = ["debugController"]
+        var contexts: [Any] = ["dummy"]
+        
+        portal?.config?.pages.forEach{ page in
+            let context: WSPageContext = (portal: portal!, page: page)
+            if page as? DashboardAccessory != nil {
+                names.append("dashboardPageController")
+                contexts.append(context)
+            }else if page as? AVAccessory != nil {
+                names.append("avPageController")
+                contexts.append(context)
+            }
+        }
+        
+        names.append("avPageController")
+        contexts.append("dummy")
+        
+        let initialPage = (portal?.defaultPage ?? -1) + 1
+
+        WKInterfaceController.reloadRootPageControllers(
+            withNames: names, contexts: contexts, orientation: .horizontal, pageIndex: initialPage)
     }
     
     @IBAction func onMenuItem() {

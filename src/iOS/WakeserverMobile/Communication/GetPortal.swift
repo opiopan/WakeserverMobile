@@ -39,13 +39,18 @@ open class GetPortal : WSPBrowserDelegate{
     }
     
     public func wspBrowserDetectPortalAdd(browser: WSPBrowser, portal: Portal) {
-        guard ConfigurationController.sharedController.registeredPortals.index(where:{$0.id == portal.id}) != nil else {
+        let portals = ConfigurationController.sharedController.registeredPortals
+        guard let index = portals.index(where:{$0.id == portal.id}) else {
             return
         }
         stop()
         let handler = self.handler
         self.handler = nil
-        handler?(portal, nil)
+        let target = portals[index]
+        if target.service == nil {
+            target.service = portal.service
+        }
+        handler?(target, nil)
     }
     
     public func wspBrowserDetectPortalDel(browser: WSPBrowser, portal: Portal) {

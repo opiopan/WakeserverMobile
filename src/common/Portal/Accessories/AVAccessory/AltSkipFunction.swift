@@ -9,8 +9,13 @@
 import Foundation
 
 open class AltSkipFunction: AVFunction {
-    var forward : Int?
-    var backward : Int?
+    open var forward : Int?
+    open var backward : Int?
+    
+    public enum Verb: String {
+        case forward = "altskipf"
+        case rewind = "altskipb"
+    }
     
     public required init(type: String, server: String) {
         super.init(type: type, server: server)
@@ -38,6 +43,16 @@ open class AltSkipFunction: AVFunction {
         if let value = option["backward"] as? Int {
             backward = value
         }
+    }
+    
+    open func invokeAction(onPortal portal: Portal, withVerb action: Verb) {
+        let command: Portal.AttributeCommand = (
+            server: self.server,
+            attribute: "player",
+            value: action.rawValue,
+            callback: nil
+        )
+        portal.sendAttributeCommand(command, withOverride: false)
     }
 
 }

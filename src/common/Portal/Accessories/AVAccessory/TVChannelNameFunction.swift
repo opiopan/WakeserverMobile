@@ -9,5 +9,13 @@
 import Foundation
 
 open class TVChannelNameFunction : AVFunction {
-    
+    open func setChannel(portal: Portal, name: String) {
+        let command: Portal.AttributeCommand = (
+            server: self.server,
+            attribute: "tvchannelname",
+            value: name,
+            callback: nil
+        )
+        portal.sendAttributeCommand(command, withOverride: true)
+    }
 }

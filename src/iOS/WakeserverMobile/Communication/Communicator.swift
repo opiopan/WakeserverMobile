@@ -17,7 +17,48 @@ class Communicator : IPCDelegate {
     
     func start() {
     }
-    
+
+    //-----------------------------------------------------------------------------------------
+    // MARK: - send commands
+    //-----------------------------------------------------------------------------------------
+    func sendComplicationData(_ data: ComplicationData) -> IPCError? {
+        guard let portal = data.place.portalObject() else {
+            abort()
+        }
+
+        var message : [String:Any] = [
+            IPCKeyCommand : IPCCmd.notifyComplicationUpdate.rawValue,
+        ]
+        
+        if !portal.isOutdoors {
+            message[IPCKeyPortalId] = portal.id!
+        }
+        if let service = portal.service {
+            message[IPCKeyServiceName] = service.name
+            message[IPCKeyServiceDomain] = service.domain
+            message[IPCKeyServicePort] = service.port
+        }
+        if let value = data.accessory1Name {
+            message[IPCKeyAccessory1Name] = value
+        }
+        if let value = data.accessory1Value {
+            message[IPCKeyAccessory1Value] = value
+        }
+        if let value = data.accessory2Name {
+            message[IPCKeyAccessory2Name] = value
+        }
+        if let value = data.accessory2Value {
+            message[IPCKeyAccessory2Value] = value
+        }
+        
+        let result = IPC.session.transferUserInfo(asComplication: true, whenConflict: .overrideAll, withData: message)
+        
+        return result.error
+    }
+
+    //-----------------------------------------------------------------------------------------
+    // MARK: - recieve commands & respond to commands
+    //-----------------------------------------------------------------------------------------
     func didRecieve(command: IPCCmd, withMessage message: [String : Any], replyHandler: (([String : Any]) -> Void)?) {
         switch command {
         case .getPosition:

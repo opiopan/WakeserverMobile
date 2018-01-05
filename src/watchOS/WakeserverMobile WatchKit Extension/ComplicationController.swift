@@ -72,18 +72,37 @@ class ComplicationDatastore {
             print("UPDATE: complication")
             
             let current = self.currentData
-            
-            if self.data.iconNamePrefix != current.iconNamePrefix ||
-                self.data.portalId != current.portalId ||
-                self.data.portalName != current.portalName ||
-                self.data.accessory1Name != current.accessory1Name ||
-                self.data.accessory1Value != current.accessory1Value ||
-                self.data.accessory2Name != current.accessory2Name ||
-                self.data.accessory2Value != current.accessory2Value {
-                self.data = current
-                let server = CLKComplicationServer.sharedInstance()
-                server.activeComplications?.forEach{server.reloadTimeline(for: $0)}
-            }
+            self.update(withComplicationData: current)
+        }
+    }
+    
+    func update(withAccessoriesInMessage message: [String:Any]) {
+        DispatchQueue.main.async{
+            [unowned self] in
+            let current : ComplicationData = (
+                iconNamePrefix: ICON_NAME_PREFIX_APP,
+                portalId: placeRecognizer.currentPortal?.id,
+                portalName: placeRecognizer.placeName,
+                accessory1Name: message[IPCKeyAccessory1Name] as? String,
+                accessory1Value: message[IPCKeyAccessory1Value] as? String,
+                accessory2Name: message[IPCKeyAccessory2Name] as? String,
+                accessory2Value: message[IPCKeyAccessory2Value] as? String
+            )
+            self.update(withComplicationData: current)
+        }
+    }
+    
+    private func update(withComplicationData data: ComplicationData) {
+        if self.data.iconNamePrefix != data.iconNamePrefix ||
+            self.data.portalId != data.portalId ||
+            self.data.portalName != data.portalName ||
+            self.data.accessory1Name != data.accessory1Name ||
+            self.data.accessory1Value != data.accessory1Value ||
+            self.data.accessory2Name != data.accessory2Name ||
+            self.data.accessory2Value != data.accessory2Value {
+            self.data = data
+            let server = CLKComplicationServer.sharedInstance()
+            server.activeComplications?.forEach{server.reloadTimeline(for: $0)}
         }
     }
 }
@@ -159,7 +178,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     //-----------------------------------------------------------------------------------------
     private func getTemplate(for complication: CLKComplication, withData data: ComplicationData) -> CLKComplicationTemplate?{
         var template : CLKComplicationTemplate?
-        let gtint = UIColor(red: 90.0/255.0, green: 200.0/255.0, blue: 250.0/255.0, alpha: 1.0)
+        let gtint = appColor.theme
 
         switch complication.family {
         case .circularSmall:

@@ -9,6 +9,10 @@
 import WatchKit
 import commonLibWatch
 
+var watchSizeIs42mm : Bool {
+    return WKInterfaceDevice.current().screenBounds.width > 136
+}
+
 var bgTaskBeginDate = Date(timeIntervalSince1970: 0)
 var bgTaskEndDate: Date? = Date(timeIntervalSince1970: 0)
 
@@ -51,6 +55,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                     print("bgtask schedule date: " + fireDate.description)
                     backgroundTask.setTaskCompleted()
                 }
+                //backgroundTask.setTaskCompleted()
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
                 snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)

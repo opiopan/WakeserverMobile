@@ -1,11 +1,11 @@
 {
   "supported complication families" : {
-    "3" : "FB9CE9FE-E2C1-48B6-ACE6-98A5111B408E.json",
-    "1" : "8C49B0B5-632E-4E99-BE56-2BFD11B0FE45.json",
-    "6" : "78839C19-33F1-4E33-A885-C4054B4DABF4.json",
-    "4" : "1C12EABF-6BF1-4F3F-8AF5-FEA65BDB9B74.json",
-    "2" : "5F0AA807-8A11-48F6-92C9-A53FD1589466.json",
-    "0" : "C2D4656E-53AD-49C7-83A4-C4935DDC699F.json"
+    "3" : "E67E48C3-3EAB-4286-883B-A0B9A09955C1.json",
+    "1" : "191177BC-B648-4580-8ED6-A9FB1B6ABD79.json",
+    "6" : "2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json",
+    "4" : "43135DC6-B8A1-464C-B44D-A6D19F1AA684.json",
+    "2" : "400E3CBD-EA2F-489E-ABE1-D8A4A349C6D8.json",
+    "0" : "659A1736-93A4-42FA-8F83-782D746E5C40.json"
   },
   "client ID" : "com.opiopan.WakeserverMobile.watchkitapp.watchkitextension"
 }

@@ -7,19 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B005E4B1FD6DA950066D4FC /* 78839C19-33F1-4E33-A885-C4054B4DABF4.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E3E1FD6DA950066D4FC /* 78839C19-33F1-4E33-A885-C4054B4DABF4.json */; };
-		7B005E4C1FD6DA950066D4FC /* 321C4637-5CCA-4DC1-A170-460DFF7459C0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E3F1FD6DA950066D4FC /* 321C4637-5CCA-4DC1-A170-460DFF7459C0.png */; };
-		7B005E4D1FD6DA950066D4FC /* FB9CE9FE-E2C1-48B6-ACE6-98A5111B408E.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E401FD6DA950066D4FC /* FB9CE9FE-E2C1-48B6-ACE6-98A5111B408E.json */; };
-		7B005E4E1FD6DA950066D4FC /* D3B95194-E544-405B-BC27-A08EE5142E9B.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E411FD6DA950066D4FC /* D3B95194-E544-405B-BC27-A08EE5142E9B.png */; };
-		7B005E4F1FD6DA950066D4FC /* 1C12EABF-6BF1-4F3F-8AF5-FEA65BDB9B74.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E421FD6DA950066D4FC /* 1C12EABF-6BF1-4F3F-8AF5-FEA65BDB9B74.json */; };
-		7B005E501FD6DA950066D4FC /* 05617530-2DD9-45DE-9646-B5DABECE5219.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E431FD6DA950066D4FC /* 05617530-2DD9-45DE-9646-B5DABECE5219.png */; };
-		7B005E511FD6DA950066D4FC /* C2D4656E-53AD-49C7-83A4-C4935DDC699F.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E441FD6DA950066D4FC /* C2D4656E-53AD-49C7-83A4-C4935DDC699F.json */; };
-		7B005E521FD6DA950066D4FC /* 7F0AEFF3-4D66-4423-BC26-A66BCDE42A91.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E451FD6DA950066D4FC /* 7F0AEFF3-4D66-4423-BC26-A66BCDE42A91.png */; };
-		7B005E531FD6DA950066D4FC /* 8C49B0B5-632E-4E99-BE56-2BFD11B0FE45.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E461FD6DA950066D4FC /* 8C49B0B5-632E-4E99-BE56-2BFD11B0FE45.json */; };
-		7B005E541FD6DA950066D4FC /* EF5E81D5-E29D-46D6-AC89-F5B773F43A87.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E471FD6DA950066D4FC /* EF5E81D5-E29D-46D6-AC89-F5B773F43A87.png */; };
-		7B005E551FD6DA950066D4FC /* 5F0AA807-8A11-48F6-92C9-A53FD1589466.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E481FD6DA950066D4FC /* 5F0AA807-8A11-48F6-92C9-A53FD1589466.json */; };
-		7B005E561FD6DA950066D4FC /* 730C0474-4FD6-4443-A29C-5F65373B8132.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E491FD6DA950066D4FC /* 730C0474-4FD6-4443-A29C-5F65373B8132.png */; };
-		7B005E571FD6DA950066D4FC /* complicationManifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B005E4A1FD6DA950066D4FC /* complicationManifest.json */; };
 		7B090C471FD3B4F00085C4D2 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B090C461FD3B4F00085C4D2 /* HomeKit.framework */; };
 		7B13A1CA1F60487F00C5FE59 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B13A1C91F60487F00C5FE59 /* DashboardViewController.swift */; };
 		7B13A1D01F65AD1200C5FE59 /* AddPortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B13A1CF1F65AD1200C5FE59 /* AddPortalViewController.swift */; };
@@ -132,6 +119,18 @@
 		7BC569BB1FDD152D008ADD3F /* Commuticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC569BA1FDD152D008ADD3F /* Commuticator.swift */; };
 		7BC569BE1FE15B31008ADD3F /* ComplicationRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC569BC1FE01414008ADD3F /* ComplicationRepresentation.swift */; };
 		7BC569C41FE5364E008ADD3F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC569C31FE5364E008ADD3F /* DebugViewController.swift */; };
+		7BF3EF4F200103BE0091794D /* 191177BC-B648-4580-8ED6-A9FB1B6ABD79.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF43200103BE0091794D /* 191177BC-B648-4580-8ED6-A9FB1B6ABD79.json */; };
+		7BF3EF50200103BE0091794D /* CA4DD92C-5266-4394-9C8B-529B9B10AB8F.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF44200103BE0091794D /* CA4DD92C-5266-4394-9C8B-529B9B10AB8F.png */; };
+		7BF3EF51200103BE0091794D /* BA515557-B5F8-4FDE-8970-E90BAB9C5D9C.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF45200103BE0091794D /* BA515557-B5F8-4FDE-8970-E90BAB9C5D9C.png */; };
+		7BF3EF52200103BE0091794D /* E67E48C3-3EAB-4286-883B-A0B9A09955C1.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF46200103BE0091794D /* E67E48C3-3EAB-4286-883B-A0B9A09955C1.json */; };
+		7BF3EF53200103BE0091794D /* DFE2F50F-1C16-4ECA-9569-D0112EEA6E92.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF47200103BE0091794D /* DFE2F50F-1C16-4ECA-9569-D0112EEA6E92.png */; };
+		7BF3EF54200103BE0091794D /* 43135DC6-B8A1-464C-B44D-A6D19F1AA684.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF48200103BE0091794D /* 43135DC6-B8A1-464C-B44D-A6D19F1AA684.json */; };
+		7BF3EF55200103BE0091794D /* 659A1736-93A4-42FA-8F83-782D746E5C40.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF49200103BE0091794D /* 659A1736-93A4-42FA-8F83-782D746E5C40.json */; };
+		7BF3EF56200103BE0091794D /* 400E3CBD-EA2F-489E-ABE1-D8A4A349C6D8.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF4A200103BE0091794D /* 400E3CBD-EA2F-489E-ABE1-D8A4A349C6D8.json */; };
+		7BF3EF57200103BE0091794D /* 023FE1A9-D9B1-4C17-8C00-F7CA772951E1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF4B200103BE0091794D /* 023FE1A9-D9B1-4C17-8C00-F7CA772951E1.png */; };
+		7BF3EF58200103BE0091794D /* 2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF4C200103BE0091794D /* 2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json */; };
+		7BF3EF59200103BE0091794D /* 393CDBB9-BCB3-4658-B170-EEC003F64F08.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF4D200103BE0091794D /* 393CDBB9-BCB3-4658-B170-EEC003F64F08.png */; };
+		7BF3EF5A200103BE0091794D /* complicationManifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF4E200103BE0091794D /* complicationManifest.json */; };
 		7BFA18431FE69C200021906E /* AVSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFA18421FE69C200021906E /* AVSheetController.swift */; };
 		7BFF80A11F6F9081001DB56E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF80A31F6F9081001DB56E /* Localizable.strings */; };
 		7BFF80A61F6F9D8F001DB56E /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF80A51F6F9D8F001DB56E /* ButtonCell.swift */; };
@@ -245,19 +244,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7B005E3E1FD6DA950066D4FC /* 78839C19-33F1-4E33-A885-C4054B4DABF4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "78839C19-33F1-4E33-A885-C4054B4DABF4.json"; sourceTree = "<group>"; };
-		7B005E3F1FD6DA950066D4FC /* 321C4637-5CCA-4DC1-A170-460DFF7459C0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "321C4637-5CCA-4DC1-A170-460DFF7459C0.png"; sourceTree = "<group>"; };
-		7B005E401FD6DA950066D4FC /* FB9CE9FE-E2C1-48B6-ACE6-98A5111B408E.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FB9CE9FE-E2C1-48B6-ACE6-98A5111B408E.json"; sourceTree = "<group>"; };
-		7B005E411FD6DA950066D4FC /* D3B95194-E544-405B-BC27-A08EE5142E9B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "D3B95194-E544-405B-BC27-A08EE5142E9B.png"; sourceTree = "<group>"; };
-		7B005E421FD6DA950066D4FC /* 1C12EABF-6BF1-4F3F-8AF5-FEA65BDB9B74.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "1C12EABF-6BF1-4F3F-8AF5-FEA65BDB9B74.json"; sourceTree = "<group>"; };
-		7B005E431FD6DA950066D4FC /* 05617530-2DD9-45DE-9646-B5DABECE5219.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "05617530-2DD9-45DE-9646-B5DABECE5219.png"; sourceTree = "<group>"; };
-		7B005E441FD6DA950066D4FC /* C2D4656E-53AD-49C7-83A4-C4935DDC699F.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "C2D4656E-53AD-49C7-83A4-C4935DDC699F.json"; sourceTree = "<group>"; };
-		7B005E451FD6DA950066D4FC /* 7F0AEFF3-4D66-4423-BC26-A66BCDE42A91.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7F0AEFF3-4D66-4423-BC26-A66BCDE42A91.png"; sourceTree = "<group>"; };
-		7B005E461FD6DA950066D4FC /* 8C49B0B5-632E-4E99-BE56-2BFD11B0FE45.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8C49B0B5-632E-4E99-BE56-2BFD11B0FE45.json"; sourceTree = "<group>"; };
-		7B005E471FD6DA950066D4FC /* EF5E81D5-E29D-46D6-AC89-F5B773F43A87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EF5E81D5-E29D-46D6-AC89-F5B773F43A87.png"; sourceTree = "<group>"; };
-		7B005E481FD6DA950066D4FC /* 5F0AA807-8A11-48F6-92C9-A53FD1589466.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "5F0AA807-8A11-48F6-92C9-A53FD1589466.json"; sourceTree = "<group>"; };
-		7B005E491FD6DA950066D4FC /* 730C0474-4FD6-4443-A29C-5F65373B8132.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "730C0474-4FD6-4443-A29C-5F65373B8132.png"; sourceTree = "<group>"; };
-		7B005E4A1FD6DA950066D4FC /* complicationManifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = complicationManifest.json; sourceTree = "<group>"; };
 		7B090C461FD3B4F00085C4D2 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.1.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
 		7B090C481FD3B4F00085C4D2 /* WakeserverMobile WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WakeserverMobile WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		7B13A1C91F60487F00C5FE59 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -352,6 +338,18 @@
 		7BC569BA1FDD152D008ADD3F /* Commuticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commuticator.swift; sourceTree = "<group>"; };
 		7BC569BC1FE01414008ADD3F /* ComplicationRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationRepresentation.swift; sourceTree = "<group>"; };
 		7BC569C31FE5364E008ADD3F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		7BF3EF43200103BE0091794D /* 191177BC-B648-4580-8ED6-A9FB1B6ABD79.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "191177BC-B648-4580-8ED6-A9FB1B6ABD79.json"; sourceTree = "<group>"; };
+		7BF3EF44200103BE0091794D /* CA4DD92C-5266-4394-9C8B-529B9B10AB8F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CA4DD92C-5266-4394-9C8B-529B9B10AB8F.png"; sourceTree = "<group>"; };
+		7BF3EF45200103BE0091794D /* BA515557-B5F8-4FDE-8970-E90BAB9C5D9C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BA515557-B5F8-4FDE-8970-E90BAB9C5D9C.png"; sourceTree = "<group>"; };
+		7BF3EF46200103BE0091794D /* E67E48C3-3EAB-4286-883B-A0B9A09955C1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "E67E48C3-3EAB-4286-883B-A0B9A09955C1.json"; sourceTree = "<group>"; };
+		7BF3EF47200103BE0091794D /* DFE2F50F-1C16-4ECA-9569-D0112EEA6E92.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DFE2F50F-1C16-4ECA-9569-D0112EEA6E92.png"; sourceTree = "<group>"; };
+		7BF3EF48200103BE0091794D /* 43135DC6-B8A1-464C-B44D-A6D19F1AA684.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "43135DC6-B8A1-464C-B44D-A6D19F1AA684.json"; sourceTree = "<group>"; };
+		7BF3EF49200103BE0091794D /* 659A1736-93A4-42FA-8F83-782D746E5C40.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "659A1736-93A4-42FA-8F83-782D746E5C40.json"; sourceTree = "<group>"; };
+		7BF3EF4A200103BE0091794D /* 400E3CBD-EA2F-489E-ABE1-D8A4A349C6D8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "400E3CBD-EA2F-489E-ABE1-D8A4A349C6D8.json"; sourceTree = "<group>"; };
+		7BF3EF4B200103BE0091794D /* 023FE1A9-D9B1-4C17-8C00-F7CA772951E1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "023FE1A9-D9B1-4C17-8C00-F7CA772951E1.png"; sourceTree = "<group>"; };
+		7BF3EF4C200103BE0091794D /* 2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json"; sourceTree = "<group>"; };
+		7BF3EF4D200103BE0091794D /* 393CDBB9-BCB3-4658-B170-EEC003F64F08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "393CDBB9-BCB3-4658-B170-EEC003F64F08.png"; sourceTree = "<group>"; };
+		7BF3EF4E200103BE0091794D /* complicationManifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = complicationManifest.json; sourceTree = "<group>"; };
 		7BFA18421FE69C200021906E /* AVSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSheetController.swift; sourceTree = "<group>"; };
 		7BFBE35F1F80E1AF00F751DF /* WSProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSProtocols.swift; sourceTree = "<group>"; };
 		7BFF80A21F6F9081001DB56E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -417,29 +415,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7B005E3D1FD6DA950066D4FC /* gallery.ckcomplication */ = {
-			isa = PBXGroup;
-			children = (
-				7B005E3E1FD6DA950066D4FC /* 78839C19-33F1-4E33-A885-C4054B4DABF4.json */,
-				7B005E3F1FD6DA950066D4FC /* 321C4637-5CCA-4DC1-A170-460DFF7459C0.png */,
-				7B005E401FD6DA950066D4FC /* FB9CE9FE-E2C1-48B6-ACE6-98A5111B408E.json */,
-				7B005E411FD6DA950066D4FC /* D3B95194-E544-405B-BC27-A08EE5142E9B.png */,
-				7B005E421FD6DA950066D4FC /* 1C12EABF-6BF1-4F3F-8AF5-FEA65BDB9B74.json */,
-				7B005E431FD6DA950066D4FC /* 05617530-2DD9-45DE-9646-B5DABECE5219.png */,
-				7B005E441FD6DA950066D4FC /* C2D4656E-53AD-49C7-83A4-C4935DDC699F.json */,
-				7B005E451FD6DA950066D4FC /* 7F0AEFF3-4D66-4423-BC26-A66BCDE42A91.png */,
-				7B005E461FD6DA950066D4FC /* 8C49B0B5-632E-4E99-BE56-2BFD11B0FE45.json */,
-				7B005E471FD6DA950066D4FC /* EF5E81D5-E29D-46D6-AC89-F5B773F43A87.png */,
-				7B005E481FD6DA950066D4FC /* 5F0AA807-8A11-48F6-92C9-A53FD1589466.json */,
-				7B005E491FD6DA950066D4FC /* 730C0474-4FD6-4443-A29C-5F65373B8132.png */,
-				7B005E4A1FD6DA950066D4FC /* complicationManifest.json */,
-			);
-			path = gallery.ckcomplication;
-			sourceTree = "<group>";
-		};
 		7B0B1AC71FC32D0600BF3E98 /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
+				7B090C481FD3B4F00085C4D2 /* WakeserverMobile WatchKit Extension.entitlements */,
 				7B0B1AC81FC32D3900BF3E98 /* WakeserverMobile WatchKit App */,
 				7B0B1AC91FC32D4E00BF3E98 /* WakeserverMobile WatchKit Extension */,
 			);
@@ -584,7 +563,6 @@
 		7B471DCD1F3C99DE00B1392D = {
 			isa = PBXGroup;
 			children = (
-				7B090C481FD3B4F00085C4D2 /* WakeserverMobile WatchKit Extension.entitlements */,
 				7BA15A231FC6EC9D00520944 /* src */,
 				7B0B1ACA1FC32EFA00BF3E98 /* tests */,
 				7B471DD71F3C99DE00B1392D /* Products */,
@@ -717,7 +695,7 @@
 				7B471DE01F3C99DE00B1392D /* Assets.xcassets */,
 				7B471DE21F3C99DE00B1392D /* LaunchScreen.storyboard */,
 				7BFF80A31F6F9081001DB56E /* Localizable.strings */,
-				7B005E3D1FD6DA950066D4FC /* gallery.ckcomplication */,
+				7BF3EF42200103BE0091794D /* gallery.ckcomplication */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -845,6 +823,25 @@
 				7BC569C31FE5364E008ADD3F /* DebugViewController.swift */,
 			);
 			path = Debug;
+			sourceTree = "<group>";
+		};
+		7BF3EF42200103BE0091794D /* gallery.ckcomplication */ = {
+			isa = PBXGroup;
+			children = (
+				7BF3EF43200103BE0091794D /* 191177BC-B648-4580-8ED6-A9FB1B6ABD79.json */,
+				7BF3EF44200103BE0091794D /* CA4DD92C-5266-4394-9C8B-529B9B10AB8F.png */,
+				7BF3EF45200103BE0091794D /* BA515557-B5F8-4FDE-8970-E90BAB9C5D9C.png */,
+				7BF3EF46200103BE0091794D /* E67E48C3-3EAB-4286-883B-A0B9A09955C1.json */,
+				7BF3EF47200103BE0091794D /* DFE2F50F-1C16-4ECA-9569-D0112EEA6E92.png */,
+				7BF3EF48200103BE0091794D /* 43135DC6-B8A1-464C-B44D-A6D19F1AA684.json */,
+				7BF3EF49200103BE0091794D /* 659A1736-93A4-42FA-8F83-782D746E5C40.json */,
+				7BF3EF4A200103BE0091794D /* 400E3CBD-EA2F-489E-ABE1-D8A4A349C6D8.json */,
+				7BF3EF4B200103BE0091794D /* 023FE1A9-D9B1-4C17-8C00-F7CA772951E1.png */,
+				7BF3EF4C200103BE0091794D /* 2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json */,
+				7BF3EF4D200103BE0091794D /* 393CDBB9-BCB3-4658-B170-EEC003F64F08.png */,
+				7BF3EF4E200103BE0091794D /* complicationManifest.json */,
+			);
+			path = gallery.ckcomplication;
 			sourceTree = "<group>";
 		};
 		7BFBE35E1F80DE3200F751DF /* WSProtocols */ = {
@@ -1160,24 +1157,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BF3EF52200103BE0091794D /* E67E48C3-3EAB-4286-883B-A0B9A09955C1.json in Resources */,
+				7BF3EF55200103BE0091794D /* 659A1736-93A4-42FA-8F83-782D746E5C40.json in Resources */,
+				7BF3EF5A200103BE0091794D /* complicationManifest.json in Resources */,
+				7BF3EF53200103BE0091794D /* DFE2F50F-1C16-4ECA-9569-D0112EEA6E92.png in Resources */,
+				7BF3EF58200103BE0091794D /* 2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json in Resources */,
 				7B471DE41F3C99DE00B1392D /* LaunchScreen.storyboard in Resources */,
-				7B005E521FD6DA950066D4FC /* 7F0AEFF3-4D66-4423-BC26-A66BCDE42A91.png in Resources */,
-				7B005E4F1FD6DA950066D4FC /* 1C12EABF-6BF1-4F3F-8AF5-FEA65BDB9B74.json in Resources */,
-				7B005E531FD6DA950066D4FC /* 8C49B0B5-632E-4E99-BE56-2BFD11B0FE45.json in Resources */,
-				7B005E501FD6DA950066D4FC /* 05617530-2DD9-45DE-9646-B5DABECE5219.png in Resources */,
-				7B005E551FD6DA950066D4FC /* 5F0AA807-8A11-48F6-92C9-A53FD1589466.json in Resources */,
-				7B005E541FD6DA950066D4FC /* EF5E81D5-E29D-46D6-AC89-F5B773F43A87.png in Resources */,
 				7BFF80A11F6F9081001DB56E /* Localizable.strings in Resources */,
-				7B005E4B1FD6DA950066D4FC /* 78839C19-33F1-4E33-A885-C4054B4DABF4.json in Resources */,
+				7BF3EF54200103BE0091794D /* 43135DC6-B8A1-464C-B44D-A6D19F1AA684.json in Resources */,
+				7BF3EF51200103BE0091794D /* BA515557-B5F8-4FDE-8970-E90BAB9C5D9C.png in Resources */,
+				7BF3EF4F200103BE0091794D /* 191177BC-B648-4580-8ED6-A9FB1B6ABD79.json in Resources */,
 				7B471DE11F3C99DE00B1392D /* Assets.xcassets in Resources */,
+				7BF3EF50200103BE0091794D /* CA4DD92C-5266-4394-9C8B-529B9B10AB8F.png in Resources */,
+				7BF3EF59200103BE0091794D /* 393CDBB9-BCB3-4658-B170-EEC003F64F08.png in Resources */,
 				7B8609D51FA5EDE900B067FF /* AccessoryStatusView.xib in Resources */,
-				7B005E561FD6DA950066D4FC /* 730C0474-4FD6-4443-A29C-5F65373B8132.png in Resources */,
-				7B005E4D1FD6DA950066D4FC /* FB9CE9FE-E2C1-48B6-ACE6-98A5111B408E.json in Resources */,
 				7B471DDF1F3C99DE00B1392D /* Main.storyboard in Resources */,
-				7B005E511FD6DA950066D4FC /* C2D4656E-53AD-49C7-83A4-C4935DDC699F.json in Resources */,
-				7B005E4C1FD6DA950066D4FC /* 321C4637-5CCA-4DC1-A170-460DFF7459C0.png in Resources */,
-				7B005E571FD6DA950066D4FC /* complicationManifest.json in Resources */,
-				7B005E4E1FD6DA950066D4FC /* D3B95194-E544-405B-BC27-A08EE5142E9B.png in Resources */,
+				7BF3EF57200103BE0091794D /* 023FE1A9-D9B1-4C17-8C00-F7CA772951E1.png in Resources */,
+				7BF3EF56200103BE0091794D /* 400E3CBD-EA2F-489E-ABE1-D8A4A349C6D8.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1663,7 +1659,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "WakeserverMobile WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "src/watchOS/WakeserverMobile WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = G3Y32477L5;
 				INFOPLIST_FILE = "src/watchOS/WakeserverMobile WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1682,7 +1678,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "WakeserverMobile WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "src/watchOS/WakeserverMobile WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = G3Y32477L5;
 				INFOPLIST_FILE = "src/watchOS/WakeserverMobile WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

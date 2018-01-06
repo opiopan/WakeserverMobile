@@ -16,10 +16,11 @@ class AVSheetController: WSPageController, WKCrownDelegate {
     // channel animation related objects
     @IBOutlet var channelGroup: WKInterfaceGroup!
     @IBOutlet var playerGroup: WKInterfaceGroup!
-    @IBOutlet var sliderGroup: WKInterfaceGroup!
+    @IBOutlet var volumeGroup: WKInterfaceGroup!
     @IBOutlet var channelPicker: WKInterfacePicker!
-
+    
     // volume animation related objects
+    @IBOutlet var sliderGroup: WKInterfaceGroup!
     @IBOutlet var volumeTapGesture: WKTapGestureRecognizer!
     @IBOutlet var volumeSlider: WKInterfaceSlider!
     @IBOutlet var volumeCircle: WKInterfaceGroup!
@@ -150,7 +151,7 @@ class AVSheetController: WSPageController, WKCrownDelegate {
             playerGroup.setHidden(pageData?.player == nil)
             assosiativeButtons.setHidden(pageData?.altSkip == nil)
             volumeCircle.setHidden(pageData?.volume == nil)
-            sliderGroup.setHidden(pageData?.volume == nil && pageData?.altSkip == nil)
+            volumeGroup.setHidden(pageData?.volume == nil && pageData?.altSkip == nil)
             
             if let altSkip = pageData?.altSkip {
                 altForwardButtonLabel.setText(altSkip.forward?.description)

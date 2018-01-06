@@ -27,11 +27,5 @@
     "class" : "CLKSimpleTextProvider",
     "text" : "TV:"
   },
-  "version" : 30000,
-  "headerImageProvider" : {
-    "onePieceImage" : {
-      "file name" : "EF5E81D5-E29D-46D6-AC89-F5B773F43A87.png",
-      "scale" : 2
-    }
-  }
+  "version" : 30000
 }

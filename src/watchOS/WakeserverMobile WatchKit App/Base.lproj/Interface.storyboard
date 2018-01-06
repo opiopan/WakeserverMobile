@@ -232,6 +232,7 @@
                         <outlet property="volumeBackgroundCircleImage" destination="meD-aY-ixr" id="2oa-py-jmv"/>
                         <outlet property="volumeCircle" destination="7V7-mQ-882" id="WUD-a7-uKV"/>
                         <outlet property="volumeCircleImage" destination="bJX-WA-UE7" id="0Ar-BO-vhx"/>
+                        <outlet property="volumeGroup" destination="26c-Ko-Qol" id="jky-ul-MGa"/>
                         <outlet property="volumeSlider" destination="rGG-Oz-aOD" id="8fg-tu-kwt"/>
                         <outlet property="volumeSpeakerIcon" destination="G7I-Qk-FKl" id="co2-6Y-164"/>
                         <outlet property="volumeTapGesture" destination="Chk-ZO-U3f" id="j5i-Z5-Y3l"/>
@@ -243,9 +244,138 @@
         <!--dashboardPageController-->
         <scene sceneID="Z8u-Wv-fT5">
             <objects>
-                <controller identifier="dashboardPageController" id="ba7-4O-c47" customClass="DashboardSheetController" customModule="WakeserverMobile_WatchKit_Extension"/>
+                <controller identifier="dashboardPageController" id="ba7-4O-c47" customClass="DashboardSheetController" customModule="WakeserverMobile_WatchKit_Extension">
+                    <items>
+                        <group alignment="center" verticalAlignment="center" spacing="0.0" id="m8q-eI-0Am">
+                            <items>
+                                <group alignment="center" verticalAlignment="center" layout="vertical" spacing="2" id="Mol-aT-ayU" userLabel="Unit1">
+                                    <items>
+                                        <group width="60" height="60" alignment="center" layout="overlap" radius="30" spacing="0.0" id="Hzt-pt-vlx">
+                                            <items>
+                                                <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="BGd-69-45K"/>
+                                                <label alignment="center" verticalAlignment="center" text="23°" id="Azf-eM-Xsy" userLabel="Caption">
+                                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                                </label>
+                                            </items>
+                                            <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="0.35777948943661969" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </group>
+                                        <label width="78" alignment="center" text="Label" textAlignment="center" id="4JS-Iy-LU4">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="eQq-Gv-3qe">
+                                            <connections>
+                                                <action selector="tapOnUnit1:" destination="ba7-4O-c47" id="xCh-JY-d43"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                </group>
+                                <group alignment="center" verticalAlignment="center" layout="vertical" spacing="2" id="vSc-rh-iCJ" userLabel="Unit2">
+                                    <items>
+                                        <group width="60" height="60" alignment="center" layout="overlap" radius="30" spacing="0.0" id="SPD-D6-qtR">
+                                            <items>
+                                                <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="31w-7c-rk3"/>
+                                                <label alignment="center" verticalAlignment="center" text="23°" id="Ugk-Gq-bZT" userLabel="Caption">
+                                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                                </label>
+                                            </items>
+                                            <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="0.35777948939999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </group>
+                                        <label width="78" alignment="center" text="Label" textAlignment="center" id="9uO-Ht-ZXm">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="7gX-v0-fHL">
+                                            <connections>
+                                                <action selector="tapOnUnit2:" destination="ba7-4O-c47" id="XVQ-N6-jaV"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                </group>
+                            </items>
+                        </group>
+                        <group alignment="center" verticalAlignment="center" spacing="0.0" id="vo8-CG-qEi">
+                            <items>
+                                <group alignment="center" verticalAlignment="center" layout="vertical" spacing="2" id="5hD-Ir-AIg" userLabel="Unit3">
+                                    <items>
+                                        <group width="60" height="60" alignment="center" layout="overlap" radius="30" spacing="0.0" id="Wz4-9u-eSy">
+                                            <items>
+                                                <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="QFG-ts-mOZ"/>
+                                                <label alignment="center" verticalAlignment="center" text="23°" id="9Le-1P-cND" userLabel="Caption">
+                                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                                </label>
+                                            </items>
+                                            <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="0.35777948939999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </group>
+                                        <label width="78" alignment="center" text="Label" textAlignment="center" id="g0q-zz-0gC">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="aT4-Us-ccf">
+                                            <connections>
+                                                <action selector="tapOnUnit3:" destination="ba7-4O-c47" id="YtP-Ri-f4z"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                </group>
+                                <group alignment="center" verticalAlignment="center" layout="vertical" spacing="2" id="WlO-2W-a43" userLabel="Unit4">
+                                    <items>
+                                        <group width="60" height="60" alignment="center" layout="overlap" radius="30" spacing="0.0" id="u9J-sm-NJj">
+                                            <items>
+                                                <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="hAs-EQ-fSj"/>
+                                                <label alignment="center" verticalAlignment="center" text="23°" id="Zij-zc-8y8" userLabel="Caption">
+                                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                                </label>
+                                            </items>
+                                            <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="0.35777948939999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </group>
+                                        <label width="78" alignment="center" text="Label" textAlignment="center" id="bQM-DV-GmA">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="Rsf-Mp-DdC">
+                                            <connections>
+                                                <action selector="tapOnUnit4:" destination="ba7-4O-c47" id="mTZ-ey-xfo"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="unit1Background" destination="Hzt-pt-vlx" id="xlQ-rx-lA6"/>
+                        <outlet property="unit1Caption" destination="Azf-eM-Xsy" id="k61-ex-F7h"/>
+                        <outlet property="unit1Gesture" destination="eQq-Gv-3qe" id="NkW-3x-9Aq"/>
+                        <outlet property="unit1Group" destination="Mol-aT-ayU" id="0oW-Ow-iVo"/>
+                        <outlet property="unit1Image" destination="BGd-69-45K" id="9IU-i1-Dwa"/>
+                        <outlet property="unit1Label" destination="4JS-Iy-LU4" id="VS8-k7-THe"/>
+                        <outlet property="unit2Background" destination="SPD-D6-qtR" id="Lrx-ar-Qov"/>
+                        <outlet property="unit2Caption" destination="Ugk-Gq-bZT" id="k5R-98-HSX"/>
+                        <outlet property="unit2Gesture" destination="7gX-v0-fHL" id="cQO-Ny-bAY"/>
+                        <outlet property="unit2Group" destination="vSc-rh-iCJ" id="XAH-2g-WMa"/>
+                        <outlet property="unit2Image" destination="31w-7c-rk3" id="CqT-Ch-MWG"/>
+                        <outlet property="unit2Label" destination="9uO-Ht-ZXm" id="qOt-LC-Kgt"/>
+                        <outlet property="unit3Background" destination="Wz4-9u-eSy" id="4zV-mh-gw2"/>
+                        <outlet property="unit3Caption" destination="9Le-1P-cND" id="MgO-iW-c2q"/>
+                        <outlet property="unit3Gesture" destination="aT4-Us-ccf" id="Mnh-OO-k2c"/>
+                        <outlet property="unit3Group" destination="5hD-Ir-AIg" id="zNd-Rf-8nM"/>
+                        <outlet property="unit3Image" destination="QFG-ts-mOZ" id="uDT-8h-qL6"/>
+                        <outlet property="unit3Label" destination="g0q-zz-0gC" id="BeL-k5-V8F"/>
+                        <outlet property="unit4Background" destination="u9J-sm-NJj" id="Bo8-05-02S"/>
+                        <outlet property="unit4Caption" destination="Zij-zc-8y8" id="RNJ-11-kkO"/>
+                        <outlet property="unit4Gesture" destination="Rsf-Mp-DdC" id="Sxi-Qb-rGO"/>
+                        <outlet property="unit4Group" destination="WlO-2W-a43" id="RXm-rd-Jwm"/>
+                        <outlet property="unit4Image" destination="hAs-EQ-fSj" id="Fsv-03-uN2"/>
+                        <outlet property="unit4Label" destination="bQM-DV-GmA" id="hRS-2e-evT"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="263" y="250"/>
+            <point key="canvasLocation" x="262.41025641025641" y="249.76923076923077"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.3529411764705882" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

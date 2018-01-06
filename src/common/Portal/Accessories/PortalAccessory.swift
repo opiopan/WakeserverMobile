@@ -228,4 +228,32 @@ open class PortalAccessoryCorrespondsServer : PortalAccessory {
             }
         }
     }
+    
+    open func togglePowerStatus(viaPortal portal: Portal) {
+        switch powerState {
+        case .off:
+            if isWakeable {
+                powerState = .on
+                portal.sendPowerControllCommand(forAccessory: self, power: true){
+                    [unowned self] result in
+                    if !result {
+                        self.powerState = .off
+                    }
+                }
+            }
+        case .on:
+            if isSleepable {
+                powerState = .off
+                portal.sendPowerControllCommand(forAccessory: self, power: false){
+                    [unowned self] result in
+                    if !result {
+                        self.powerState = .on
+                    }
+                }
+            }
+        case .unknown:
+            // TODO: should be implement sending toggle power command to portal
+            break
+        }
+    }
 }

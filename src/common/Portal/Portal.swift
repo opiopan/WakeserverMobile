@@ -344,6 +344,34 @@ open class Portal : LooseSerializable {
         }
     }
 
+    //-----------------------------------------------------------------------------------------
+    // MARK: - Power controll command management
+    //-----------------------------------------------------------------------------------------
+    func sendPowerControllCommand(forAccessory accessory: PortalAccessory, power: Bool, callback: ((Bool)->Void)?) {
+        guard let service = service,
+            let server = accessory.server,
+            (power == true && accessory.isWakeable) || (power == false && accessory.isSleepable) else {
+            callback?(false)
+            return
+        }
+            
+        let urlprefix = "http://\(service.name).\(service.domain):\(service.port)"
+        let urlsuffix = power ? "wakeserver-wake.cgi" : "wakeserver-sleep.cgi"
+        var components = URLComponents(string: "\(urlprefix)/cgi-bin/\(urlsuffix)")
+        components?.queryItems = [
+            URLQueryItem(name:"target", value: server),
+        ]
+        let task = URLSession.shared.dataTask(with: components!.url!){
+            data, response, error in
+            
+            guard data != nil, let response = response, (response as! HTTPURLResponse).statusCode == 200 else {
+                callback?(false)
+                return
+            }
+            callback?(true)
+        }
+        task.resume()
+    }
     
     //-----------------------------------------------------------------------------------------
     // MARK: - Attribute cgi management

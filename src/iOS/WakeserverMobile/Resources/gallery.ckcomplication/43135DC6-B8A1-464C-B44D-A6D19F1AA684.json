@@ -5,11 +5,13 @@
     "alpha" : 1,
     "blue" : 0.98039215803146362
   },
-  "class" : "CLKComplicationTemplateModularSmallSimpleImage",
+  "class" : "CLKComplicationTemplateCircularSmallRingImage",
+  "fillFraction" : 0,
+  "ringStyle" : 0,
   "version" : 30000,
   "imageProvider" : {
     "onePieceImage" : {
-      "file name" : "05617530-2DD9-45DE-9646-B5DABECE5219.png",
+      "file name" : "393CDBB9-BCB3-4658-B170-EEC003F64F08.png",
       "scale" : 2
     }
   }

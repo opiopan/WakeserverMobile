@@ -196,8 +196,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .modularLarge:
             let modularTemplate = CLKComplicationTemplateModularLargeTable()
             modularTemplate.tintColor = gtint
-            modularTemplate.headerImageProvider =
-                CLKImageProvider(onePieceImage: UIImage(named: data.iconNamePrefix + "ModularLarge")!)
+            //modularTemplate.headerImageProvider =
+            //    CLKImageProvider(onePieceImage: UIImage(named: data.iconNamePrefix + "ModularLarge")!)
             modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: data.portalName)
             modularTemplate.row1Column1TextProvider =
                 CLKSimpleTextProvider(text: (data.accessory1Name ?? "------") + ":")

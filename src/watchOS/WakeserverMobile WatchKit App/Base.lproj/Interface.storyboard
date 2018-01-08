@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Of2-LA-Y0T">
     <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -61,7 +61,58 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="34" y="-153"/>
+            <point key="canvasLocation" x="586" y="250"/>
+        </scene>
+        <!--Wakeserver-->
+        <scene sceneID="ztc-nt-UEt">
+            <objects>
+                <controller identifier="detectingPortalController" title="Wakeserver" id="Of2-LA-Y0T" customClass="DetectingSheetController" customModule="WakeserverMobile_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Detecting a portal..." id="oIS-rj-SvG">
+                            <color key="textColor" red="0.88577954894356015" green="1" blue="0.20501345084330502" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="-502"/>
+        </scene>
+        <!--homeSheetController-->
+        <scene sceneID="l9B-0e-Rf3">
+            <objects>
+                <controller identifier="homeSheetController" spacing="0.0" id="OYV-8M-cwB" customClass="HomeSheetController" customModule="WakeserverMobile_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="6" alignment="left" id="Az7-rT-8Cw"/>
+                        <imageView width="80" height="80" alignment="center" id="tFk-0B-xfX"/>
+                        <group width="1" height="6" alignment="left" id="Ize-la-9cU"/>
+                        <label alignment="center" text="Label" id="omV-0a-GUu">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <button alignment="center" verticalAlignment="bottom" id="MlS-BI-gOF">
+                            <group key="contentGroup" width="1" height="38" alignment="left" spacing="0.0" id="wuD-ce-byh">
+                                <items>
+                                    <group width="8" alignment="left" id="gmS-tM-Aiw"/>
+                                    <imageView width="28" height="28" alignment="left" verticalAlignment="center" image="home_detect_portal" id="mA4-PN-Oy9"/>
+                                    <group width="8" alignment="left" id="9Mj-3X-z2z"/>
+                                    <label alignment="center" verticalAlignment="center" text="Detect Portal" id="Rlf-Iq-PG9">
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <action selector="detectPortal" destination="OYV-8M-cwB" id="HOf-Cm-5N2"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="omV-0a-GUu" id="Etc-R7-dTu"/>
+                        <outlet property="portalImage" destination="tFk-0B-xfX" id="RSJ-Mu-3wQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="-126"/>
         </scene>
         <!--avPageController-->
         <scene sceneID="9ZL-zz-Dny">
@@ -213,6 +264,15 @@
                             </items>
                         </group>
                     </items>
+                    <menu key="menu" id="fcW-NX-37U">
+                        <items>
+                            <menuItem title="Toggle power" image="menu_icon_switch" id="LAQ-iB-f8h">
+                                <connections>
+                                    <action selector="togglePowerMenuAction" destination="50v-RA-ate" id="Py1-97-5f7"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="altForwardButtonLabel" destination="6OL-0x-gAm" id="oTy-EK-qfi"/>
                         <outlet property="altForwardButtonSizeChangee" destination="Hc8-hn-I3g" id="tX3-hb-sUg"/>
@@ -375,7 +435,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="262.41025641025641" y="249.76923076923077"/>
+            <point key="canvasLocation" x="324" y="250"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.3529411764705882" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -12,8 +12,8 @@ import commonLibWatch
 private let INITIAL_INTERVAL = 1.0
 private let NORMAL_INTERVAL = 60.0
 
-private let UPDATE_PERIOD_PLACE = 30.0
-private let UPDATE_PERIOD_STATE = 5.0
+private let UPDATE_PERIOD_PLACE = 30.0 * 60.0
+private let UPDATE_PERIOD_STATE = 10.0
 private let UPDATE_PERIOD_CHARACTERISTICS = 60.0
 
 public enum PlaceType {
@@ -27,6 +27,26 @@ public enum PlaceType {
             return portal
         default:
             return nil
+        }
+    }
+    
+    func broadPortalObject() -> Portal? {
+        switch self {
+        case .portal(let portal):
+            return portal
+        case .outdoors:
+            return ConfigurationController.sharedController.outdoorsPortal
+        default:
+            return nil
+        }
+    }
+    
+    func isOutdoors() -> Bool {
+        switch self {
+        case .outdoors:
+            return true
+        default:
+            return false
         }
     }
     
@@ -156,24 +176,29 @@ open class PlaceRecognizer {
             }
             needSetTimer = (timer != nil)
         case .outdoors:
-            if case .outdoors = place {
+            if case .outdoors = place, !isDetecting {
                 return
             }
         case .portal(let oldPortal):
-            if let newPortal = place.portalObject(), newPortal.id == oldPortal.id {
+            if let newPortal = place.portalObject(), newPortal.id == oldPortal.id, !isDetecting {
                 return
             }
         }
         
         self.placeHolder = place
         self.placeHolder.portalObject()?.dashboardAccessory?.resetState()
+        updateTimePlace = Date()
+        updateTimeState = Date(timeIntervalSince1970: 0)
+        updateTimeCharacteristics = Date(timeIntervalSince1970: 0)
         if needSetTimer {
             setTimer()
         }
+        reflesh(nil)
 
         DispatchQueue.main.async {
             [unowned self] in
             self.delegates.forEach{$0.placeRecognizerDetectChangePortal(recognizer: self, place: self.place)}
+            self.reorganizePages()
         }
     }
 
@@ -323,6 +348,47 @@ open class PlaceRecognizer {
         }else{
             scheduleReflesh(.updatingCharacteristics, withError: true, withComplitionHandler: handler)
         }
+    }
+
+    //-----------------------------------------------------------------------------------------
+    // MARK: - pages collection generator
+    //-----------------------------------------------------------------------------------------
+    private var isDetecting = false
+    
+    public func reorganizePages() {
+        guard let portal = place.broadPortalObject() else {
+            return
+        }
+        
+        isDetecting = false
+        
+        var names = ["homeSheetController"]
+        var contexts: [Any] = [HomeSheetControllerContext(name: placeName, portal: portal)]
+        
+        portal.config?.pages.forEach{ page in
+            let context: WSPageContext = (portal: portal, page: page)
+            if page as? DashboardAccessory != nil {
+                names.append("dashboardPageController")
+                contexts.append(context)
+            }else if page as? AVAccessory != nil {
+                names.append("avPageController")
+                contexts.append(context)
+            }
+        }
+        
+        names.append("avPageController")
+        contexts.append("dummy")
+        
+        let initialPage = portal.isOutdoors ? 0 : portal.defaultPage + 1
+        
+        WKInterfaceController.reloadRootPageControllers(
+            withNames: names, contexts: contexts, orientation: .horizontal, pageIndex: initialPage)
+    }
+    
+    public func changeToDetectingPage() {
+        isDetecting = true
+        WKInterfaceController.reloadRootPageControllers(withNames:["detectingPortalController"], contexts: nil,
+                                                        orientation: .horizontal, pageIndex: 0)
     }
 }
 

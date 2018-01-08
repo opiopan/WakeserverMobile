@@ -187,9 +187,9 @@ class AVSheetController: WSPageController, WKCrownDelegate {
             let volume = pageData?.volume, volume.volumeValue == nil,
             let portal = context?.portal {
             lastUpdateCharacteristicsDate = now
+            weak var weakSelf = self
             pageData?.updateCharacteristicStatus(portal: portal, notifier: {
-                [unowned self] in
-                self.reflectRemoteStatus()
+                weakSelf?.reflectRemoteStatus()
             })
         }
     }
@@ -435,6 +435,12 @@ class AVSheetController: WSPageController, WKCrownDelegate {
             self.animate(withDuration: 0.3){
                 animation?.setState(true)
             }
+        }
+    }
+    
+    @IBAction func togglePowerMenuAction() {
+        if let portal = context?.portal {
+            pageData?.togglePowerStatus(viaPortal: portal)
         }
     }
 }

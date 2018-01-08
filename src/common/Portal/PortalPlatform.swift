@@ -21,12 +21,12 @@ open class PortalPlatformEntity {
 open class PortalPlatform {
     private static let list : [String: PortalPlatformEntity] = [
         "raspi": PortalPlatformEntity(name: "Raspberry Pi",
-                                      icon: libBundleImage(name: "platform_icon_raspi"))
+                                      icon: libBundleImage(name: "platform_icon_home"))
     ]
     
     private static let unknownPlatform : PortalPlatformEntity =
         PortalPlatformEntity(name: LocalizedString("PORTAL_PLATFORM_UNKNOWN"),
-                             icon: libBundleImage(name: "platform_icon_unknown"))
+                             icon: libBundleImage(name: "platform_icon_home"))
     
     open static func name(forKey key: String?) -> String {
         if let platform = list[key == nil ? "" : key!] {

@@ -10,6 +10,8 @@
 		7B090C471FD3B4F00085C4D2 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B090C461FD3B4F00085C4D2 /* HomeKit.framework */; };
 		7B13A1CA1F60487F00C5FE59 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B13A1C91F60487F00C5FE59 /* DashboardViewController.swift */; };
 		7B13A1D01F65AD1200C5FE59 /* AddPortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B13A1CF1F65AD1200C5FE59 /* AddPortalViewController.swift */; };
+		7B19E0702003209E005B44E0 /* DetectingSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19E06F2003209E005B44E0 /* DetectingSheetController.swift */; };
+		7B19E07320034393005B44E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B19E0712003426E005B44E0 /* Assets.xcassets */; };
 		7B1A51DB1FB47B4C00C9E37D /* HomeKitSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A51DA1FB47B4C00C9E37D /* HomeKitSupport.swift */; };
 		7B1A51DE1FB4830300C9E37D /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1A51DD1FB4830300C9E37D /* HomeKit.framework */; };
 		7B1A51E21FB4985C00C9E37D /* OutdoorsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A51E11FB4985C00C9E37D /* OutdoorsSettingsViewController.swift */; };
@@ -38,7 +40,6 @@
 		7B471DFA1F3C99DE00B1392D /* WakeserverMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B471DF91F3C99DE00B1392D /* WakeserverMobileUITests.swift */; };
 		7B471DFF1F3C99DE00B1392D /* WakeserverMobile WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7B471DFE1F3C99DE00B1392D /* WakeserverMobile WatchKit App.app */; };
 		7B471E051F3C99DE00B1392D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B471E031F3C99DE00B1392D /* Interface.storyboard */; };
-		7B471E071F3C99DE00B1392D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B471E061F3C99DE00B1392D /* Assets.xcassets */; };
 		7B471E0E1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B471E0D1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7B471E131F3C99DE00B1392D /* DebugSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B471E121F3C99DE00B1392D /* DebugSheetController.swift */; };
 		7B471E151F3C99DE00B1392D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B471E141F3C99DE00B1392D /* ExtensionDelegate.swift */; };
@@ -131,6 +132,7 @@
 		7BF3EF58200103BE0091794D /* 2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF4C200103BE0091794D /* 2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json */; };
 		7BF3EF59200103BE0091794D /* 393CDBB9-BCB3-4658-B170-EEC003F64F08.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF4D200103BE0091794D /* 393CDBB9-BCB3-4658-B170-EEC003F64F08.png */; };
 		7BF3EF5A200103BE0091794D /* complicationManifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF4E200103BE0091794D /* complicationManifest.json */; };
+		7BF3EF5C2002189F0091794D /* HomeSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EF5B2002189F0091794D /* HomeSheetController.swift */; };
 		7BFA18431FE69C200021906E /* AVSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFA18421FE69C200021906E /* AVSheetController.swift */; };
 		7BFF80A11F6F9081001DB56E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF80A31F6F9081001DB56E /* Localizable.strings */; };
 		7BFF80A61F6F9D8F001DB56E /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF80A51F6F9D8F001DB56E /* ButtonCell.swift */; };
@@ -248,6 +250,8 @@
 		7B090C481FD3B4F00085C4D2 /* WakeserverMobile WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WakeserverMobile WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		7B13A1C91F60487F00C5FE59 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		7B13A1CF1F65AD1200C5FE59 /* AddPortalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPortalViewController.swift; sourceTree = "<group>"; };
+		7B19E06F2003209E005B44E0 /* DetectingSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectingSheetController.swift; sourceTree = "<group>"; };
+		7B19E0712003426E005B44E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B1A51DA1FB47B4C00C9E37D /* HomeKitSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitSupport.swift; sourceTree = "<group>"; };
 		7B1A51DD1FB4830300C9E37D /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		7B1A51E11FB4985C00C9E37D /* OutdoorsSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutdoorsSettingsViewController.swift; sourceTree = "<group>"; };
@@ -288,7 +292,6 @@
 		7B471DFB1F3C99DE00B1392D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B471DFE1F3C99DE00B1392D /* WakeserverMobile WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WakeserverMobile WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B471E041F3C99DE00B1392D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		7B471E061F3C99DE00B1392D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B471E081F3C99DE00B1392D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B471E0D1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WakeserverMobile WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B471E121F3C99DE00B1392D /* DebugSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSheetController.swift; sourceTree = "<group>"; };
@@ -350,6 +353,7 @@
 		7BF3EF4C200103BE0091794D /* 2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "2E647E5C-73B1-4BBD-AA04-24C94F56FA21.json"; sourceTree = "<group>"; };
 		7BF3EF4D200103BE0091794D /* 393CDBB9-BCB3-4658-B170-EEC003F64F08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "393CDBB9-BCB3-4658-B170-EEC003F64F08.png"; sourceTree = "<group>"; };
 		7BF3EF4E200103BE0091794D /* complicationManifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = complicationManifest.json; sourceTree = "<group>"; };
+		7BF3EF5B2002189F0091794D /* HomeSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSheetController.swift; sourceTree = "<group>"; };
 		7BFA18421FE69C200021906E /* AVSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSheetController.swift; sourceTree = "<group>"; };
 		7BFBE35F1F80E1AF00F751DF /* WSProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSProtocols.swift; sourceTree = "<group>"; };
 		7BFF80A21F6F9081001DB56E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -430,7 +434,7 @@
 			children = (
 				7B471E081F3C99DE00B1392D /* Info.plist */,
 				7B471E031F3C99DE00B1392D /* Interface.storyboard */,
-				7B471E061F3C99DE00B1392D /* Assets.xcassets */,
+				7B19E0712003426E005B44E0 /* Assets.xcassets */,
 			);
 			path = "WakeserverMobile WatchKit App";
 			sourceTree = "<group>";
@@ -534,10 +538,12 @@
 			children = (
 				7B4225761FEE3AD400F2FE68 /* Components */,
 				7B24C1581FEEA1C80005509B /* ColorDefinition.swift */,
+				7B19E06F2003209E005B44E0 /* DetectingSheetController.swift */,
+				7BF3EF5B2002189F0091794D /* HomeSheetController.swift */,
 				7B24C15C1FEFD4780005509B /* WSPageController.swift */,
-				7B471E121F3C99DE00B1392D /* DebugSheetController.swift */,
 				7BFA18421FE69C200021906E /* AVSheetController.swift */,
 				7B24C15E1FEFDFCA0005509B /* DashboardSheetController.swift */,
+				7B471E121F3C99DE00B1392D /* DebugSheetController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1195,7 +1201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B471E071F3C99DE00B1392D /* Assets.xcassets in Resources */,
+				7B19E07320034393005B44E0 /* Assets.xcassets in Resources */,
 				7B471E051F3C99DE00B1392D /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1319,7 +1325,9 @@
 				7B24C15B1FEFB1490005509B /* ButtonAnimation.swift in Sources */,
 				7B471E151F3C99DE00B1392D /* ExtensionDelegate.swift in Sources */,
 				7B8427EB1FD3F3E6007258CA /* PlaceRecognizer.swift in Sources */,
+				7BF3EF5C2002189F0091794D /* HomeSheetController.swift in Sources */,
 				7B4225791FEE3B4100F2FE68 /* InterfaceCircle.swift in Sources */,
+				7B19E0702003209E005B44E0 /* DetectingSheetController.swift in Sources */,
 				7B24C15F1FEFDFCA0005509B /* DashboardSheetController.swift in Sources */,
 				7B471E131F3C99DE00B1392D /* DebugSheetController.swift in Sources */,
 				7B471E171F3C99DE00B1392D /* ComplicationController.swift in Sources */,

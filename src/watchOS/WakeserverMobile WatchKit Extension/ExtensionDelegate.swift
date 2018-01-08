@@ -47,7 +47,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 print("bgtask fire date: " + bgTaskBeginDate.description)
                 placeRecognizer.reflesh{
                     bgTaskEndDate = Date()
-                    let fireDate = Date(timeIntervalSinceNow: 60 * 6)
+                    let fireDate = Date(timeIntervalSinceNow: 60 * 30)
                     WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil){
                         error in
                         print("bgtask complete")

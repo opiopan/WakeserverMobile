@@ -13,6 +13,7 @@ public enum IPCCmd: Int{
     case getPosition = 1
     case getComplicationData
     case notifyComplicationUpdate
+    case getPortalConfig
 }
 
 public let IPCKeyCommand = "IPCKeyCmd"
@@ -30,6 +31,7 @@ public let IPCKeyAccessory3Name = "IPCKeyAccessory3Name"
 public let IPCKeyAccessory3Value = "IPCKeyAccessory3Value"
 public let IPCKeyAccessory4Name = "IPCKeyAccessory4Name"
 public let IPCKeyAccessory4Value = "IPCKeyAccessory4Value"
+public let IPCKeyPortalConfig = "IPCKeyPortalConfig"
 
 public enum IPCResponse : Int {
     case succeed = 0

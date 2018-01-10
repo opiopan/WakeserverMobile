@@ -85,12 +85,15 @@ open class ConfigurationController : NSObject {
         super.init()
     }
     
+    open var syncCount = 0
+    
     open func updagteAll(with dictionary: [String : Any]) {
         let reflect : (String) -> Void = {key in
             self.controller.setValue(dictionary[key], forKey: key)
         }
         reflect(UserDefaults.RegisteredPortals)
         reflect(UserDefaults.OutdoorsPortal)
+        syncCount += 1
     }
 
     //-----------------------------------------------------------------------------------------

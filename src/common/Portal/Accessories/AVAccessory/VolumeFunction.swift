@@ -20,7 +20,7 @@ open class VolumeFunction : AVFunction {
         let command: Portal.AttributeCommand = (
             server: self.server,
             attribute: attribute,
-            value: "",
+            value: nil,
             callback: {
                 [unowned self] result, error in
                 if result?.result == true, let value = result?.value {
@@ -32,13 +32,14 @@ open class VolumeFunction : AVFunction {
         portal.sendAttributeCommand(command, withOverride: true)
     }
     
-    open func setVolume(portal: Portal, value: Int) {
-        volumeValueHolder = value
-        
+    open func setVolume(portal: Portal, value: @escaping ()->Int) {
         let command: Portal.AttributeCommand = (
             server: self.server,
             attribute: attribute,
-            value: String(value),
+            value: {
+                [unowned self] in
+                self.volumeValueHolder = value()
+                return String(self.volumeValueHolder!)},
             callback: nil
         )
         portal.sendAttributeCommand(command, withOverride: true)

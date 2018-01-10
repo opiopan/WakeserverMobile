@@ -268,12 +268,16 @@ class AVSheetController: WSPageController, WKCrownDelegate {
         is1stFocus = false
     }
     
+    private var pickerItemIndex = 0
     @IBAction func channelPickerAction(_ value: Int) {
+        pickerItemIndex = value
         if channelIsExpanded {
             setChannelExpansionTimer(2)
             if let portal = context?.portal, let channels = portal.config?.tvchannels {
-                let name = channels[value].name
-                pageData?.tvChannelName?.setChannel(portal: portal, name: name)
+                weak var weakSelf = self
+                pageData?.tvChannelName?.setChannel(portal: portal){
+                    return channels[weakSelf?.pickerItemIndex ?? 0].name
+                }
             }
         }
     }
@@ -517,7 +521,10 @@ private class VolumeData {
                         speakerIcon?.setImageNamed("volume_speaker_on")
                     }
                     if let portal = portal {
-                        page?.volume?.setVolume(portal: portal, value: newValue)
+                        weak var weakSelf = self
+                        page?.volume?.setVolume(portal: portal){
+                            return weakSelf?.value ?? 0
+                        }
                     }
                 }else{
                     if let syncedValue = syncedValue {

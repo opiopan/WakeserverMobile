@@ -9,7 +9,7 @@
 import Foundation
 
 open class TVChannelNameFunction : AVFunction {
-    open func setChannel(portal: Portal, name: String) {
+    open func setChannel(portal: Portal, name: @escaping ()->String) {
         let command: Portal.AttributeCommand = (
             server: self.server,
             attribute: "tvchannelname",

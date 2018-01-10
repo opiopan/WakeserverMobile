@@ -12,9 +12,12 @@ import commonLibWatch
 private let INITIAL_INTERVAL = 1.0
 private let NORMAL_INTERVAL = 60.0
 
-private let UPDATE_PERIOD_PLACE = 30.0 * 60.0
-private let UPDATE_PERIOD_STATE = 10.0
-private let UPDATE_PERIOD_CHARACTERISTICS = 60.0
+private let UPDATE_PERIOD_PLACE_INHOME = 30.0 * 60.0
+private let UPDATE_PERIOD_STATE_INHOME = 10.0
+private let UPDATE_PERIOD_CHARACTERISTICS_INHOME = 60.0
+private let UPDATE_PERIOD_PLACE_OUTDOORS = 30.0 * 60.0
+private let UPDATE_PERIOD_STATE_OUTDOORS = 10.0 * 60.0
+private let UPDATE_PERIOD_CHARACTERISTICS_OUTDOORS = 10.0 * 60.0
 
 public enum PlaceType {
     case unknown
@@ -198,6 +201,7 @@ open class PlaceRecognizer {
         DispatchQueue.main.async {
             [unowned self] in
             self.delegates.forEach{$0.placeRecognizerDetectChangePortal(recognizer: self, place: self.place)}
+            complicationDatastore.update()
             self.reorganizePages()
         }
     }
@@ -263,21 +267,30 @@ open class PlaceRecognizer {
                 self.tranTimeBegin = Date()
                 self.tranTimeEnd = nil
                 self.lastTransactionError = nil
-                if self.updateTimePlace.timeIntervalSinceNow < -UPDATE_PERIOD_PLACE {
+                let now = Date()
+                let interval = now.timeIntervalSince(self.updateTimePlace)
+                if (self.place.isOutdoors() && interval > UPDATE_PERIOD_PLACE_OUTDOORS) ||
+                    (!self.place.isOutdoors() && interval > UPDATE_PERIOD_PLACE_INHOME){
                     self.refleshPlace(handler)
                 }else{
                     self.scheduleReflesh(.updatingPlace, withError: false, withComplitionHandler: handler)
                 }
             case .updatingPlace:
                 self.refleshTransaction = .updatingState
-                if self.updateTimeState.timeIntervalSinceNow < -UPDATE_PERIOD_STATE {
+                let now = Date()
+                let interval = now.timeIntervalSince(self.updateTimeState)
+                if (self.place.isOutdoors() && interval > UPDATE_PERIOD_STATE_OUTDOORS) ||
+                    (!self.place.isOutdoors() && interval > UPDATE_PERIOD_STATE_INHOME){
                     self.refleshState(handler)
                 }else{
                     self.scheduleReflesh(.updatingState, withError: false, withComplitionHandler: handler)
                 }
             case .updatingState:
                 self.refleshTransaction = .updatingCharacteristics
-                if self.updateTimeCharacteristics.timeIntervalSinceNow < -UPDATE_PERIOD_CHARACTERISTICS {
+                let now = Date()
+                let interval = now.timeIntervalSince(self.updateTimeCharacteristics)
+                if (self.place.isOutdoors() && interval > UPDATE_PERIOD_CHARACTERISTICS_OUTDOORS) ||
+                    (!self.place.isOutdoors() && interval > UPDATE_PERIOD_CHARACTERISTICS_INHOME){
                     self.refleshCharacteristics(handler)
                 }else{
                     self.scheduleReflesh(.updatingCharacteristics, withError: false, withComplitionHandler: handler)

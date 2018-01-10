@@ -28,7 +28,7 @@ class Communicator : IPCDelegate {
     }
     
     func removeAllBackgroundTask(){
-        backgroundTasks.forEach{$0.setTaskCompleted()}
+        backgroundTasks.forEach{$0.setTaskCompletedWithSnapshot(false)}
         backgroundTasks.removeAll()
     }
 
@@ -47,6 +47,21 @@ class Communicator : IPCDelegate {
         }
     }
 
+    func loadPortalConfig(handler: @escaping (IPCError?) -> Void) {
+        let sendData = [IPCKeyCommand: IPCCmd.getPortalConfig.rawValue]
+        IPC.session.sendMessage(sendData){
+            data, error in
+            guard error == nil, let data = data else {
+                handler(error)
+                return
+            }
+            if let config = data[IPCKeyPortalConfig] as? [String: Any] {
+                ConfigurationController.sharedController.updagteAll(with: config)
+            }
+            handler(nil)
+        }
+    }
+    
     //-----------------------------------------------------------------------------------------
     // MARK: - recieve commands & respond to commands
     //-----------------------------------------------------------------------------------------

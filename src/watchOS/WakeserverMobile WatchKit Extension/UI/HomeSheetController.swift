@@ -45,6 +45,7 @@ class HomeSheetController: WKInterfaceController {
     //-----------------------------------------------------------------------------------------
     override func willActivate() {
         super.willActivate()
+        //descriptionLabel.setText(String(format: "sync: %d", ConfigurationController.sharedController.syncCount))
     }
 
     override func didDeactivate() {

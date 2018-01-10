@@ -65,6 +65,10 @@ class Communicator : IPCDelegate {
             if let replyHandler = replyHandler {
                 getPosition(replyHandler)
             }
+        case .getPortalConfig:
+            if let replyHandler = replyHandler {
+                getPortalConfig(replyHandler)
+            }
         default:
             replyHandler?([IPCKeyResponse: IPCResponse.notSupportedFunction.rawValue])
         }
@@ -98,6 +102,14 @@ class Communicator : IPCDelegate {
                 self.getPortalCmd = nil
             }
         }
+    }
+    
+    private func getPortalConfig(_ replyHandler: @escaping ([String : Any]) -> Void) {
+        let data : [String:Any] = [
+            IPCKeyResponse: IPCResponse.succeed.rawValue,
+            IPCKeyPortalConfig: ConfigurationController.sharedController.dictionaryRepresentation
+        ]
+        replyHandler(data)
     }
  }
 

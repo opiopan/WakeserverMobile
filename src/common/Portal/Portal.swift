@@ -384,7 +384,7 @@ open class Portal : LooseSerializable {
     
     typealias AttributeCommandResult = (result: Bool, value: String?, message: String)
     typealias AttributeCommand = (
-        server: String,attribute: String, value: String?,
+        server: String,attribute: String, value: (()->String)?,
         callback: ((AttributeCommandResult?, PortalCommError?) -> Void)?)
 
     private var attributeCommandQue = [AttributeCommand]()
@@ -425,7 +425,7 @@ open class Portal : LooseSerializable {
             URLQueryItem(name:"attribute", value: command.attribute)
         ]
         if let value = command.value {
-            queryItems.append(URLQueryItem(name: "value", value: value))
+            queryItems.append(URLQueryItem(name: "value", value: value()))
         }
         components?.queryItems = queryItems
         attributeCommandTask = URLSession.shared.dataTask(with: components!.url!){

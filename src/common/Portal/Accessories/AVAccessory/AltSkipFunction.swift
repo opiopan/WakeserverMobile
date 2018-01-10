@@ -49,7 +49,7 @@ open class AltSkipFunction: AVFunction {
         let command: Portal.AttributeCommand = (
             server: self.server,
             attribute: "player",
-            value: action.rawValue,
+            value: {action.rawValue},
             callback: nil
         )
         portal.sendAttributeCommand(command, withOverride: false)

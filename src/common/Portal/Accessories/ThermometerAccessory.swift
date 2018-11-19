@@ -10,7 +10,7 @@ import Foundation
 import HomeKit
 
 open class ThermometerAccessory : PortalAccessoryCorrespondsServer {
-    open let attribute : String
+    public let attribute : String
     
     open var temperature : Double?
     

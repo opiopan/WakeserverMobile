@@ -22,11 +22,11 @@ open class PortalAccessoryAttribute {
     
     private static var counter = 0
 
-    open let seqid : Int
-    open let type : String
-    open let typeName : String?
-    open let create : CreateClosure?
-    open var preferenceIcon : UIImage? {
+    public let seqid : Int
+    public let type : String
+    public let typeName : String?
+    public let create : CreateClosure?
+    public var preferenceIcon : UIImage? {
         get {return PortalAccessoryImage.preference(type)}
     }
     open var dashboardIcon : UIImage? {

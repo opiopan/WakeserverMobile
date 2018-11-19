@@ -10,7 +10,7 @@ import Foundation
 
 open class DashboardAccessory : PortalAccessory {
 
-    open let units : [PortalAccessory]
+    public let units : [PortalAccessory]
     
     public init(units: [PortalAccessory]) {
         self.units = units

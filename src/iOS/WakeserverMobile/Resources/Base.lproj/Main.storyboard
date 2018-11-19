@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Aq-KS-Opb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Aq-KS-Opb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Thin</string>
-            <string>HelveticaNeue-UltraLight</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Dashboard-->
         <scene sceneID="VT9-lr-bI5">
@@ -39,7 +32,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <color key="backgroundColor" white="1" alpha="0.72953345070422526" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EzR-ET-ZNV">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="EzR-ET-ZNV">
                                             <rect key="frame" x="16" y="20" width="159.5" height="159.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="EzR-ET-ZNV" secondAttribute="height" multiplier="1:1" id="ct8-BT-Yfs"/>
@@ -52,7 +45,7 @@
                                             <rect key="frame" x="191.5" y="16" width="167.5" height="167.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4e-KM-s0W" userLabel="Indicator upper">
-                                                    <rect key="frame" x="-0.5" y="-0.5" width="167.5" height="78"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="167.5" height="78"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWk-JE-JvR" userLabel="Indicator1" customClass="AccessoryStatusView" customModule="WakeserverMobile" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="82" height="78"/>
@@ -76,14 +69,14 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAK-VQ-X2V" userLabel="Indicator lower">
-                                                    <rect key="frame" x="0.0" y="89.5" width="167.5" height="78"/>
+                                                    <rect key="frame" x="0.0" y="90" width="167.5" height="77.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpg-rM-ibR" userLabel="Indicator3" customClass="AccessoryStatusView" customModule="WakeserverMobile" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="82" height="78"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="82" height="77.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R15-8M-oXt" userLabel="Indicator4" customClass="AccessoryStatusView" customModule="WakeserverMobile" customModuleProvider="target">
-                                                            <rect key="frame" x="86" y="0.0" width="81.5" height="78"/>
+                                                            <rect key="frame" x="86" y="0.0" width="81.5" height="77.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                     </subviews>
@@ -586,7 +579,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDI-qQ-cah">
-                                                    <rect key="frame" x="16" y="0.0" width="278" height="47.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="277.5" height="47.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -773,7 +766,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Accessory Settings" id="frc-I1-Mbj">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="jto-5G-5EO">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="jto-5G-5EO">
                             <connections>
                                 <action selector="closeThisView:" destination="A9r-Pv-A5k" id="odQ-2P-VoX"/>
                             </connections>
@@ -834,7 +827,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home Kit Node" id="rb6-fp-Py4">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="cancel" id="Bb0-ze-LcF">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="cancel" id="Bb0-ze-LcF">
                             <connections>
                                 <action selector="closeThisView:" destination="Cm3-wk-neh" id="RQX-ns-wzq"/>
                             </connections>
@@ -937,7 +930,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Input string" placeholder="Plasce holder" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1sn-5A-Tbs">
-                                                    <rect key="frame" x="15" y="10.5" width="345" height="21"/>
+                                                    <rect key="frame" x="15" y="11.5" width="345" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -1146,9 +1139,9 @@ Not impremented</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDP-LM-lNl">
-                                <rect key="frame" x="119" y="28" width="137" height="30"/>
+                                <rect key="frame" x="135.5" y="28" width="104" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="137" id="PqN-iO-WvM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="PqN-iO-WvM"/>
                                     <constraint firstAttribute="height" constant="30" id="nct-OF-J3d"/>
                                 </constraints>
                                 <state key="normal" title="Reflesh &amp; Sync"/>
@@ -1203,7 +1196,7 @@ Not impremented</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYD-w2-n7y">
-                                <rect key="frame" x="15" y="8" width="170" height="15"/>
+                                <rect key="frame" x="15" y="8" width="170" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1324,7 +1317,7 @@ Not impremented</string>
     <inferredMetricsTieBreakers>
         <segue reference="YwB-tH-Apl"/>
         <segue reference="eZw-cu-mVd"/>
-        <segue reference="AHO-0G-mvx"/>
+        <segue reference="cAY-wB-2fn"/>
         <segue reference="NSl-IN-ceR"/>
     </inferredMetricsTieBreakers>
 </document>

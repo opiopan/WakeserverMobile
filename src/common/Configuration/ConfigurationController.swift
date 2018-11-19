@@ -34,7 +34,7 @@ public struct UserDefaults {
 // MARK: - Controller to access app configuration
 //-----------------------------------------------------------------------------------------
 open class ConfigurationController : NSObject {
-    static open let sharedController = ConfigurationController()
+    static public let sharedController = ConfigurationController()
     
     private let defaults : [String:Any]
     private let controller = Foundation.UserDefaults(suiteName: AppGroupID)!

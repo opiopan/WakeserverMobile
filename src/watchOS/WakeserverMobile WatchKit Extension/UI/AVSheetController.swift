@@ -219,6 +219,7 @@ class AVSheetController: WSPageController, WKCrownDelegate {
     //-----------------------------------------------------------------------------------------
     private var channelIsExpanded = false
     private var channelExpansionTimer : Timer?
+    private var channelCommitTimer : Timer?
     
     private func toggleChannelExpansion() {
         if channelIsExpanded {
@@ -254,11 +255,6 @@ class AVSheetController: WSPageController, WKCrownDelegate {
         }
     }
     
-    private func resetChannelExpansionTimer() {
-        channelExpansionTimer?.invalidate()
-        channelExpansionTimer = nil
-    }
-    
     private var is1stFocus = true
     override func pickerDidFocus(_ picker: WKInterfacePicker) {
         if !channelIsExpanded && !is1stFocus {
@@ -267,18 +263,35 @@ class AVSheetController: WSPageController, WKCrownDelegate {
         }
         is1stFocus = false
     }
-    
+
     private var pickerItemIndex = 0
+
+    private func setChannelCommitTimer(_ interval: TimeInterval) {
+        channelCommitTimer?.invalidate()
+        weak var weakSelf = self
+        channelCommitTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: false){ _ in
+            if let portal = weakSelf?.context?.portal, let channels = portal.config?.tvchannels {
+                weakSelf?.pageData?.tvChannelName?.setChannel(portal: portal){
+                    return channels[weakSelf?.pickerItemIndex ?? 0].name
+                }
+            }
+            self.channelCommitTimer = nil
+        }
+    }
+
     @IBAction func channelPickerAction(_ value: Int) {
         pickerItemIndex = value
         if channelIsExpanded {
             setChannelExpansionTimer(2)
+            setChannelCommitTimer(0.5)
+            /*
             if let portal = context?.portal, let channels = portal.config?.tvchannels {
                 weak var weakSelf = self
                 pageData?.tvChannelName?.setChannel(portal: portal){
                     return channels[weakSelf?.pickerItemIndex ?? 0].name
                 }
             }
+             */
         }
     }
     

@@ -77,7 +77,7 @@ public protocol IPCDelegate {
 open class IPC : NSObject, WCSessionDelegate {
     private static var sessionObject = IPC()
     
-    open static var session : IPC {
+    public static var session : IPC {
         get {
             if sessionObject.wcSession == nil {
                 sessionObject.startObject()

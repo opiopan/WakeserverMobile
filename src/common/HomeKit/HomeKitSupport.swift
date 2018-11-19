@@ -24,7 +24,7 @@ private let supportedServices : [String : HomeKitServiceType] = [
 open class HomeKitManager : NSObject, HMHomeManagerDelegate {
     public typealias Notifier = (HomeKitManager) -> Void
 
-    open static var sharedManager = HomeKitManager()
+    public static var sharedManager = HomeKitManager()
     
     private let manager : HMHomeManager
     private var isInitialized = false
@@ -85,9 +85,9 @@ open class HomeKitNode{
         case accessory
     }
 
-    open let nodeType : NodeType
-    open let nodeId : String
-    open let children : [HomeKitNode]
+    public let nodeType : NodeType
+    public let nodeId : String
+    public let children : [HomeKitNode]
     open var nodeName : String?
     open var homeId : String?
     open var home : HMHome?
@@ -226,7 +226,7 @@ open class HomeKitNodeManager : NSObject {
     }
 
     private func accessoryNode(accessory: HMAccessory, home: HMHome) -> [HomeKitNode] {
-        return accessory.services.flatMap{service in
+        return accessory.services.compactMap{service in
             if let _ = supportedServices[service.serviceType] {
                 let accessoryNode = HomeKitNode(type: .accessory,
                                                 nodeId: accessory.uniqueIdentifier.uuidString,

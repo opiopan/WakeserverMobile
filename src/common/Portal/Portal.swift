@@ -13,13 +13,13 @@ import Foundation
 //-----------------------------------------------------------------------------------------
 open class Portal : LooseSerializable {
     open var name: String
-    open let domain: String
-    open let hostName: String
-    open let id: String?
-    open let hostDescription: String?
-    open let platform: String?
-    open let configHash: String?
-    open let serversHash: String?
+    public let domain: String
+    public let hostName: String
+    public let id: String?
+    public let hostDescription: String?
+    public let platform: String?
+    public let configHash: String?
+    public let serversHash: String?
     open var config : PortalConfig?
     open var isEnableBeacon : Bool = true
     open var defaultPage : Int = 0
@@ -505,7 +505,7 @@ open class OutdoorsPortal : Portal{
     public required init(dict: [String : Any]) throws {
         try super.init(dict: dict)
         if let accessories = dict["home_kit_accessories"] as? [Any] {
-            homeKitAccessories = try accessories.flatMap{
+            homeKitAccessories = try accessories.compactMap{
                 input -> PortalAccessory? in
                 guard let dict = input as? [String : Any],
                     let type = dict["type"] as? String,

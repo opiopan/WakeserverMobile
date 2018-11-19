@@ -17,8 +17,8 @@ public enum PortalConfigError : Error {
 
 open class PortalConfig : LooseSerializable{
     open class TVChannel : LooseSerializable{
-        open let name : String
-        open let description : String
+        public let name : String
+        public let description : String
         
         init(){name = ""; description = ""}
 
@@ -37,9 +37,9 @@ open class PortalConfig : LooseSerializable{
         }
     }
     
-    open let pages : [PortalAccessory]
-    open let tvchannels : [TVChannel]
-    open let background: String?
+    public let pages : [PortalAccessory]
+    public let tvchannels : [TVChannel]
+    public let background: String?
 
     //-----------------------------------------------------------------------------------------
     // MARK: - Initializing / Serializing / Deserializing

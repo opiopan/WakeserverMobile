@@ -22,7 +22,7 @@ open class PortalAccessory : LooseSerializable {
     
     open var name : String
     open var type : String
-    open let server : String?
+    public let server : String?
     open var iconName : String?
     
     open var model : String = ""

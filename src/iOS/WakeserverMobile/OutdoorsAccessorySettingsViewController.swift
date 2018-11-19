@@ -173,10 +173,10 @@ class OutdoorsAccessorySettingsViewController: UITableViewController {
         }else if let target = segue.destination as? ItemSelectorViewController {
             let identity = ItemSelectorIdentity()
             identity.title = NSLocalizedString("SELECT_ICON_TITLE", comment: "")
-            identity.items = sortedPortalAccessoryTypes.flatMap{portalAccessories[$0]?.description}
+            identity.items = sortedPortalAccessoryTypes.compactMap{portalAccessories[$0]?.description}
             identity.selectionIndex =
                 portalAccessories[personality?.accessory.iconName ?? personality!.accessory.type]!.seqid
-            identity.icons = sortedPortalAccessoryTypes.flatMap{
+            identity.icons = sortedPortalAccessoryTypes.compactMap{
                 Graphics.shrinkingFilter.apply(image:
                     Graphics.coloringFilter.apply(image: portalAccessories[$0]?.dashboardIcon,
                                                   color: UIColor.lightGray),

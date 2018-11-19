@@ -28,7 +28,7 @@ open class PortalPlatform {
         PortalPlatformEntity(name: LocalizedString("PORTAL_PLATFORM_UNKNOWN"),
                              icon: libBundleImage(name: "platform_icon_home"))
     
-    open static func name(forKey key: String?) -> String {
+    public static func name(forKey key: String?) -> String {
         if let platform = list[key == nil ? "" : key!] {
             return platform.name
         }else{
@@ -36,7 +36,7 @@ open class PortalPlatform {
         }
     }
     
-    open static func icon(forKey key: String?) -> UIImage? {
+    public static func icon(forKey key: String?) -> UIImage? {
         if let platform = list[key == nil ? "" : key!] {
             return platform.icon
         }else{

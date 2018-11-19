@@ -22,8 +22,6 @@
 		7B2B45841FA4457C0067D5DC /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B45831FA4457C0067D5DC /* CommonUtils.swift */; };
 		7B2EF30A1F8A72F3009E840D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B2EF3091F8A72F3009E840D /* Assets.xcassets */; };
 		7B3DBB281F7695B2009D3715 /* ProgressHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3DBB271F7695B2009D3715 /* ProgressHeaderViewController.swift */; };
-		7B3DBB371F77DCB6009D3715 /* commonLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3DBB2E1F77DCB6009D3715 /* commonLib.framework */; };
-		7B3DBB3E1F77DCB6009D3715 /* commonLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3DBB3D1F77DCB6009D3715 /* commonLibTests.swift */; };
 		7B3DBB401F77DCB6009D3715 /* commonLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3DBB301F77DCB6009D3715 /* commonLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B3DBB431F77DCB6009D3715 /* commonLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3DBB2E1F77DCB6009D3715 /* commonLib.framework */; };
 		7B3DBB441F77DCB6009D3715 /* commonLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3DBB2E1F77DCB6009D3715 /* commonLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -36,8 +34,6 @@
 		7B471DDF1F3C99DE00B1392D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B471DDD1F3C99DE00B1392D /* Main.storyboard */; };
 		7B471DE11F3C99DE00B1392D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B471DE01F3C99DE00B1392D /* Assets.xcassets */; };
 		7B471DE41F3C99DE00B1392D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B471DE21F3C99DE00B1392D /* LaunchScreen.storyboard */; };
-		7B471DEF1F3C99DE00B1392D /* WakeserverMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B471DEE1F3C99DE00B1392D /* WakeserverMobileTests.swift */; };
-		7B471DFA1F3C99DE00B1392D /* WakeserverMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B471DF91F3C99DE00B1392D /* WakeserverMobileUITests.swift */; };
 		7B471DFF1F3C99DE00B1392D /* WakeserverMobile WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7B471DFE1F3C99DE00B1392D /* WakeserverMobile WatchKit App.app */; };
 		7B471E051F3C99DE00B1392D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B471E031F3C99DE00B1392D /* Interface.storyboard */; };
 		7B471E0E1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B471E0D1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -140,40 +136,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7B3DBB381F77DCB6009D3715 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7B471DCE1F3C99DE00B1392D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7B3DBB2D1F77DCB6009D3715;
-			remoteInfo = commonLib;
-		};
-		7B3DBB3A1F77DCB6009D3715 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7B471DCE1F3C99DE00B1392D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7B471DD51F3C99DE00B1392D;
-			remoteInfo = WakeserverMobile;
-		};
 		7B3DBB411F77DCB6009D3715 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7B471DCE1F3C99DE00B1392D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7B3DBB2D1F77DCB6009D3715;
 			remoteInfo = commonLib;
-		};
-		7B471DEB1F3C99DE00B1392D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7B471DCE1F3C99DE00B1392D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7B471DD51F3C99DE00B1392D;
-			remoteInfo = WakeserverMobile;
-		};
-		7B471DF61F3C99DE00B1392D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7B471DCE1F3C99DE00B1392D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7B471DD51F3C99DE00B1392D;
-			remoteInfo = WakeserverMobile;
 		};
 		7B471E001F3C99DE00B1392D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -267,9 +235,6 @@
 		7B3DBB2E1F77DCB6009D3715 /* commonLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = commonLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3DBB301F77DCB6009D3715 /* commonLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commonLib.h; sourceTree = "<group>"; };
 		7B3DBB311F77DCB6009D3715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B3DBB361F77DCB6009D3715 /* commonLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = commonLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B3DBB3D1F77DCB6009D3715 /* commonLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commonLibTests.swift; sourceTree = "<group>"; };
-		7B3DBB3F1F77DCB6009D3715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B3DBB531F77E8C4009D3715 /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
 		7B3DBB551F77EB0D009D3715 /* WakeserverMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WakeserverMobile.entitlements; sourceTree = "<group>"; };
 		7B416AF21FD05E12009F07F8 /* PlaceRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRecognizer.swift; sourceTree = "<group>"; };
@@ -284,12 +249,6 @@
 		7B471DE01F3C99DE00B1392D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B471DE31F3C99DE00B1392D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B471DE51F3C99DE00B1392D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B471DEA1F3C99DE00B1392D /* WakeserverMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WakeserverMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B471DEE1F3C99DE00B1392D /* WakeserverMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeserverMobileTests.swift; sourceTree = "<group>"; };
-		7B471DF01F3C99DE00B1392D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B471DF51F3C99DE00B1392D /* WakeserverMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WakeserverMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B471DF91F3C99DE00B1392D /* WakeserverMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeserverMobileUITests.swift; sourceTree = "<group>"; };
-		7B471DFB1F3C99DE00B1392D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B471DFE1F3C99DE00B1392D /* WakeserverMobile WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WakeserverMobile WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B471E041F3C99DE00B1392D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		7B471E081F3C99DE00B1392D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -369,34 +328,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7B3DBB331F77DCB6009D3715 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7B3DBB371F77DCB6009D3715 /* commonLib.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7B471DD31F3C99DE00B1392D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7B1A51DE1FB4830300C9E37D /* HomeKit.framework in Frameworks */,
 				7B3DBB431F77DCB6009D3715 /* commonLib.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7B471DE71F3C99DE00B1392D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7B471DF21F3C99DE00B1392D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,43 +388,6 @@
 				7BB1265A1FD50E95000D23B4 /* Resources */,
 			);
 			path = "WakeserverMobile WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		7B0B1ACA1FC32EFA00BF3E98 /* tests */ = {
-			isa = PBXGroup;
-			children = (
-				7B0B1ACB1FC32F0F00BF3E98 /* commonLibTests */,
-				7B0B1ACC1FC32F1B00BF3E98 /* WakeserverMobileTests */,
-				7B0B1ACD1FC32F2300BF3E98 /* WakeserverMobileUITests */,
-			);
-			path = tests;
-			sourceTree = "<group>";
-		};
-		7B0B1ACB1FC32F0F00BF3E98 /* commonLibTests */ = {
-			isa = PBXGroup;
-			children = (
-				7B3DBB3D1F77DCB6009D3715 /* commonLibTests.swift */,
-				7B3DBB3F1F77DCB6009D3715 /* Info.plist */,
-			);
-			path = commonLibTests;
-			sourceTree = "<group>";
-		};
-		7B0B1ACC1FC32F1B00BF3E98 /* WakeserverMobileTests */ = {
-			isa = PBXGroup;
-			children = (
-				7B471DEE1F3C99DE00B1392D /* WakeserverMobileTests.swift */,
-				7B471DF01F3C99DE00B1392D /* Info.plist */,
-			);
-			path = WakeserverMobileTests;
-			sourceTree = "<group>";
-		};
-		7B0B1ACD1FC32F2300BF3E98 /* WakeserverMobileUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7B471DF91F3C99DE00B1392D /* WakeserverMobileUITests.swift */,
-				7B471DFB1F3C99DE00B1392D /* Info.plist */,
-			);
-			path = WakeserverMobileUITests;
 			sourceTree = "<group>";
 		};
 		7B1A51D91FB47AEC00C9E37D /* HomeKit */ = {
@@ -570,7 +470,6 @@
 			isa = PBXGroup;
 			children = (
 				7BA15A231FC6EC9D00520944 /* src */,
-				7B0B1ACA1FC32EFA00BF3E98 /* tests */,
 				7B471DD71F3C99DE00B1392D /* Products */,
 				7B1A51DC1FB4830300C9E37D /* Frameworks */,
 			);
@@ -580,12 +479,9 @@
 			isa = PBXGroup;
 			children = (
 				7B471DD61F3C99DE00B1392D /* WakeserverMobile.app */,
-				7B471DEA1F3C99DE00B1392D /* WakeserverMobileTests.xctest */,
-				7B471DF51F3C99DE00B1392D /* WakeserverMobileUITests.xctest */,
 				7B471DFE1F3C99DE00B1392D /* WakeserverMobile WatchKit App.app */,
 				7B471E0D1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension.appex */,
 				7B3DBB2E1F77DCB6009D3715 /* commonLib.framework */,
-				7B3DBB361F77DCB6009D3715 /* commonLibTests.xctest */,
 				7B98B5E51FBD9F89001F579B /* commonLibWatch.framework */,
 			);
 			name = Products;
@@ -909,25 +805,6 @@
 			productReference = 7B3DBB2E1F77DCB6009D3715 /* commonLib.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7B3DBB351F77DCB6009D3715 /* commonLibTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7B3DBB491F77DCB6009D3715 /* Build configuration list for PBXNativeTarget "commonLibTests" */;
-			buildPhases = (
-				7B3DBB321F77DCB6009D3715 /* Sources */,
-				7B3DBB331F77DCB6009D3715 /* Frameworks */,
-				7B3DBB341F77DCB6009D3715 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7B3DBB391F77DCB6009D3715 /* PBXTargetDependency */,
-				7B3DBB3B1F77DCB6009D3715 /* PBXTargetDependency */,
-			);
-			name = commonLibTests;
-			productName = commonLibTests;
-			productReference = 7B3DBB361F77DCB6009D3715 /* commonLibTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		7B471DD51F3C99DE00B1392D /* WakeserverMobile */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B471E251F3C99DE00B1392D /* Build configuration list for PBXNativeTarget "WakeserverMobile" */;
@@ -948,42 +825,6 @@
 			productName = WakeserverMobile;
 			productReference = 7B471DD61F3C99DE00B1392D /* WakeserverMobile.app */;
 			productType = "com.apple.product-type.application";
-		};
-		7B471DE91F3C99DE00B1392D /* WakeserverMobileTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7B471E281F3C99DE00B1392D /* Build configuration list for PBXNativeTarget "WakeserverMobileTests" */;
-			buildPhases = (
-				7B471DE61F3C99DE00B1392D /* Sources */,
-				7B471DE71F3C99DE00B1392D /* Frameworks */,
-				7B471DE81F3C99DE00B1392D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7B471DEC1F3C99DE00B1392D /* PBXTargetDependency */,
-			);
-			name = WakeserverMobileTests;
-			productName = WakeserverMobileTests;
-			productReference = 7B471DEA1F3C99DE00B1392D /* WakeserverMobileTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		7B471DF41F3C99DE00B1392D /* WakeserverMobileUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7B471E2B1F3C99DE00B1392D /* Build configuration list for PBXNativeTarget "WakeserverMobileUITests" */;
-			buildPhases = (
-				7B471DF11F3C99DE00B1392D /* Sources */,
-				7B471DF21F3C99DE00B1392D /* Frameworks */,
-				7B471DF31F3C99DE00B1392D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7B471DF71F3C99DE00B1392D /* PBXTargetDependency */,
-			);
-			name = WakeserverMobileUITests;
-			productName = WakeserverMobileUITests;
-			productReference = 7B471DF51F3C99DE00B1392D /* WakeserverMobileUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		7B471DFD1F3C99DE00B1392D /* WakeserverMobile WatchKit App */ = {
 			isa = PBXNativeTarget;
@@ -1052,18 +893,13 @@
 					7B3DBB2D1F77DCB6009D3715 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = G3Y32477L5;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
-					};
-					7B3DBB351F77DCB6009D3715 = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 7B471DD51F3C99DE00B1392D;
 					};
 					7B471DD51F3C99DE00B1392D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = G3Y32477L5;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1077,20 +913,6 @@
 							};
 						};
 					};
-					7B471DE91F3C99DE00B1392D = {
-						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = G3Y32477L5;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 7B471DD51F3C99DE00B1392D;
-					};
-					7B471DF41F3C99DE00B1392D = {
-						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = G3Y32477L5;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 7B471DD51F3C99DE00B1392D;
-					};
 					7B471DFD1F3C99DE00B1392D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = G3Y32477L5;
@@ -1099,7 +921,7 @@
 					7B471E0C1F3C99DE00B1392D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = G3Y32477L5;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes.watchos.extension = {
@@ -1113,6 +935,7 @@
 					7B98B5E41FBD9F89001F579B = {
 						CreatedOnToolsVersion = 9.1;
 						DevelopmentTeam = G3Y32477L5;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1131,12 +954,9 @@
 			projectRoot = "";
 			targets = (
 				7B471DD51F3C99DE00B1392D /* WakeserverMobile */,
-				7B471DE91F3C99DE00B1392D /* WakeserverMobileTests */,
-				7B471DF41F3C99DE00B1392D /* WakeserverMobileUITests */,
 				7B471DFD1F3C99DE00B1392D /* WakeserverMobile WatchKit App */,
 				7B471E0C1F3C99DE00B1392D /* WakeserverMobile WatchKit Extension */,
 				7B3DBB2D1F77DCB6009D3715 /* commonLib */,
-				7B3DBB351F77DCB6009D3715 /* commonLibTests */,
 				7B98B5E41FBD9F89001F579B /* commonLibWatch */,
 			);
 		};
@@ -1149,13 +969,6 @@
 			files = (
 				7B2EF30A1F8A72F3009E840D /* Assets.xcassets in Resources */,
 				7BA66C591F89198200C32FDB /* Localizable.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7B3DBB341F77DCB6009D3715 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1180,20 +993,6 @@
 				7B471DDF1F3C99DE00B1392D /* Main.storyboard in Resources */,
 				7BF3EF57200103BE0091794D /* 023FE1A9-D9B1-4C17-8C00-F7CA772951E1.png in Resources */,
 				7BF3EF56200103BE0091794D /* 400E3CBD-EA2F-489E-ABE1-D8A4A349C6D8.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7B471DE81F3C99DE00B1392D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7B471DF31F3C99DE00B1392D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1261,14 +1060,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7B3DBB321F77DCB6009D3715 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7B3DBB3E1F77DCB6009D3715 /* commonLibTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7B471DD21F3C99DE00B1392D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1296,22 +1087,6 @@
 				7BC569B71FDCF9B8008ADD3F /* Communicator.swift in Sources */,
 				7B8916861FD8AC6A0063FD41 /* PlaceRecognizer.swift in Sources */,
 				7BC569C41FE5364E008ADD3F /* DebugViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7B471DE61F3C99DE00B1392D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7B471DEF1F3C99DE00B1392D /* WakeserverMobileTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7B471DF11F3C99DE00B1392D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7B471DFA1F3C99DE00B1392D /* WakeserverMobileUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1373,30 +1148,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7B3DBB391F77DCB6009D3715 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7B3DBB2D1F77DCB6009D3715 /* commonLib */;
-			targetProxy = 7B3DBB381F77DCB6009D3715 /* PBXContainerItemProxy */;
-		};
-		7B3DBB3B1F77DCB6009D3715 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7B471DD51F3C99DE00B1392D /* WakeserverMobile */;
-			targetProxy = 7B3DBB3A1F77DCB6009D3715 /* PBXContainerItemProxy */;
-		};
 		7B3DBB421F77DCB6009D3715 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7B3DBB2D1F77DCB6009D3715 /* commonLib */;
 			targetProxy = 7B3DBB411F77DCB6009D3715 /* PBXContainerItemProxy */;
-		};
-		7B471DEC1F3C99DE00B1392D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7B471DD51F3C99DE00B1392D /* WakeserverMobile */;
-			targetProxy = 7B471DEB1F3C99DE00B1392D /* PBXContainerItemProxy */;
-		};
-		7B471DF71F3C99DE00B1392D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7B471DD51F3C99DE00B1392D /* WakeserverMobile */;
-			targetProxy = 7B471DF61F3C99DE00B1392D /* PBXContainerItemProxy */;
 		};
 		7B471E011F3C99DE00B1392D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1476,7 +1231,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1507,52 +1262,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.commonLib;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7B3DBB4A1F77DCB6009D3715 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = tests/commonLibTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.commonLibTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WakeserverMobile.app/WakeserverMobile";
-			};
-			name = Debug;
-		};
-		7B3DBB4B1F77DCB6009D3715 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = tests/commonLibTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.commonLibTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WakeserverMobile.app/WakeserverMobile";
 			};
 			name = Release;
 		};
@@ -1679,8 +1392,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
@@ -1698,8 +1410,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
@@ -1754,8 +1465,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1772,70 +1482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		7B471E291F3C99DE00B1392D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = tests/WakeserverMobileTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobileTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WakeserverMobile.app/WakeserverMobile";
-			};
-			name = Debug;
-		};
-		7B471E2A1F3C99DE00B1392D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = tests/WakeserverMobileTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobileTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WakeserverMobile.app/WakeserverMobile";
-			};
-			name = Release;
-		};
-		7B471E2C1F3C99DE00B1392D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = tests/WakeserverMobileUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobileUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = WakeserverMobile;
-			};
-			name = Debug;
-		};
-		7B471E2D1F3C99DE00B1392D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = G3Y32477L5;
-				INFOPLIST_FILE = tests/WakeserverMobileUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobileUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = WakeserverMobile;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1862,7 +1509,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1893,7 +1540,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1909,15 +1556,6 @@
 			buildConfigurations = (
 				7B3DBB461F77DCB6009D3715 /* Debug */,
 				7B3DBB471F77DCB6009D3715 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7B3DBB491F77DCB6009D3715 /* Build configuration list for PBXNativeTarget "commonLibTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7B3DBB4A1F77DCB6009D3715 /* Debug */,
-				7B3DBB4B1F77DCB6009D3715 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1954,24 +1592,6 @@
 			buildConfigurations = (
 				7B471E261F3C99DE00B1392D /* Debug */,
 				7B471E271F3C99DE00B1392D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7B471E281F3C99DE00B1392D /* Build configuration list for PBXNativeTarget "WakeserverMobileTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7B471E291F3C99DE00B1392D /* Debug */,
-				7B471E2A1F3C99DE00B1392D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7B471E2B1F3C99DE00B1392D /* Build configuration list for PBXNativeTarget "WakeserverMobileUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7B471E2C1F3C99DE00B1392D /* Debug */,
-				7B471E2D1F3C99DE00B1392D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

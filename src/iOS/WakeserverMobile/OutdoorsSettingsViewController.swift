@@ -186,7 +186,7 @@ class OutdoorsSettingsViewController: UITableViewController {
     //-----------------------------------------------------------------------------------------
     // MARK: - Table view editing
     //-----------------------------------------------------------------------------------------
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath)-> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath)-> UITableViewCell.EditingStyle {
         return sections[indexPath.section].editable ? .delete : .none
     }
 
@@ -194,7 +194,7 @@ class OutdoorsSettingsViewController: UITableViewController {
         return sections[indexPath.section].editable
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let portal = config.outdoorsPortal
             portal.homeKitAccessories.remove(at: indexPath.row)

@@ -193,7 +193,7 @@ class DashboardViewController: UITableViewController, PlaceRecognizerDelegate, C
         return sections[indexPath.section].editable(indexPath)
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alert = UIAlertController(
                 title: NSLocalizedString("PORTAL_DELETE_TITLE", comment: ""),

@@ -107,7 +107,7 @@ class AccessoryStatusUnitView: UIView, CAAnimationDelegate {
             
         temperatureTextLayer = CATextLayer()
         if let child = temperatureTextLayer {
-            child.alignmentMode = kCAAlignmentCenter
+            child.alignmentMode = CATextLayerAlignmentMode.center
             initAndAddLayer(child)
         }
         
@@ -155,11 +155,11 @@ class AccessoryStatusUnitView: UIView, CAAnimationDelegate {
                 animation.delegate = self
                 animation.duration = duration
                 animation.repeatCount = 1
-                animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
                 animation.fromValue = from
                 animation.toValue = to
                 animation.isRemovedOnCompletion = false
-                animation.fillMode = kCAFillModeForwards
+                animation.fillMode = CAMediaTimingFillMode.forwards
                 return animation
             }
             

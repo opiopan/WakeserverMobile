@@ -128,7 +128,9 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" spacing="11" id="usX-Yd-2dy" userLabel="RootGroup">
                             <items>
-                                <group width="1" height="14" alignment="left" id="Pa0-ox-H1A" userLabel="SpaceGroup"/>
+                                <group width="1" height="14" alignment="left" id="Pa0-ox-H1A" userLabel="SpaceGroup">
+                                    <variation key="device=watch40mm" height="18"/>
+                                </group>
                                 <group width="1" height="35" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="uOm-vi-ty7" userLabel="ChannelGroup">
                                     <items>
                                         <picker width="1" height="1" alignment="left" verticalAlignment="center" focusStyle="stack" id="WCS-24-iyh">

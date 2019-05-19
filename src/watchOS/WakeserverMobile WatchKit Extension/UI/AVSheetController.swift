@@ -53,6 +53,7 @@ class AVSheetController: WSPageController, WKCrownDelegate {
     private var pageData: AVAccessory?
 
     private typealias GEOMETRY = (
+        space: CGFloat,
         channel: CGFloat,
         player: CGFloat,
         volumeCircle: CGFloat,
@@ -64,6 +65,7 @@ class AVSheetController: WSPageController, WKCrownDelegate {
     private var geometry: GEOMETRY!
     
     private let geometryFor42mm: GEOMETRY = (
+        space: CGFloat(11.0),
         channel: CGFloat(35.0),
         player: CGFloat(50.0),
         volumeCircle: CGFloat(50),
@@ -73,6 +75,27 @@ class AVSheetController: WSPageController, WKCrownDelegate {
     )
 
     private let geometryFor38mm: GEOMETRY = (
+        space: CGFloat(8.0),
+        channel: CGFloat(31.0),
+        player: CGFloat(44.0),
+        volumeCircle: CGFloat(44),
+        volumeSlider: CGFloat(44),
+        assosiativeButtonsNormal: CGFloat(0.9),
+        assosiativeButtonsExpand: CGFloat(2.5)
+    )
+
+    private let geometryFor44mm: GEOMETRY = (
+        space: CGFloat(11.0),
+        channel: CGFloat(35.0),
+        player: CGFloat(50.0),
+        volumeCircle: CGFloat(50),
+        volumeSlider: CGFloat(50),
+        assosiativeButtonsNormal: CGFloat(0.9),
+        assosiativeButtonsExpand: CGFloat(2.5)
+    )
+
+    private let geometryFor40mm: GEOMETRY = (
+        space: CGFloat(11.0),
         channel: CGFloat(35.0),
         player: CGFloat(50.0),
         volumeCircle: CGFloat(50),
@@ -88,8 +111,12 @@ class AVSheetController: WSPageController, WKCrownDelegate {
         super.awake(withContext: context)
 
         crownSequencer.delegate = self
-        geometry = watchSizeIs42mm ? geometryFor42mm : geometryFor38mm
-        
+        let wsize = watchSize()
+        geometry = wsize == .s38mm ? geometryFor38mm :
+                   wsize == .s42mm ? geometryFor42mm :
+                   wsize == .s40mm ? geometryFor40mm :
+                                     geometryFor44mm
+
         pageData = self.context?.page as? AVAccessory
 
         //--------------------------------------------------------------------------------------------
@@ -233,7 +260,7 @@ class AVSheetController: WSPageController, WKCrownDelegate {
             resetVolumeSlider()
             animate(withDuration: 0.3){
                 [unowned self] in
-                self.channelGroup.setRelativeHeight(0.6, withAdjustment: 0)
+                self.channelGroup.setHeight(self.geometry.channel + self.geometry.player)
                 self.playerGroup.setHeight(0)
             }
             channelPicker.focus()

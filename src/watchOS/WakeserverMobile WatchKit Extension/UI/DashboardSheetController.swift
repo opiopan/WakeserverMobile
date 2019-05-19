@@ -56,8 +56,18 @@ class DashboardSheetController: WSPageController {
     )
     
     private let geometryFor38mm: GEOMETRY = (
-        imageHeight: CGFloat(60),
+        imageHeight: CGFloat(54),
         circleThickness: CGFloat(4.5)
+    )
+    
+    private let geometryFor40mm: GEOMETRY = (
+        imageHeight: CGFloat(60),
+        circleThickness: CGFloat(5)
+    )
+    
+    private let geometryFor44mm: GEOMETRY = (
+        imageHeight: CGFloat(60),
+        circleThickness: CGFloat(5)
     )
 
     //-----------------------------------------------------------------------------------------
@@ -66,7 +76,11 @@ class DashboardSheetController: WSPageController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        geometry = watchSizeIs42mm ? geometryFor42mm : geometryFor38mm
+        let wsize = watchSize()
+        geometry = wsize == .s38mm ? geometryFor38mm :
+                   wsize == .s42mm ? geometryFor42mm :
+                   wsize == .s40mm ? geometryFor40mm :
+                                     geometryFor44mm
         pageData = self.context?.page as? DashboardAccessory
 
         units = [

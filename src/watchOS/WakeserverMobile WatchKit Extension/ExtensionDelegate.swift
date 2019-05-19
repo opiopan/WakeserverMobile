@@ -9,8 +9,19 @@
 import WatchKit
 import commonLibWatch
 
-var watchSizeIs42mm : Bool {
-    return WKInterfaceDevice.current().screenBounds.width > 136
+enum WatchSize {
+    case s38mm
+    case s42mm
+    case s40mm
+    case s44mm
+}
+
+func watchSize() -> WatchSize {
+    let width = WKInterfaceDevice.current().screenBounds.width
+    return width > 162 ? .s44mm :
+           width > 156 ? .s40mm :
+           width > 136 ? .s42mm :
+                         .s38mm
 }
 
 var bgTaskBeginDate = Date(timeIntervalSince1970: 0)

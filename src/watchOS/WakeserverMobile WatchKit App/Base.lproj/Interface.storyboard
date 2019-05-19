@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Of2-LA-Y0T">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Of2-LA-Y0T">
     <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
         <!--debugController-->
@@ -56,7 +56,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="586" y="250"/>
+            <point key="canvasLocation" x="913" y="250"/>
         </scene>
         <!--Wakeserver-->
         <scene sceneID="ztc-nt-UEt">
@@ -78,7 +78,9 @@
                 <controller identifier="homeSheetController" spacing="0.0" id="OYV-8M-cwB" customClass="HomeSheetController" customModule="WakeserverMobile_WatchKit_Extension">
                     <items>
                         <group width="1" height="6" alignment="left" id="Az7-rT-8Cw"/>
-                        <imageView width="80" height="80" alignment="center" id="tFk-0B-xfX"/>
+                        <imageView width="80" height="80" alignment="center" id="tFk-0B-xfX">
+                            <variation key="device=watch38mm" height="72" width="72"/>
+                        </imageView>
                         <group width="1" height="6" alignment="left" id="Ize-la-9cU"/>
                         <label alignment="center" text="Label" id="omV-0a-GUu">
                             <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
@@ -86,15 +88,25 @@
                         <button alignment="center" verticalAlignment="bottom" id="MlS-BI-gOF">
                             <group key="contentGroup" width="1" height="38" alignment="left" spacing="0.0" id="wuD-ce-byh">
                                 <items>
-                                    <group width="8" alignment="left" id="gmS-tM-Aiw"/>
-                                    <imageView width="28" height="28" alignment="left" verticalAlignment="center" image="home_detect_portal" id="mA4-PN-Oy9"/>
-                                    <group width="8" alignment="left" id="9Mj-3X-z2z"/>
+                                    <group width="8" alignment="left" id="gmS-tM-Aiw">
+                                        <variation key="device=watch38mm" width="5"/>
+                                    </group>
+                                    <imageView width="28" height="28" alignment="left" verticalAlignment="center" image="home_detect_portal" id="mA4-PN-Oy9">
+                                        <variation key="device=watch38mm" height="20" width="20"/>
+                                    </imageView>
+                                    <group width="8" alignment="left" id="9Mj-3X-z2z">
+                                        <variation key="device=watch38mm" width="5"/>
+                                    </group>
                                     <label alignment="center" verticalAlignment="center" text="Detect Portal" id="Rlf-Iq-PG9">
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                        <variation key="device=watch38mm">
+                                            <fontDescription key="font" type="system" pointSize="14"/>
+                                        </variation>
                                     </label>
                                 </items>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <variation key="device=watch38mm" height="27"/>
                             </group>
                             <connections>
                                 <action selector="detectPortal" destination="OYV-8M-cwB" id="HOf-Cm-5N2"/>
@@ -112,10 +124,11 @@
         <!--avPageController-->
         <scene sceneID="9ZL-zz-Dny">
             <objects>
-                <controller identifier="avPageController" id="50v-RA-ate" customClass="AVSheetController" customModule="WakeserverMobile_WatchKit_Extension">
+                <controller identifier="avPageController" fullBounds="YES" id="50v-RA-ate" customClass="AVSheetController" customModule="WakeserverMobile_WatchKit_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" spacing="11" id="usX-Yd-2dy" userLabel="RootGroup">
                             <items>
+                                <group width="1" height="14" alignment="left" id="Pa0-ox-H1A" userLabel="SpaceGroup"/>
                                 <group width="1" height="35" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="uOm-vi-ty7" userLabel="ChannelGroup">
                                     <items>
                                         <picker width="1" height="1" alignment="left" verticalAlignment="center" focusStyle="stack" id="WCS-24-iyh">
@@ -124,6 +137,7 @@
                                             </connections>
                                         </picker>
                                     </items>
+                                    <variation key="device=watch38mm" height="31"/>
                                 </group>
                                 <group width="1" height="50" alignment="left" verticalAlignment="center" spacing="2" id="jj4-yG-GDn" userLabel="PlayerGroup">
                                     <items>
@@ -137,13 +151,14 @@
                                                         <color key="tintColor" red="0.94901960784313721" green="0.95686274509803915" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </imageView>
                                                 </items>
+                                                <variation key="device=watch38mm" height="35" width="35"/>
                                             </group>
                                             <connections>
                                                 <action selector="rewindButtonAction" destination="50v-RA-ate" id="N3n-sU-FvR"/>
                                             </connections>
                                         </button>
                                         <button alignment="center" verticalAlignment="center" id="RJy-qv-4Kf" userLabel="PlayPause">
-                                            <group key="contentGroup" width="50" height="50" alignment="left" layout="overlap" radius="0.0" spacing="0.0" id="3x9-Mg-cCS">
+                                            <group key="contentGroup" width="44" height="44" alignment="left" layout="overlap" radius="0.0" spacing="0.0" id="3x9-Mg-cCS">
                                                 <items>
                                                     <group width="1" height="1" alignment="left" radius="25" id="0s2-ff-YVR" userLabel="bg">
                                                         <color key="backgroundColor" red="0.1411777139" green="0.14117419719999999" blue="0.1411766112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -167,12 +182,14 @@
                                                         <color key="tintColor" red="0.94901960784313721" green="0.95686274509803915" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </imageView>
                                                 </items>
+                                                <variation key="device=watch38mm" height="35" width="35"/>
                                             </group>
                                             <connections>
                                                 <action selector="forwardButtonAction" destination="50v-RA-ate" id="ZPp-2n-YXu"/>
                                             </connections>
                                         </button>
                                     </items>
+                                    <variation key="device=watch38mm" height="44"/>
                                 </group>
                                 <group width="1" height="50" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="26c-Ko-Qol" userLabel="Volume Group">
                                     <items>
@@ -187,6 +204,7 @@
                                                             </connections>
                                                         </slider>
                                                     </items>
+                                                    <variation key="device=watch38mm" height="44" width="44"/>
                                                 </group>
                                                 <group width="50" height="50" alignment="center" verticalAlignment="center" layout="overlap" radius="0.0" spacing="0.0" id="7V7-mQ-882" userLabel="VolumeCircle">
                                                     <items>
@@ -207,6 +225,7 @@
                                                             </connections>
                                                         </tapGestureRecognizer>
                                                     </gestureRecognizers>
+                                                    <variation key="device=watch38mm" height="44" width="44"/>
                                                 </group>
                                             </items>
                                         </group>
@@ -222,11 +241,15 @@
                                                                     </imageView>
                                                                     <label alignment="center" verticalAlignment="center" textAlignment="center" id="9cP-8T-Fon">
                                                                         <fontDescription key="font" name="ArialHebrew" family="Arial Hebrew" pointSize="10"/>
+                                                                        <variation key="device=watch38mm">
+                                                                            <fontDescription key="font" name="ArialHebrew" family="Arial Hebrew" pointSize="8"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </items>
                                                             </group>
                                                         </items>
                                                         <color key="backgroundColor" red="0.1411777139" green="0.14117419719999999" blue="0.1411766112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <variation key="device=watch38mm" height="31" width="31"/>
                                                     </group>
                                                     <connections>
                                                         <action selector="altRewindButtonAction" destination="50v-RA-ate" id="zNs-wb-h27"/>
@@ -241,12 +264,13 @@
                                                                         <color key="tintColor" red="0.94901960784313721" green="0.95686274509803915" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </imageView>
                                                                     <label alignment="center" verticalAlignment="center" textAlignment="center" id="6OL-0x-gAm">
-                                                                        <fontDescription key="font" name="ArialHebrew" family="Arial Hebrew" pointSize="10"/>
+                                                                        <fontDescription key="font" name="ArialHebrew" family="Arial Hebrew" pointSize="8"/>
                                                                     </label>
                                                                 </items>
                                                             </group>
                                                         </items>
                                                         <color key="backgroundColor" red="0.1411777139" green="0.14117419719999999" blue="0.1411766112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <variation key="device=watch38mm" height="31" width="31"/>
                                                     </group>
                                                     <connections>
                                                         <action selector="altForwardButtonAction" destination="50v-RA-ate" id="nAW-SX-ZZm"/>
@@ -255,8 +279,10 @@
                                             </items>
                                         </group>
                                     </items>
+                                    <variation key="device=watch38mm" height="44"/>
                                 </group>
                             </items>
+                            <variation key="device=watch38mm" spacing="8"/>
                         </group>
                     </items>
                     <menu key="menu" id="fcW-NX-37U">
@@ -310,12 +336,19 @@
                                                 <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="BGd-69-45K"/>
                                                 <label alignment="center" verticalAlignment="center" text="23°" id="Azf-eM-Xsy" userLabel="Caption">
                                                     <fontDescription key="font" type="system" pointSize="20"/>
+                                                    <variation key="device=watch38mm">
+                                                        <fontDescription key="font" type="system" pointSize="18"/>
+                                                    </variation>
                                                 </label>
                                             </items>
                                             <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="0.35777948943661969" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <variation key="device=watch38mm" height="54" radius="27" width="54"/>
                                         </group>
                                         <label width="78" alignment="center" text="Label" textAlignment="center" id="4JS-Iy-LU4">
                                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            <variation key="device=watch38mm" width="68">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </variation>
                                         </label>
                                     </items>
                                     <gestureRecognizers>
@@ -325,6 +358,7 @@
                                             </connections>
                                         </tapGestureRecognizer>
                                     </gestureRecognizers>
+                                    <variation key="device=watch38mm" spacing="1"/>
                                 </group>
                                 <group alignment="center" verticalAlignment="center" layout="vertical" spacing="2" id="vSc-rh-iCJ" userLabel="Unit2">
                                     <items>
@@ -333,12 +367,19 @@
                                                 <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="31w-7c-rk3"/>
                                                 <label alignment="center" verticalAlignment="center" text="23°" id="Ugk-Gq-bZT" userLabel="Caption">
                                                     <fontDescription key="font" type="system" pointSize="20"/>
+                                                    <variation key="device=watch38mm">
+                                                        <fontDescription key="font" type="system" pointSize="18"/>
+                                                    </variation>
                                                 </label>
                                             </items>
                                             <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="0.35777948939999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <variation key="device=watch38mm" height="54" radius="27" width="54"/>
                                         </group>
                                         <label width="78" alignment="center" text="Label" textAlignment="center" id="9uO-Ht-ZXm">
                                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            <variation key="device=watch38mm" width="68">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </variation>
                                         </label>
                                     </items>
                                     <gestureRecognizers>
@@ -348,6 +389,7 @@
                                             </connections>
                                         </tapGestureRecognizer>
                                     </gestureRecognizers>
+                                    <variation key="device=watch38mm" spacing="0.0"/>
                                 </group>
                             </items>
                         </group>
@@ -360,12 +402,19 @@
                                                 <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="QFG-ts-mOZ"/>
                                                 <label alignment="center" verticalAlignment="center" text="23°" id="9Le-1P-cND" userLabel="Caption">
                                                     <fontDescription key="font" type="system" pointSize="20"/>
+                                                    <variation key="device=watch38mm">
+                                                        <fontDescription key="font" type="system" pointSize="18"/>
+                                                    </variation>
                                                 </label>
                                             </items>
                                             <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="0.35777948939999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <variation key="device=watch38mm" height="54" radius="27" width="54"/>
                                         </group>
                                         <label width="78" alignment="center" text="Label" textAlignment="center" id="g0q-zz-0gC">
                                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            <variation key="device=watch38mm" width="68">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </variation>
                                         </label>
                                     </items>
                                     <gestureRecognizers>
@@ -375,6 +424,7 @@
                                             </connections>
                                         </tapGestureRecognizer>
                                     </gestureRecognizers>
+                                    <variation key="device=watch38mm" spacing="1"/>
                                 </group>
                                 <group alignment="center" verticalAlignment="center" layout="vertical" spacing="2" id="WlO-2W-a43" userLabel="Unit4">
                                     <items>
@@ -383,12 +433,19 @@
                                                 <imageView width="1" height="1" alignment="center" verticalAlignment="center" id="hAs-EQ-fSj"/>
                                                 <label alignment="center" verticalAlignment="center" text="23°" id="Zij-zc-8y8" userLabel="Caption">
                                                     <fontDescription key="font" type="system" pointSize="20"/>
+                                                    <variation key="device=watch38mm">
+                                                        <fontDescription key="font" type="system" pointSize="18"/>
+                                                    </variation>
                                                 </label>
                                             </items>
                                             <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="0.35777948939999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <variation key="device=watch38mm" height="54" radius="27" width="54"/>
                                         </group>
                                         <label width="78" alignment="center" text="Label" textAlignment="center" id="bQM-DV-GmA">
                                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            <variation key="device=watch38mm" width="68">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </variation>
                                         </label>
                                     </items>
                                     <gestureRecognizers>
@@ -398,6 +455,7 @@
                                             </connections>
                                         </tapGestureRecognizer>
                                     </gestureRecognizers>
+                                    <variation key="device=watch38mm" spacing="1"/>
                                 </group>
                             </items>
                         </group>
@@ -431,6 +489,13 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="324" y="250"/>
+        </scene>
+        <!--acPageController-->
+        <scene sceneID="gJE-fv-s0W">
+            <objects>
+                <controller identifier="acPageController" id="KXu-0D-9SV"/>
+            </objects>
+            <point key="canvasLocation" x="614" y="250"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.3529411764705882" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

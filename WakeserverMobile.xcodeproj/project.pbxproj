@@ -30,6 +30,8 @@
 		7B44142C1FA0D58300DC3303 /* WebUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B44142B1FA0D58300DC3303 /* WebUIViewController.swift */; };
 		7B45D4151FD24E450028CA89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B45D4141FD24E450028CA89 /* Assets.xcassets */; };
 		7B45D45F1FD281480028CA89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B45D45E1FD281480028CA89 /* Localizable.strings */; };
+		7B470EDC21DAD83200B662D1 /* ACAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F4C0F21B2B5BB00930ADC /* ACAccessory.swift */; };
+		7B470EDD21DAD83300B662D1 /* ACAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F4C0F21B2B5BB00930ADC /* ACAccessory.swift */; };
 		7B471DDA1F3C99DE00B1392D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B471DD91F3C99DE00B1392D /* AppDelegate.swift */; };
 		7B471DDF1F3C99DE00B1392D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B471DDD1F3C99DE00B1392D /* Main.storyboard */; };
 		7B471DE11F3C99DE00B1392D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B471DE01F3C99DE00B1392D /* Assets.xcassets */; };
@@ -237,6 +239,7 @@
 		7B3DBB311F77DCB6009D3715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B3DBB531F77E8C4009D3715 /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
 		7B3DBB551F77EB0D009D3715 /* WakeserverMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WakeserverMobile.entitlements; sourceTree = "<group>"; };
+		7B3F4C0F21B2B5BB00930ADC /* ACAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACAccessory.swift; sourceTree = "<group>"; };
 		7B416AF21FD05E12009F07F8 /* PlaceRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRecognizer.swift; sourceTree = "<group>"; };
 		7B4225771FEE3B3500F2FE68 /* InterfaceCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceCircle.swift; sourceTree = "<group>"; };
 		7B4414271F9DFEE700DC3303 /* ItemSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSelectorViewController.swift; sourceTree = "<group>"; };
@@ -446,6 +449,14 @@
 				7B471E121F3C99DE00B1392D /* DebugSheetController.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		7B3F4C0E21B2B57300930ADC /* ACAccessory */ = {
+			isa = PBXGroup;
+			children = (
+				7B3F4C0F21B2B5BB00930ADC /* ACAccessory.swift */,
+			);
+			path = ACAccessory;
 			sourceTree = "<group>";
 		};
 		7B4225761FEE3AD400F2FE68 /* Components */ = {
@@ -667,6 +678,7 @@
 				7BBBE4961F922E5100E80FA8 /* PortalAccessoryList.swift */,
 				7BADC5B11F91C867001B3442 /* PortalAccessory.swift */,
 				7B5BBA9C1F9B788100FFB495 /* AVAccessory */,
+				7B3F4C0E21B2B57300930ADC /* ACAccessory */,
 				7BADC5B71F91DBB8001B3442 /* SwitchAcceesory.swift */,
 				7BADC5B91F91DC32001B3442 /* ThermometerAccessory.swift */,
 				7BADC5BB1F91DC59001B3442 /* DashboardAccessory.swift */,
@@ -945,6 +957,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1054,6 +1067,7 @@
 				7BA66C4D1F890FDA00C32FDB /* Portal.swift in Sources */,
 				7B5BBAA01F9B7EC700FFB495 /* VolumeFunction.swift in Sources */,
 				7BADC5B21F91C867001B3442 /* PortalAccessory.swift in Sources */,
+				7B470EDD21DAD83300B662D1 /* ACAccessory.swift in Sources */,
 				7B2B45841FA4457C0067D5DC /* CommonUtils.swift in Sources */,
 				7B98B6121FBF8FC1001F579B /* IPC.swift in Sources */,
 				7BADC5BC1F91DC59001B3442 /* DashboardAccessory.swift in Sources */,
@@ -1128,6 +1142,7 @@
 				7B98B5FD1FBDB482001F579B /* AVAccessory.swift in Sources */,
 				7B98B5FA1FBDB475001F579B /* PortalConfig.swift in Sources */,
 				7B98B6081FBDB4C4001F579B /* AuxFunction.swift in Sources */,
+				7B470EDC21DAD83200B662D1 /* ACAccessory.swift in Sources */,
 				7B98B6021FBDB499001F579B /* TVChannelNameFunction.swift in Sources */,
 				7B98B5F51FBDB343001F579B /* CommonUtils.swift in Sources */,
 				7B98B5FC1FBDB47E001F579B /* PortalAccessory.swift in Sources */,

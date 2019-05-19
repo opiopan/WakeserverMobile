@@ -220,6 +220,15 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 CLKImageProvider(onePieceImage: UIImage(named: data.iconNamePrefix + "Utility")!)
             utilityTemplate.textProvider = CLKSimpleTextProvider(text: data.portalName)
             template = utilityTemplate
+        case .graphicCircular:
+            if #available(watchOSApplicationExtension 5.0, *) {
+                let graphCircularTemplate = CLKComplicationTemplateGraphicCircularImage()
+                graphCircularTemplate.imageProvider =
+                    CLKFullColorImageProvider(fullColorImage: UIImage(named: data.iconNamePrefix + "GraphicCircular")!)
+                template = graphCircularTemplate
+            } else {
+                template = nil
+            }
         default:
             template = nil
         }

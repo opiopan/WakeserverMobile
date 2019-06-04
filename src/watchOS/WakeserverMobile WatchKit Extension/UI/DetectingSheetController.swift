@@ -14,31 +14,7 @@ class DetectingSheetController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        if ConfigurationController.sharedController.registeredPortals.count == 0 {
-            weak var weakSelf = self
-            communicator.loadPortalConfig{
-                error in
-                DispatchQueue.global().async {
-                    weakSelf?.detectPortal()
-                }
-            }
-        }else{
-            detectPortal()
-        }
-    }
-
-    private func detectPortal() {
-        communicator.getLocation(handler: {portalData, error in
-            guard let portalData = portalData else {
-                if let portal = placeRecognizer.place.portalObject() {
-                    placeRecognizer.setPlace(withPortal: (portalId: portal.id, service: portal.service))
-                }else if placeRecognizer.place.isOutdoors(){
-                    placeRecognizer.setPlace(withPortal: (portalId: nil, service: nil))
-                }
-                return
-            }
-            placeRecognizer.setPlace(withPortal: portalData)
-        })
+        placeRecognizer.refleshForce()
     }
     
     override func willActivate() {

@@ -97,6 +97,8 @@ class Communicator : IPCDelegate {
                     IPCKeyServiceName: service.name,
                     IPCKeyServiceDomain: service.domain,
                     IPCKeyServicePort: service.port,
+                    IPCKeyConfigHash: portal.configHash ?? "",
+                    IPCKeyServersHash: portal.serversHash ?? "",
                     ]
                 replyHandler(data)
                 self.getPortalCmd = nil

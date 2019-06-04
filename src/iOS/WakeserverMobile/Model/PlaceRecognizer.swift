@@ -41,13 +41,13 @@ open class PlaceRecognizer : WSPBrowserDelegate{
     // MARK: - delegate manipulation
     //-----------------------------------------------------------------------------------------
     open func register(delegate: PlaceRecognizerDelegate) {
-        if (delegates.index{$0 === delegate}) == nil {
+        if (delegates.firstIndex{$0 === delegate}) == nil {
             delegates.append(delegate)
         }
     }
     
     open func unregister(delegate: PlaceRecognizerDelegate) {
-        if let index = (delegates.index{$0 === delegate}) {
+        if let index = (delegates.firstIndex{$0 === delegate}) {
             delegates.remove(at: index)
         }
     }
@@ -86,7 +86,7 @@ open class PlaceRecognizer : WSPBrowserDelegate{
     
     open func updatePortalConfig(){
         let currentID = currentPortalHolder.id
-        if let index = (config.registeredPortals.index{$0.id == currentID}) {
+        if let index = (config.registeredPortals.firstIndex{$0.id == currentID}) {
             currentPortalHolder = config.registeredPortals[index]
         } else {
             currentPortalHolder = config.outdoorsPortal
@@ -172,7 +172,7 @@ open class PlaceRecognizer : WSPBrowserDelegate{
         if targetPortals[0].configHash != portal.configHash || targetPortals[0].serversHash != portal.serversHash {
             portal.updateConfig{
                 [unowned self] portal, error in
-                if let portal = portal, let index = (self.config.registeredPortals.index{$0.id == portal.id}) {
+                if let portal = portal, let index = (self.config.registeredPortals.firstIndex{$0.id == portal.id}) {
                     var portals = self.config.registeredPortals
                     portal.reflectOption(of: portals[index])
                     portals.replaceSubrange(index..<index + 1, with: [portal])

@@ -124,13 +124,13 @@ open class PortalAccessory : LooseSerializable {
     }
     
     open func register(delegate: PortalAccessoryDelegate) {
-        if (delegates.index{$0 === delegate}) == nil {
+        if (delegates.firstIndex{$0 === delegate}) == nil {
             delegates.append(delegate)
         }
     }
     
     open func unregister(delegate: PortalAccessoryDelegate) {
-        if let index = (delegates.index{$0 === delegate}) {
+        if let index = (delegates.firstIndex{$0 === delegate}) {
             delegates.remove(at: index)
         }
     }

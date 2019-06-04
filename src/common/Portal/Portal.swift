@@ -60,7 +60,7 @@ open class Portal : LooseSerializable {
     
     open var dashboardAccessory : DashboardAccessory? {
         get {
-            if let index = config?.pages.index(where: {$0 as? DashboardAccessory != nil}) {
+            if let index = config?.pages.firstIndex(where: {$0 as? DashboardAccessory != nil}) {
                 return config?.pages[index] as? DashboardAccessory
             }else{
                 return nil
@@ -251,11 +251,11 @@ open class Portal : LooseSerializable {
     open func reflectOption(of portal: Portal) {
         name = portal.name
         isEnableBeacon = portal.isEnableBeacon
-        if let index = (config?.pages.index{$0.name == portal.config?.pages[portal.defaultPage].name}) {
+        if let index = (config?.pages.firstIndex{$0.name == portal.config?.pages[portal.defaultPage].name}) {
             defaultPage = index
         }
         config?.pages.forEach{ page in
-            if let index = (portal.config?.pages.index{$0.name == page.name}) {
+            if let index = (portal.config?.pages.firstIndex{$0.name == page.name}) {
                 page.reflectOption(of: (portal.config?.pages[index])!)
             }
         }
@@ -394,7 +394,7 @@ open class Portal : LooseSerializable {
         DispatchQueue.main.async {
             [unowned self] in
             if override {
-                let index = self.attributeCommandQue.index(where: {
+                let index = self.attributeCommandQue.firstIndex(where: {
                     $0.server == command.server && $0.attribute == command.attribute &&
                     (($0.value == nil && command.value == nil) || ($0.value != nil && command.value != nil))
                 })

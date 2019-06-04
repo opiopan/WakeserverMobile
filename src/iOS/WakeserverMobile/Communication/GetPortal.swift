@@ -40,7 +40,7 @@ open class GetPortal : WSPBrowserDelegate{
     
     public func wspBrowserDetectPortalAdd(browser: WSPBrowser, portal: Portal) {
         let portals = ConfigurationController.sharedController.registeredPortals
-        guard let index = portals.index(where:{$0.id == portal.id}) else {
+        guard let index = portals.firstIndex(where:{$0.id == portal.id}) else {
             return
         }
         stop()

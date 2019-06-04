@@ -91,7 +91,9 @@ class Communicator : IPCDelegate {
             let sport = data[IPCKeyServicePort] as? Int {
             service = (name: sname, domain: sdomain, port: sport)
         }
-        return (portalId: data[IPCKeyPortalId] as? String, service: service)
+        return (portalId: data[IPCKeyPortalId] as? String, service: service,
+                serversHash: data[IPCKeyServersHash] as? String,
+                configHash: data[IPCKeyConfigHash] as? String)
     }
 }
 

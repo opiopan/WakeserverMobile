@@ -20,6 +20,8 @@ public let IPCKeyCommand = "IPCKeyCmd"
 public let IPCKeyResponse = "IPCKeyRsp"
 public let IPCKeyPortalId = "IPCKeyPortalId"
 public let IPCKeyPortalUrl = "IPCKeyIPUrl"
+public let IPCKeyServersHash = "IPCKeyServersHash"
+public let IPCKeyConfigHash = "IPCKeyConfigHash"
 public let IPCKeyServiceName = "IPCKeyServiceName"
 public let IPCKeyServiceDomain = "IPCKeyServiceDomain"
 public let IPCKeyServicePort = "IPCKeyServicePort"
@@ -104,6 +106,8 @@ open class IPC : NSObject, WCSessionDelegate {
             wcSession = WCSession.default
             wcSession?.delegate = self
             wcSession?.activate()
+        }else{
+            print("ERROR: IPC cannot start due to unsupported environment")
         }
     }
 

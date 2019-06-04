@@ -43,13 +43,13 @@ class AddPortalViewController: UITableViewController, WSPBrowserDelegate {
     // MARK: - WSPBrowserProxy protocol
     //-----------------------------------------------------------------------------------------
     func wspBrowserDetectPortalAdd(browser: WSPBrowser, portal: Portal) {
-        if config.registeredPortals.index(where:{$0.id == portal.id}) == nil {
+        if config.registeredPortals.firstIndex(where:{$0.id == portal.id}) == nil {
             portal.updateConfig(){
                 [unowned self] (portal:Portal?, error) in
                 if let portal = portal {
                     self.portals.append(portal)
                     self.portals = self.portals.sorted{$0.hostName < $1.hostName}
-                    let index = self.portals.index{$0 === portal}
+                    let index = self.portals.firstIndex{$0 === portal}
                     self.tableView.beginUpdates()
                     self.tableView.insertRows(at: [IndexPath(row: index!, section: 0)], with: .automatic)
                     self.tableView.endUpdates()
@@ -60,7 +60,7 @@ class AddPortalViewController: UITableViewController, WSPBrowserDelegate {
     }
     
     func wspBrowserDetectPortalDel(browser: WSPBrowser, portal: Portal) {
-        if let index = portals.index(where:{$0.id == portal.id}) {
+        if let index = portals.firstIndex(where:{$0.id == portal.id}) {
             portals.remove(at: index)
             tableView.beginUpdates()
             tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)

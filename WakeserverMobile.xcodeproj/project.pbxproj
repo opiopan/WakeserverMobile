@@ -29,7 +29,6 @@
 		7B4414281F9DFEE700DC3303 /* ItemSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4414271F9DFEE700DC3303 /* ItemSelectorViewController.swift */; };
 		7B44142C1FA0D58300DC3303 /* WebUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B44142B1FA0D58300DC3303 /* WebUIViewController.swift */; };
 		7B45D4151FD24E450028CA89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B45D4141FD24E450028CA89 /* Assets.xcassets */; };
-		7B45D45F1FD281480028CA89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B45D45E1FD281480028CA89 /* Localizable.strings */; };
 		7B470EDC21DAD83200B662D1 /* ACAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F4C0F21B2B5BB00930ADC /* ACAccessory.swift */; };
 		7B470EDD21DAD83300B662D1 /* ACAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F4C0F21B2B5BB00930ADC /* ACAccessory.swift */; };
 		7B471DDA1F3C99DE00B1392D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B471DD91F3C99DE00B1392D /* AppDelegate.swift */; };
@@ -118,6 +117,7 @@
 		7BC569BB1FDD152D008ADD3F /* Commuticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC569BA1FDD152D008ADD3F /* Commuticator.swift */; };
 		7BC569BE1FE15B31008ADD3F /* ComplicationRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC569BC1FE01414008ADD3F /* ComplicationRepresentation.swift */; };
 		7BC569C41FE5364E008ADD3F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC569C31FE5364E008ADD3F /* DebugViewController.swift */; };
+		7BC66CD92294FABA00A07E10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BC66CDB2294FABA00A07E10 /* Localizable.strings */; };
 		7BF3EF4F200103BE0091794D /* 191177BC-B648-4580-8ED6-A9FB1B6ABD79.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF43200103BE0091794D /* 191177BC-B648-4580-8ED6-A9FB1B6ABD79.json */; };
 		7BF3EF50200103BE0091794D /* CA4DD92C-5266-4394-9C8B-529B9B10AB8F.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF44200103BE0091794D /* CA4DD92C-5266-4394-9C8B-529B9B10AB8F.png */; };
 		7BF3EF51200103BE0091794D /* BA515557-B5F8-4FDE-8970-E90BAB9C5D9C.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EF45200103BE0091794D /* BA515557-B5F8-4FDE-8970-E90BAB9C5D9C.png */; };
@@ -245,7 +245,6 @@
 		7B4414271F9DFEE700DC3303 /* ItemSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSelectorViewController.swift; sourceTree = "<group>"; };
 		7B44142B1FA0D58300DC3303 /* WebUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUIViewController.swift; sourceTree = "<group>"; };
 		7B45D4141FD24E450028CA89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7B45D45E1FD281480028CA89 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7B471DD61F3C99DE00B1392D /* WakeserverMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeserverMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B471DD91F3C99DE00B1392D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B471DDE1F3C99DE00B1392D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -303,6 +302,7 @@
 		7BC569BA1FDD152D008ADD3F /* Commuticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commuticator.swift; sourceTree = "<group>"; };
 		7BC569BC1FE01414008ADD3F /* ComplicationRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationRepresentation.swift; sourceTree = "<group>"; };
 		7BC569C31FE5364E008ADD3F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		7BC66CDA2294FABA00A07E10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7BF3EF43200103BE0091794D /* 191177BC-B648-4580-8ED6-A9FB1B6ABD79.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "191177BC-B648-4580-8ED6-A9FB1B6ABD79.json"; sourceTree = "<group>"; };
 		7BF3EF44200103BE0091794D /* CA4DD92C-5266-4394-9C8B-529B9B10AB8F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CA4DD92C-5266-4394-9C8B-529B9B10AB8F.png"; sourceTree = "<group>"; };
 		7BF3EF45200103BE0091794D /* BA515557-B5F8-4FDE-8970-E90BAB9C5D9C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BA515557-B5F8-4FDE-8970-E90BAB9C5D9C.png"; sourceTree = "<group>"; };
@@ -690,7 +690,7 @@
 			isa = PBXGroup;
 			children = (
 				7B45D4141FD24E450028CA89 /* Assets.xcassets */,
-				7B45D45E1FD281480028CA89 /* Localizable.strings */,
+				7BC66CDB2294FABA00A07E10 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -905,13 +905,13 @@
 					7B3DBB2D1F77DCB6009D3715 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = G3Y32477L5;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					7B471DD51F3C99DE00B1392D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = G3Y32477L5;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -933,7 +933,7 @@
 					7B471E0C1F3C99DE00B1392D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = G3Y32477L5;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes.watchos.extension = {
@@ -947,17 +947,16 @@
 					7B98B5E41FBD9F89001F579B = {
 						CreatedOnToolsVersion = 9.1;
 						DevelopmentTeam = G3Y32477L5;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 7B471DD11F3C99DE00B1392D /* Build configuration list for PBXProject "WakeserverMobile" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -1023,7 +1022,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B45D4151FD24E450028CA89 /* Assets.xcassets in Resources */,
-				7B45D45F1FD281480028CA89 /* Localizable.strings in Resources */,
+				7BC66CD92294FABA00A07E10 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1210,6 +1209,14 @@
 			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
+		7BC66CDB2294FABA00A07E10 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BC66CDA2294FABA00A07E10 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7BFF80A31F6F9081001DB56E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1246,7 +1253,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1277,7 +1284,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.commonLib;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1407,7 +1414,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
@@ -1425,7 +1432,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
@@ -1480,7 +1487,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1497,7 +1504,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opiopan.WakeserverMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1524,7 +1531,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1555,7 +1562,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

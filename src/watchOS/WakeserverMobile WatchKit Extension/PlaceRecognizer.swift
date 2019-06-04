@@ -91,9 +91,12 @@ open class PlaceRecognizer {
         case updatingPlace
         case updatingState
         case updatingCharacteristics
+        case invalidatingConfig
+        case updatingConfig
     }
     
     private var refleshTransaction = RefleshPhase.none
+    private var needRestart = false
     private var transactionHasUpdated = false
     public var isInTransaction : Bool {
         get {
@@ -140,14 +143,16 @@ open class PlaceRecognizer {
     }
 
     public typealias ServiceRepresentation = (name: String, domain: String, port: Int)
-    public typealias PortalRepresentation = (portalId: String?, service: ServiceRepresentation?)
+    public typealias PortalRepresentation = (
+        portalId: String?, service: ServiceRepresentation?,
+        serversHash: String?, configHash: String?)
     
     open func setPlace(withPortal portalData: PortalRepresentation) {
         if portalData.portalId == nil {
             self.updateAndNotifyPlace(place: .outdoors)
         }else{
             let portals = ConfigurationController.sharedController.registeredPortals
-            if let index = portals.index(where: {$0.id == portalData.portalId}) {
+            if let index = portals.firstIndex(where: {$0.id == portalData.portalId}) {
                 let portal = portals[index]
                 portal.service = portalData.service
                 self.updateAndNotifyPlace(place: .portal(portal))
@@ -159,13 +164,13 @@ open class PlaceRecognizer {
     // MARK: - delegate manipulation
     //-----------------------------------------------------------------------------------------
     open func register(delegate: PlaceRecognizerDelegate) {
-        if (delegates.index{$0 === delegate}) == nil {
+        if (delegates.firstIndex{$0 === delegate}) == nil {
             delegates.append(delegate)
         }
     }
     
     open func unregister(delegate: PlaceRecognizerDelegate) {
-        if let index = (delegates.index{$0 === delegate}) {
+        if let index = (delegates.firstIndex{$0 === delegate}) {
             delegates.remove(at: index)
         }
     }
@@ -244,6 +249,18 @@ open class PlaceRecognizer {
         scheduleReflesh(.none, withError: false, withComplitionHandler: handler)
     }
     
+    open func refleshForce() {
+        DispatchQueue.main.async {
+            [unowned self] in
+            self.updateTimePlace = Date(timeIntervalSince1970: 0)
+            if self.refleshTransaction == .none {
+                self.scheduleReflesh(.none, withError: false, withComplitionHandler: nil)
+            }else{
+                self.needRestart = true
+            }
+        }
+    }
+    
     private func scheduleReflesh(_ phase: RefleshPhase, withError error: Bool, withComplitionHandler handler: (()->Void)?) {
         DispatchQueue.main.async {
             [unowned self] in
@@ -257,6 +274,11 @@ open class PlaceRecognizer {
             guard !error else {
                 self.finishTransaction()
                 handler?()
+                return
+            }
+            guard !self.needRestart else {
+                self.finishTransaction()
+                self.scheduleReflesh(.none, withError: false, withComplitionHandler: handler)
                 return
             }
             
@@ -299,12 +321,20 @@ open class PlaceRecognizer {
                 complicationDatastore.update()
                 self.finishTransaction()
                 handler?()
+                
+            case .invalidatingConfig:
+                self.refleshTransaction = .updatingConfig
+                self.refleshConfig(handler)
+            case.updatingConfig:
+                self.finishTransaction()
+                self.scheduleReflesh(.none, withError: false, withComplitionHandler: handler)
             }
         }
     }
     
     private func finishTransaction(){
         self.refleshTransaction = .none
+        self.needRestart = false;
         self.tranTimeEnd = Date()
     }
     
@@ -327,10 +357,20 @@ open class PlaceRecognizer {
                     self.updateAndNotifyPlace(place: .outdoors)
                 }else{
                     let portals = ConfigurationController.sharedController.registeredPortals
-                    if let index = portals.index(where: {$0.id == result?.portalId}) {
+                    if let index = portals.firstIndex(where: {$0.id == result?.portalId}){
                         let portal = portals[index]
+                        if portal.serversHash != result?.serversHash ||
+                            portal.configHash != result?.configHash {
+                            self.refleshTransaction = .invalidatingConfig
+                            self.scheduleReflesh(.invalidatingConfig, withError: false, withComplitionHandler: handler)
+                            return
+                        }
                         portal.service = result?.service
                         self.updateAndNotifyPlace(place: .portal(portal))
+                    }else{
+                        self.refleshTransaction = .invalidatingConfig
+                        self.scheduleReflesh(.invalidatingConfig, withError: false, withComplitionHandler: handler)
+                        return
                     }
                 }
                 self.updateTimePlace = Date()
@@ -360,6 +400,13 @@ open class PlaceRecognizer {
             }
         }else{
             scheduleReflesh(.updatingCharacteristics, withError: true, withComplitionHandler: handler)
+        }
+    }
+    
+    private func refleshConfig(_ handler: (()->Void)?) {
+        communicator.loadPortalConfig{
+            [unowned self] error in
+            self.scheduleReflesh(.updatingConfig, withError: false, withComplitionHandler: handler)
         }
     }
 

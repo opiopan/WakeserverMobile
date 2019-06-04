@@ -59,15 +59,15 @@ open class HomeKitManager : NSObject, HMHomeManagerDelegate {
 
     open func serviceAndReleatedObjects(homeId: String, accessoryId: String, serviceId: String)
         -> (home: HMHome, accessory: HMAccessory, service: HMService)? {
-            guard let homeIndex = manager.homes.index(where: {$0.uniqueIdentifier.uuidString == homeId}) else {
+            guard let homeIndex = manager.homes.firstIndex(where: {$0.uniqueIdentifier.uuidString == homeId}) else {
                 return nil
             }
             let home = manager.homes[homeIndex]
-            guard let accessoryIndex = home.accessories.index(where: {$0.uniqueIdentifier.uuidString == accessoryId}) else {
+            guard let accessoryIndex = home.accessories.firstIndex(where: {$0.uniqueIdentifier.uuidString == accessoryId}) else {
                 return nil
             }
             let accessory = home.accessories[accessoryIndex]
-            guard let serviceIndex = accessory.services.index(where: {$0.uniqueIdentifier.uuidString == serviceId}) else {
+            guard let serviceIndex = accessory.services.firstIndex(where: {$0.uniqueIdentifier.uuidString == serviceId}) else {
                 return nil
             }
             let service = accessory.services[serviceIndex]
@@ -104,7 +104,7 @@ open class HomeKitNode{
         var newacc : PortalAccessory? = nil
         if service?.serviceType == HMServiceTypeTemperatureSensor {
             newacc = ThermometerAccessory()
-        }else if service?.characteristics.index(where: {$0.characteristicType == HMCharacteristicTypePowerState}) != nil {
+        }else if service?.characteristics.firstIndex(where: {$0.characteristicType == HMCharacteristicTypePowerState}) != nil {
             newacc = SwitchAccessory()
         }
         newacc?.reflectTypeInformation()

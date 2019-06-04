@@ -44,13 +44,13 @@ open class ConfigurationController : NSObject {
     // MARK: - delegates operation
     //--------------------------------------------------------------------------------------
     open func register(delegate: ConfigurationControllerDelegate) {
-        if (delegates.index{$0 === delegate}) == nil {
+        if (delegates.firstIndex{$0 === delegate}) == nil {
             delegates.append(delegate)
         }
     }
     
     open func unregister(delegate: ConfigurationControllerDelegate) {
-        if let index = (delegates.index{$0 === delegate}) {
+        if let index = (delegates.firstIndex{$0 === delegate}) {
             delegates.remove(at: index)
         }
     }
@@ -94,6 +94,16 @@ open class ConfigurationController : NSObject {
         reflect(UserDefaults.RegisteredPortals)
         reflect(UserDefaults.OutdoorsPortal)
         syncCount += 1
+
+        registeredPortals =
+            (controller.value(forKey: UserDefaults.RegisteredPortals) as! [[String : Any]])
+                .map{try! Portal(dict: $0)}
+        outdoorsPortal =
+            try! OutdoorsPortal(dict:(controller.value(forKey: UserDefaults.OutdoorsPortal) as! [String : Any]))
+    }
+    
+    private func loadData() {
+        
     }
 
     //-----------------------------------------------------------------------------------------

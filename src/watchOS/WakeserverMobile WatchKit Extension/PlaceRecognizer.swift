@@ -72,7 +72,7 @@ open class PlaceRecognizer {
     public var place : PlaceType {
         get {return placeHolder}
     }
-    
+
     public var currentPortal : Portal? {
         get {
             switch place {
@@ -188,7 +188,9 @@ open class PlaceRecognizer {
                 return
             }
         case .portal(let oldPortal):
-            if let newPortal = place.portalObject(), newPortal.id == oldPortal.id, !isDetecting {
+            if let newPortal = place.portalObject(), newPortal.id == oldPortal.id,
+               newPortal.serversHash == oldPortal.serversHash && newPortal.configHash == oldPortal.configHash,
+               !isDetecting {
                 return
             }
         }
